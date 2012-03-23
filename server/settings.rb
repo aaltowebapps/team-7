@@ -1,0 +1,2 @@
+# enables reloader
+DEVELOPMENT = true
