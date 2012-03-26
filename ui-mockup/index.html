@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Find-a-Room</title>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+        <style>
+        #searchview {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #listview {
+            padding: 5px;
+            margin: 0px;
+        }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
+        </script>
+        <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
+        </script>
+
+    </head>
+    <body>
+        <div data-role="page" id="search">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Find a Room
+                </h3>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#search" data-theme="" data-icon="search">
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#outside" data-theme="" data-icon="arrow-u">
+                                Outside
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#inside" data-theme="" data-icon="arrow-d">
+                                Inside
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content">
+                <p id="searchview">
+                <form action="" method="post">
+
+                <label for="search-basic" class="ui-hidden-accessible">Search:</label>
+                    <input type="search" name="search" id="searc-basic" value="" placeholder="Search a room" />
+                </form>
+                </p>
+                <p id="listview">
+                <ul data-role="listview" data-divider-theme="b" data-inset="false">
+                    <li data-role="list-divider" role="heading">
+                        Rooms
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            A-sali
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            M-sali
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            A334
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="#page1" data-transition="slide">
+                            A000
+                        </a>
+                    </li>
+                    <li data-theme="">
+                        <a href="#page1" data-transition="slide">
+                            A111
+                        </a>
+                    </li>
+                </ul>
+            </p>
+            </div>
+        </div>
+
+        <div data-role="page" id="inside">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Find a Room
+                </h3>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#search" data-theme="" data-icon="search">
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#outside" data-theme="" data-icon="arrow-u">
+                                Outside
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#inside" data-theme="" data-icon="arrow-d">
+                                Inside
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content">
+            </div>
+            <div data-theme="a" data-role="footer">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#page4" data-theme="c" data-icon="">
+                                1st
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page1" data-theme="c" data-icon="">
+                                2nd
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#page1" data-theme="c" data-icon="">
+                                3rd
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="page" id="outside">
+            <div data-theme="a" data-role="header">
+                <h3>
+                    Find a Room
+                </h3>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#search" data-theme="" data-icon="search">
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#outside" data-theme="" data-icon="arrow-u">
+                                Outside
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#inside" data-theme="" data-icon="arrow-d">
+                                Inside
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="content">
+                
+            </div>
+        </div>
+    </body>
+</html>
