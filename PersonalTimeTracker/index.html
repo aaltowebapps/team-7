@@ -34,47 +34,67 @@
     <script type='text/javascript'>
       //<![CDATA[
         var Templates = {};
-        var articles;
+        var tasks;
+
+        function Timer(callback) {
+          this.interval = setInterval(callback, 1000);
+          this.stop = function () {
+            clearInterval(this.interval);
+          }
+        } 
+
         
-        var Article = Backbone.Model.extend ({
+        var Task = Backbone.Model.extend ({
+          averageTime: function() {
+            return this.get("totalTime") / this.get("count");
+          },
+
+          formattedTotal: function() {
+            return Math.floor(this.get("totalTime") / 1000) + "s";
+          }
         });
         
-        var Articles = Backbone.Collection.extend ({
-          model: Article,
-          localStorage: new Backbone.LocalStorage("Articles")
+        var Tasks = Backbone.Collection.extend ({
+          model: Task,
+          localStorage: new Backbone.LocalStorage("Tasks")
         });
-              
+
         $(function() {
+
           //Load the templates and store them in a global variable
           $('script[type="text/x-handlebars-template"]').each(function () {
             Templates[this.id] = Handlebars.compile($(this).html());
           });
           
           //View for rendering one entry of the blog
-          var ItemView = Backbone.View.extend ({
+          var TaskView = Backbone.View.extend ({
             tagName: "li",
             events: {
-              "blur [contenteditable]": "saveValues"
+              "click input[data-delete-task]": "deleteTask",
+              "click input[data-toggle-running]": "toggleRunning"
             },
             initialize: function() { 
               this.model.bind('change', this.render, this);
-              this.template = Templates.article;  
+              this.template = Templates.task;  
             },
             render: function() { 
-              $(this.el).html( this.template(this.model.toJSON()) ); 
+              var raw = this.model.toJSON();
+              raw['formattedTime'] = raw['totalTime']/1000+"s";
+              raw['runningText'] = raw['isRunning'] ? "Stop" : "Start";
+              $(this.el).html( this.template(raw) ); 
               return this; 
             },
-            saveValues: function() {
-              this.model.save({
-                title: this.$("[data-name='title']").html(), 
-                content: this.$("[data-name='content']").html()
-              },{silent: true});
-            }        
+            deleteTask: function() {
+              this.model.destroy();
+            },
+            toggleRunning: function() {
+              this.model.set("isRunning", !this.model.get("isRunning"));
+            }
           });
           
           //View for rendering the list of entries
           var ListView = Backbone.View.extend ({
-            el: $("#articlesList"),
+            el: $("#tasksList"),
             events: {
             },
             initialize: function() {
@@ -85,24 +105,22 @@
               var el = this.$el;
               el.empty();
               this.collection.each(function(item) {
-                var itemView = new ItemView({model: item});
-                el.append(itemView.render().el);
+                var taskView = new TaskView({model: item});
+                el.append(taskView.render().el);
               });
               this.$el.listview('refresh');
               return this;
-            },
+            }
           });
           
-          //View for creating a new entry
+          //View for creating a new task
           var NewView = Backbone.View.extend({
             el: $("#new"),
             events: {
-              "click #postEntry": "createNew"
+              "click #addTask": "createNew"
             },
             initialize: function() {
               this.title = this.$("#title");
-              this.content = this.$("#content");
-              
             },
             createNew: function() {
               this.$(".invalid").removeClass("invalid");
@@ -112,154 +130,70 @@
               }
               this.collection.create({
                 title: this.title.val(), 
-                content: this.content.val(),
-                email: localStorage.email,
-                name: localStorage.name
+                count: 0,
+                totalTime: 0,
+                isRunning: false
               }, {at: 0});
               this.title.val("");
-              this.content.val("");
             } 
           });
         
-          //View for editing the options
-          var OptionsView = Backbone.View.extend({
-            el: $("#options"),
-            events: {
-              "click #saveOpt": "saveOptions"
-            },
-            initialize: function() {
-              this.name = this.$("#optName");
-              this.email = this.$("#optEmail");
-              
-              // Assign the options from the local storage
-              this.name.val(localStorage.name);
-              this.email.val(localStorage.email);
-            },
-            saveOptions: function() {
-              this.$(".invalid").removeClass("invalid")
-              if (this.$(":invalid").length) {
-                this.$(":invalid").addClass("invalid");
-                return false;
-              }
-              localStorage.name = this.name.val();
-              localStorage.email = this.email.val();
-            }
-          });
-          
-          //Trigger an update of the articles collection 
-          $("#refresh").live('click',function () {
-            articles.fetch();
-          });    
-          
           //Instantiate the collection of articles
-          articles = new Articles();
+          tasks = new Tasks();
+          // test data for some tasks
         
           //Instantiate the views
-          var listView = new ListView({collection: articles});
-          var newView = new NewView({collection: articles});
-          var optionsView = new OptionsView();
+          var listView = new ListView({collection: tasks});
+          var newView = new NewView({collection: tasks});
           
           //Fetch the latest articles and trigger an update of the views
-          articles.fetch();
+          tasks.fetch();
+
+          // create a timer for keeping track of time
+          var timer = new Timer(function() {
+            // go through all the tasks and advance those running
+            var runningTasks = _.filter(tasks.models, function(t) {return t.get("isRunning");});
+            _.each(runningTasks, function(task) {
+              task.set("totalTime", task.get("totalTime") + 1000);
+            });
+          });
         })
       //]]>
     </script>
   </head>
   <body>
-    <script id='article' type='text/x-handlebars-template'>
+    <script id='task' type='text/x-handlebars-template'>
       <p class='ui-li-aside'>
-        {{timestamp}}
+        <input data-toggle-running="true" type="button" data-role="button" value="{{runningText}}">
+        <input data-delete-task="true" type="button" data-role="button" value="Delete">
       </p>
-      <h3 contenteditable='true' data-id='{{id}}' data-name='title'>
+      <h3 data-name='title'>
         {{title}}
       </h3>
       <p>
-        <strong>
-          {{email}}
-        </strong>
-      </p>
-      <p contenteditable='true' data-id='{{id}}' data-name='content'>
-        {{content}}
+        Total: {{formattedTime}}
       </p>
     </script>
     <div data-role='page' id='home'>
       <div data-role='header'>
-        <h1>Our First Blog</h1>
-        <a class='ui-btn-right' data-icon='gear' data-transition='slidedown' href='#options'>Options</a>
+        <h1>Task tracker</h1>
       </div>
       <div data-role='content'>
-        <ul data-role='listview' id='articlesList'></ul>
+        <ul data-role='listview' id='tasksList'></ul>
       </div>
-      <div data-position='fixed' data-role='footer'>
-        <div data-role='navbar'>
-          <ul>
-            <li>
-              <a data-icon='home' href='/'>Posts</a>
-            </li>
-            <li>
-              <a data-icon='refresh' href='#home' id='refresh'>Refresh</a>
-            </li>
-            <li>
-              <a data-icon='plus' data-transition='flip' href='#new'>New Entry</a>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <a data-role='button' href="#new">
+        New task
+      </a>
     </div>
-    <div data-role='page' id='new'>
+    <div data-role='page' id='new' data-add-back-btn="true">
       <div data-role='header'>
-        <h1>Our First Blog</h1>
-        <a class='ui-btn-right' data-icon='gear' data-transition='slidedown' href='#options'>Options</a>
+        <h1>Task tracker</h1>
       </div>
       <div data-role='content'>
         <form>
-          <input id='title' name='title' placeholder='Post Title' required='required' type='text' />
-          <textarea id='content' name='content' placeholder='Content' rows='5'></textarea>
-          <a data-role='button' href='#home' id='postEntry'>Post</a>
+          <input id='title' name='title' placeholder='Task title' required='required' type='text' />
+          <a data-role='button' href='#home' id='addTask'>Add</a>
         </form>
-      </div>
-      <div data-position='fixed' data-role='footer'>
-        <div data-role='navbar'>
-          <ul>
-            <li>
-              <a data-icon='home' href='/'>Posts</a>
-            </li>
-            <li>
-              <a data-icon='refresh' href='#home' id='refresh'>Refresh</a>
-            </li>
-            <li>
-              <a data-icon='plus' data-transition='flip' href='#new'>New Entry</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div data-role='page' id='options'>
-      <div data-position='inline' data-role='header'>
-        <a data-icon='delete' data-rel='back' href='#home'>Cancel</a>
-        <h1>Options</h1>
-        <a data-icon='check' data-rel='back' data-theme='b' href='#home' id='saveOpt'>Save</a>
-      </div>
-      <div data-role='content'>
-        <form>
-          <input id='optName' name='name' placeholder='Name' type='text' />
-          <input id='optEmail' name='email' placeholder='Email' type='email' />
-        </form>
-      </div>
-      <div data-position='fixed' data-role='footer'>
-        <div data-role='navbar'>
-          <ul>
-            <li>
-              <a data-icon='home' href='/'>Posts</a>
-            </li>
-            <li>
-              <a data-icon='refresh' href='#home' id='refresh'>Refresh</a>
-            </li>
-            <li>
-              <a data-icon='plus' data-transition='flip' href='#new'>New Entry</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   </body>
