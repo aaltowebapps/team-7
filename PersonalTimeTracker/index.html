@@ -66,6 +66,7 @@
           $('script[type="text/x-handlebars-template"]').each(function () {
             Templates[this.id] = Handlebars.compile($(this).html());
           });
+          Handlebars.registerPartial("taskpartial", $("#taskpartial").html());
           
           //View for rendering one entry of the blog
           var TaskView = Backbone.View.extend ({
@@ -75,7 +76,7 @@
               "click input[data-toggle-running]": "toggleRunning"
             },
             initialize: function() { 
-              this.model.bind('change', this.render, this);
+              this.model.bind('change', this.modelChange, this);
               this.template = Templates.task;  
             },
             render: function() { 
@@ -87,6 +88,16 @@
               $(this.el).html( this.template(raw) ); 
               $(this.el).find("input").button();
               return this; 
+            },
+            modelChange: function() {
+              // avoid expensive button creation, just update all the texts
+              var raw = this.model.toJSON();
+              function formatTime(time) {return Math.floor(time/1000) + "s";}
+              raw['formattedTime'] = formatTime(raw['totalTime']);
+              raw['avgTime'] = formatTime(raw['count'] != 0  ? raw['totalTime'] / raw['count'] : 0);
+              raw['runningText'] = raw['isRunning'] ? "Stop" : "Start";
+              $(this.el).find(".taskdesc").html( Templates.taskpartial(raw) );
+              $(this.el).find("*[data-toggle-running]").val(raw['runningText']);
             },
             deleteTask: function() {
               this.model.destroy();
@@ -187,9 +198,12 @@
       <h3 data-name='title'>
         {{title}}
       </h3>
-      <p>
-        Total: {{formattedTime}}, average time per run: {{avgTime}}, runs: {{count}}
+      <p class="taskdesc">
+        {{> taskpartial}}
       </p>
+    </script>
+    <script id='taskpartial' type='text/x-handlebars-template'>
+      Total: {{formattedTime}}, average time per run: {{avgTime}}, runs: {{count}}
     </script>
     <div data-role='page' id='home'>
       <div data-role='header'>
