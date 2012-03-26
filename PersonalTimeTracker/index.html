@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="/cache.appcache">
   <head>
     <meta charset='utf-8' />
     <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
@@ -37,7 +37,15 @@
         var tasks;
 
         function Timer(callback) {
-          this.interval = setInterval(callback, 1000);
+          this.lastTime = new Date().getTime();
+          this.tick = function() {
+            // keep track of elapsed times to keep the timer accurate
+            var newTime = new Date().getTime();
+            var elapsedMs = newTime - this.lastTime;
+            this.lastTime = newTime;
+            callback(elapsedMs);
+          }
+          this.interval = setInterval(this.tick, 1000);
           this.stop = function () {
             clearInterval(this.interval);
           }
@@ -45,13 +53,6 @@
 
         
         var Task = Backbone.Model.extend ({
-          averageTime: function() {
-            return this.get("totalTime") / this.get("count");
-          },
-
-          formattedTotal: function() {
-            return Math.floor(this.get("totalTime") / 1000) + "s";
-          }
         });
         
         var Tasks = Backbone.Collection.extend ({
@@ -79,9 +80,12 @@
             },
             render: function() { 
               var raw = this.model.toJSON();
-              raw['formattedTime'] = raw['totalTime']/1000+"s";
+              function formatTime(time) {return Math.floor(time/1000) + "s";}
+              raw['formattedTime'] = formatTime(raw['totalTime']);
+              raw['avgTime'] = formatTime(raw['count'] != 0  ? raw['totalTime'] / raw['count'] : 0);
               raw['runningText'] = raw['isRunning'] ? "Stop" : "Start";
               $(this.el).html( this.template(raw) ); 
+              $(this.el).find("input").button();
               return this; 
             },
             deleteTask: function() {
@@ -89,6 +93,10 @@
             },
             toggleRunning: function() {
               this.model.set("isRunning", !this.model.get("isRunning"));
+              if (this.model.get("isRunning")) {
+                this.model.set("count", this.model.get("count") + 1);
+              }
+              this.model.save();
             }
           });
           
@@ -128,7 +136,7 @@
                 this.$(":invalid").addClass("invalid");
                 return false;
               }
-              this.collection.create({
+              this.collection.create({ // most of these defaults should be in Task#initialize
                 title: this.title.val(), 
                 count: 0,
                 totalTime: 0,
@@ -150,11 +158,20 @@
           tasks.fetch();
 
           // create a timer for keeping track of time
-          var timer = new Timer(function() {
+          var timer = new Timer(function(elapsedMs) {
             // go through all the tasks and advance those running
-            var runningTasks = _.filter(tasks.models, function(t) {return t.get("isRunning");});
+            var runningTasks = _.filter(tasks.models, function(t) {
+              // filter out stopped tasks and those with a totalTime of null
+              return t.get("isRunning");
+            });
             _.each(runningTasks, function(task) {
-              task.set("totalTime", task.get("totalTime") + 1000);
+              // this is an attempt to work around a bug
+              // which happens while reloading when timer is running
+              var newValue = task.get("totalTime") + elapsedMs;
+              if (newValue != null) {
+                task.set("totalTime", newValue);
+                task.save();
+              }
             });
           });
         })
@@ -164,14 +181,14 @@
   <body>
     <script id='task' type='text/x-handlebars-template'>
       <p class='ui-li-aside'>
-        <input data-toggle-running="true" type="button" data-role="button" value="{{runningText}}">
-        <input data-delete-task="true" type="button" data-role="button" value="Delete">
+        <input data-toggle-running="true" type="button" data-inline="true" data-role="button" value="{{runningText}}">
+        <input data-delete-task="true" type="button" data-role="button" data-inline="true" value="Delete">
       </p>
       <h3 data-name='title'>
         {{title}}
       </h3>
       <p>
-        Total: {{formattedTime}}
+        Total: {{formattedTime}}, average time per run: {{avgTime}}, runs: {{count}}
       </p>
     </script>
     <div data-role='page' id='home'>
