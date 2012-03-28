@@ -15,7 +15,23 @@
             padding: 5px;
             margin: 0px;
         }
+
+        .list-button {
+            margin-top: 0px;
+            padding-top: 0px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            
+            /*padding: 0px 100px 0px 100px;
+            text-align: center;
+            vertical-align: middle;
+            width: 500px;
+            border: 10px solid black;*/
+
+        }
+
         </style>
+        
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js">
         </script>
         <script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js">
@@ -25,9 +41,6 @@
     <body>
         <div data-role="page" id="search">
             <div data-theme="a" data-role="header">
-                <h3>
-                    Find a Room
-                </h3>
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -53,7 +66,7 @@
                 <form action="" method="post">
 
                 <label for="search-basic" class="ui-hidden-accessible">Search:</label>
-                    <input type="search" name="search" id="searc-basic" value="" placeholder="Search a room" />
+                    <input type="search" name="search" id="search-basic" value="" placeholder="Search a room" />
                 </form>
                 </p>
                 <p id="listview">
@@ -62,20 +75,37 @@
                         Rooms
                     </li>
                     <li data-theme="c">
-                        <a href="#page1" data-transition="slide">
-                            A-sali
-                        </a>
+                        <div class="ui-grid-b">
+
+                        <div class="ui-block-a">
+                        <h3>A-sali</h3>
+                        </div>
+
+                        <div class="ui-block-c">
+                             <a href="#outside" data-role="button" class="list-button" data-icon="arrow-u" data-mini="true">
+                            Outside
+                            </a>
+                        </div>
+
+                        <div class="ui-block-b">
+                            <a href="#inside" data-role="button" class="list-button" data-icon="arrow-d" data-mini="true">Inside
+                            </a>
+                        </div>
+                      
+                        </div>
                     </li>
+
+
                     <li data-theme="c">
-                        <a href="#page1" data-transition="slide">
-                            M-sali
+                        <a href="#inside" data-transition="slide">
+                            M-sali (tää on vie inside)
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c">
+                            Outside
                         </a>
                     </li>
-                    <li data-theme="c">
-                        <a href="#page1" data-transition="slide">
-                            A334
-                        </a>
-                    </li>
+
                     <li data-theme="c">
                         <a href="#page1" data-transition="slide">
                             A000
@@ -93,9 +123,6 @@
 
         <div data-role="page" id="inside">
             <div data-theme="a" data-role="header">
-                <h3>
-                    Find a Room
-                </h3>
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -143,9 +170,6 @@
 
         <div data-role="page" id="outside">
             <div data-theme="a" data-role="header">
-                <h3>
-                    Find a Room
-                </h3>
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
