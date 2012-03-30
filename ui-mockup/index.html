@@ -69,7 +69,7 @@
             });
 
 
-            $(document).bind("pagechange", function(event, data){
+            $("#outside").live("pageshow", function() {
                 initialize();
             });
 
