@@ -13,19 +13,18 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
         <script src="jquery/jquery.mobile-1.0.1.min.js"></script>
         
-        
-    
         <script type="text/javascript">
             var map;
 
             function initialize() {
                 var myOptions = {
                     zoom: 15,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI: true,
+
                 };
             
                 map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
-
         
                 if(navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {
@@ -68,6 +67,12 @@
             $(function() {
                 initialize();
             });
+
+
+            $(document).bind("pagechange", function(event, data){
+                initialize();
+            });
+
         </script>
 
     </head>
@@ -76,7 +81,7 @@
 
         <div data-role="page" id="search">
 
-            <div data-theme="a" data-role="header" data-position="fixed" data-fullscreen="true">
+            <div data-theme="a" data-role="header" data-position="fixed"  data-tap-toggle="true">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -104,6 +109,7 @@
                         <input type="search" name="search" id="search-basic" value="" placeholder="Search a room" data-theme="c" />
                     </form>
                 </div>
+
             </div>
            
             <div data-role="content">
@@ -219,6 +225,7 @@
                     </ul>
                 </div>
             </div>
+
             <div data-role="content">
             </div>
             <div data-theme="a" data-role="footer">
@@ -266,9 +273,8 @@
                     </ul>
                 </div>
             </div>
-            <div data-role="content" id="map_canvas">
-                
-            </div>
+
+            <div data-role="content" id="map_canvas"></div>
         </div>
     </body>
 </html>
