@@ -17,62 +17,63 @@
             var map;
 
             function initialize() {
-                var myOptions = {
+
+                /* Options of the map */
+                var options = {
                     zoom: 15,
                     mapTypeId: google.maps.MapTypeId.ROADMAP,
                     disableDefaultUI: true,
+                }
 
-                };
-            
-                map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
-        
+                map = new google.maps.Map(document.getElementById('map_canvas'), options);
+
                 if(navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
+                     navigator.geolocation.getCurrentPosition(function(position) {
                         var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
-                        /*var infowindow = new google.maps.InfoWindow({
-                            map: map,
-                            position: pos,
-                            content: 'Location found using HTML5.'
-                        });*/
-
                         map.setCenter(pos);
+                        
+
+                        /*Just for testing...*/
+                        google.maps.event.addListener(map , "click", function(event) {
+                $("#test").html(event.latLng.lat() + ", " + event.latLng.lng());
+                        }); 
+
+                          initializePlaces();
                     }, function() {
-                        handleNoGeolocation(true);
-                     });
-        
+                        /*Geolocation failed*/
+                    });
                 } else {
-                    // Browser doesn't support Geolocation
-                    handleNoGeolocation(false);
+                    /* Browser doesn't support geolocation */
                 }
             }
 
-            function handleNoGeolocation(errorFlag) {
-                if (errorFlag) {
-                    var content = 'Error: The Geolocation service failed.';
-                } else {
-                    var content = 'Error: Your browser doesn\'t support geolocation.';
-                }
-
-                var options = {
+            function place(lat, long, text) {
+                this.options = {
                     map: map,
-                    position: new google.maps.LatLng(60, 105),
-                    content: content
+                    position: new google.maps.LatLng(lat, long),
+                    title: text,
                 };
 
-                var infowindow = new google.maps.InfoWindow(options);
-                map.setCenter(options.position);
+                map.setCenter(this.options.position);
+                this.marker = new google.maps.Marker(this.options);
+
+                google.maps.event.addListener(this.marker, 'click', function() {
+                    $.mobile.changePage( "#inside", { transition: "pop"} );
+                });
+            }
+
+            function initializePlaces() {
+                place("60.18689745913466", "24.821578044211037", "T-talo");
             }
 
             $(function() {
                 initialize();
             });
 
-
             $("#outside").live("pageshow", function() {
                 initialize();
             });
-
         </script>
 
     </head>
@@ -81,7 +82,7 @@
 
         <div data-role="page" id="search">
 
-            <div data-theme="a" data-role="header" data-position="fixed"  data-tap-toggle="true">
+            <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="true">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -251,7 +252,7 @@
             </div>
         </div>
 
-        <div data-role="page" id="outside">
+        <div data-role="page" id="outside" class="full_height">
             <div data-theme="a" data-role="header">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -275,6 +276,7 @@
             </div>
 
             <div data-role="content" id="map_canvas"></div>
+            <div id="test"></div>
         </div>
     </body>
 </html>
