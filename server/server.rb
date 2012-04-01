@@ -4,8 +4,6 @@ require 'sinatra/reloader' if DEVELOPMENT
 require 'base64'
 require 'json'
 
-FLOORMAP_DIR = 'floormaps'
-
 get '/' do
 # return the client's index file
 # TODO: it would make sense to keep all client files in public/
