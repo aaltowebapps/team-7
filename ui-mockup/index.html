@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
 
         <title>Find-a-Room</title>
 
@@ -36,15 +37,16 @@
 
                         /*Just for testing...*/
                         google.maps.event.addListener(map , "click", function(event) {
-                $("#test").html(event.latLng.lat() + ", " + event.latLng.lng());
+                            $("#test").html(event.latLng.lat() + ", " + event.latLng.lng());
                         }); 
 
                           initializePlaces();
                     }, function() {
-                        /*Geolocation failed*/
+                        $("#map_canvas").html("Geolocation failed.");
                     });
                 } else {
                     /* Browser doesn't support geolocation */
+                    $("#map_canvas").html("Your browser does not support geolocation.");
                 }
             }
 
@@ -82,7 +84,7 @@
 
         <div data-role="page" id="search">
 
-            <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="true">
+            <div data-theme="a" data-role="header" data-position="fixed">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -189,6 +191,76 @@
                         TUAS-talo
                     </li>
                     
+                    <li data-theme="c" class="list_item">
+                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
+                            B111
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
+                            Outside
+                        </a>
+                    </li>
+
+                    <li data-theme="c" class="list_item">
+                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
+                            B111
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
+                            Outside
+                        </a>
+                    </li>
+
+                    <li data-theme="c" class="list_item">
+                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
+                            B111
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
+                            Outside
+                        </a>
+                    </li>
+
+                    <li data-theme="c" class="list_item">
+                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
+                            B111
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
+                            Outside
+                        </a>
+                    </li>
+
+                    <li data-theme="c" class="list_item">
+                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
+                            B111
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
+                            Outside
+                        </a>
+                    </li>
+
+                    <li data-theme="c" class="list_item">
+                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
+                            B111
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
+                            Outside
+                        </a>
+                    </li>
+
+                    <li data-theme="c" class="list_item">
+                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
+                            B111
+                        </a>
+
+                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
+                            Outside
+                        </a>
+                    </li>
+
                     <li data-theme="c" class="list_item">
                         <a href="#inside" data-transition="slide" data-icon="arrow-d">
                             B111

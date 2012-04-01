@@ -17,6 +17,7 @@ html, body {
     min-height: 90%;
     padding: 0px;
     margin: 0px;
+    text-align: center;
 }
 
 .list-button {
