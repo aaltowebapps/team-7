@@ -63,7 +63,7 @@ html, body {
 .list_name { 
     float: left;
     width: 30%;
-    text-indent: 10px;
+    text-indent: 15px;
 }
 
 .searchview_list a.list_button, .searchview_list a.list_button:visited {
@@ -72,8 +72,8 @@ html, body {
     text-align: center;
     height: 100%;
     line-height: 50px;
-    border-left: 1px solid lightgrey;
-    margin-left: -1px;
+    /*border-left: 1px solid lightgrey;
+    margin-left: -1px;*/
     color: #000;
     text-decoration: none;
 }
@@ -93,3 +93,22 @@ html, body {
     background-image:         linear-gradient( #f6f6f6 , #e0e0e0 );
 }
 
+.icon_up {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-image: url(images/icons-18-black.png);
+    background-position:    -180px 50%;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+.icon_down {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-image: url(images/icons-18-black.png);
+    background-position:    -216px 50%;
+    margin: 0 auto;
+    margin-top: 16px;
+}
