@@ -67,9 +67,28 @@
       var drawY = 10;
 
       $(function() {
+        navigator.geolocation.getCurrentPosition(function(position){
+          lat = position.coords.latitude;
+          lng = position.coords.longitude;
+          printCoordinates(lat, lng);
+        });
+        
+
         var canvas = $('#canvas')[0];
         var ctx = canvas.getContext('2d');
       
+        function printCoordinates(latitude, longitude) {
+      	  ctx.font = '20px sans-serif';
+          var coordStr = '';
+          coordStr += latitude;
+      	  coordStr += 'N'; // TODO: newline not working
+	  ctx.fillText(coordStr, 30, 30);
+      	  coordStr = longitude;
+      	  coordStr += 'E';
+	  ctx.fillText(coordStr, 30, 50);
+        }
+        
+        
         var header = $('div[data-role="header"]:visible');
         var footer = $('div[data-role="footer"]:visible');
         var content = $('div[data-role="content"]:visible');
