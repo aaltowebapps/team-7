@@ -179,6 +179,19 @@
             window.addEventListener("deviceorientation", function(event) {
               drawY = drawY + event.beta/10;
               drawX = drawX + event.gamma/10;
+
+              if (drawY < 0) {
+                drawY = 0;
+              } else if (drawY > canvas.height) {
+                drawY = canvas.height - 10;
+              }
+              
+              if (drawX < 0) {
+                drawX = 0;
+              } else if (drawX > canvas.width) {
+                drawX = canvas.width - 10; 
+              }
+
               draw(drawX, drawY);
             }, false);
         } else {
