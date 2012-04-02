@@ -85,14 +85,15 @@
         /*drawX = canvas.width/2;
         drawY = canvas.height/2;*/
 
-        $("#save_local").bind("click", function(e) {
+        $("#save_server").bind("click", function(e) {
+          $.post("/uploadBase64", {"img": encode64(canvas.toDataURL())});
           e.preventDefault();
         });
-        $("#save_server").bind("click", function(e) {
+        $("#save_local").bind("click", function(e) {
+          $.
           e.preventDefault();
         });
 
-<<<<<<< HEAD
         var lastLat;
         var lastLng;
         var lastPlaceId;
@@ -141,14 +142,13 @@
           $.getJSON("/images/"+placeId+"/", function(data) {
             var images = "";
             $.each(data["data"], function(i, e) {
-              images += "<img onclick=\"addImage('"+encode64(e["images"]["standard_resolution"]["url"])+"');\" src='"+e["images"]["thumbnail"]["url"]+"'>";
+              images += "<img width='100' onclick=\"addImage('"+encode64(e["images"]["standard_resolution"]["url"])+"');\" src='"+e["images"]["thumbnail"]["url"]+"'>";
             });
             $("#backgroundImages").html(images);
             $.mobile.hidePageLoadingMsg();
           });
         });
 
-=======
       function draw(x, y) {
         ctx.beginPath();
         ctx.arc(x, y, 10, 0, Math.PI*2, true);
@@ -167,7 +167,6 @@
       }
 
       draw(drawX, drawY);
->>>>>>> drawing works
       });
     </script>
   </head>

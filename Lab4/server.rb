@@ -32,3 +32,9 @@ get '/get_url/:url/' do |url|
   url = Base64.decode64(url).gsub("\\/", "/")
   open(url)
 end
+
+post '/uploadBase64' do
+  File.open("public/snapshots/"+(Time.now.to_f * 10).floor.to_s+".png", "w") do |f| 
+    f.puts Base64.decode64(params["img"]).gsub("data:image/png;base64,", "");
+  end 
+end
