@@ -63,6 +63,9 @@
       var lng = 24.832063;
       var placeId;
 
+      var drawX = 10;
+      var drawY = 10;
+
       $(function() {
         var canvas = $('#canvas')[0];
         var ctx = canvas.getContext('2d');
@@ -79,6 +82,9 @@
         canvas.width = viewport_width;
         canvas.height = content_height;
 
+        /*drawX = canvas.width/2;
+        drawY = canvas.height/2;*/
+
         $("#save_local").bind("click", function(e) {
           e.preventDefault();
         });
@@ -86,6 +92,7 @@
           e.preventDefault();
         });
 
+<<<<<<< HEAD
         var lastLat;
         var lastLng;
         var lastPlaceId;
@@ -141,6 +148,26 @@
           });
         });
 
+=======
+      function draw(x, y) {
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, Math.PI*2, true);
+        ctx.closePath();
+        ctx.fill();
+      }
+
+      if (window.DeviceOrientationEvent) {
+            window.addEventListener("deviceorientation", function(event) {
+              drawY = drawY + event.beta/10;
+              drawX = drawX + event.gamma/10;
+              draw(drawX, drawY);
+            }, false);
+        } else {
+          
+      }
+
+      draw(drawX, drawY);
+>>>>>>> drawing works
       });
     </script>
   </head>
