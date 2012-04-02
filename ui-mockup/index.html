@@ -74,7 +74,9 @@
             });
 
             $("#outside").live("pageshow", function() {
+                $.mobile.showPageLoadingMsg();
                 initialize();
+                $.mobile.hidePageLoadingMsg();
             });
         </script>
 
@@ -84,7 +86,7 @@
 
         <div data-role="page" id="search">
 
-            <div data-theme="a" data-role="header" data-position="fixed">
+            <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -115,164 +117,24 @@
 
             </div>
            
-            <div data-role="content">
-              
-                <p id="listview">
-                <ul data-role="listview" data-divider-theme="d" data-inset="false">
+            <div data-role="content" id="list_view">
+                <ul class="searchview_list">
+                <li class="list_item ui-btn-up-c">
+                        <div class="list_name">A-sali</div><a class="list_button" href="#inside">Inside</a><a class="list_button" href="#outside">Outside</a>
+                </li>
 
-                    <li data-role="list-divider">
-                        Päärakennus
-                    </li>
+                <li class="list_item ui-btn-up-c">
+                        <div class="list_name">A-sali</div><a class="list_button" href="#inside">Inside</a><a class="list_button" href="#outside">Outside</a>
+                </li>
 
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            A-sali
-                        </a>
+                <li class="list_item ui-btn-up-c">
+                        <div class="list_name">A-sali</div><a class="list_button" href="#inside">Inside</a><a class="list_button" href="#outside">Outside</a>
+                </li>
 
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            M-sali
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-role="list-divider">
-                        T-talo
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            A000
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-                    
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            A000
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            A000
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            A000
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-role="list-divider">
-                        TUAS-talo
-                    </li>
-                    
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                    <li data-theme="c" class="list_item">
-                        <a href="#inside" data-transition="slide" data-icon="arrow-d">
-                            B111
-                        </a>
-
-                        <a href="#outside" data-transition="slide" data-icon="arrow-u"  title="Outside" data-theme="c" class="list_right">
-                            Outside
-                        </a>
-                    </li>
-
-                </ul>
-            </p>
+                <li class="list_item ui-btn-up-c">
+                        <div class="list_name">A-sali</div><a class="list_button" href="#inside">Inside</a><a class="list_button" href="#outside">Outside</a>
+                </li>
+        </ul>​
             </div>
         </div>
 
