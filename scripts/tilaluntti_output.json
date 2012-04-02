@@ -1,0 +1,1971 @@
+[
+  {
+    "name": "1 Päärakennus",
+    "rooms": [
+      {
+        "room_code": "1A",
+        "room_name": "Y202a"
+      },
+      {
+        "room_code": "1A0",
+        "room_name": "A037"
+      },
+      {
+        "room_code": "1A1",
+        "room_name": "A123"
+      },
+      {
+        "room_code": "1A125b",
+        "room_name": "A125b"
+      },
+      {
+        "room_code": "1A2",
+        "room_name": "A215"
+      },
+      {
+        "room_code": "1A304",
+        "room_name": "A304"
+      },
+      {
+        "room_code": "1A308",
+        "room_name": "A308"
+      },
+      {
+        "room_code": "1AAula",
+        "room_name": "ala-aula"
+      },
+      {
+        "room_code": "1AP1",
+        "room_name": "A122a"
+      },
+      {
+        "room_code": "1AP2",
+        "room_name": "A235f"
+      },
+      {
+        "room_code": "1AP3",
+        "room_name": "A309"
+      },
+      {
+        "room_code": "1AS0",
+        "room_name": "A034"
+      },
+      {
+        "room_code": "1AS1",
+        "room_name": "A124"
+      },
+      {
+        "room_code": "1AS2",
+        "room_name": "A221"
+      },
+      {
+        "room_code": "1AS3",
+        "room_name": "A307"
+      },
+      {
+        "room_code": "1ATK1",
+        "room_name": "A046a"
+      },
+      {
+        "room_code": "1ATK2",
+        "room_name": "A046b"
+      },
+      {
+        "room_code": "1B",
+        "room_name": "Y203a"
+      },
+      {
+        "room_code": "1C",
+        "room_name": "Y205"
+      },
+      {
+        "room_code": "1D",
+        "room_name": "Y122"
+      },
+      {
+        "room_code": "1E",
+        "room_name": "Y124"
+      },
+      {
+        "room_code": "1F",
+        "room_name": "U141"
+      },
+      {
+        "room_code": "1G",
+        "room_name": "U142"
+      },
+      {
+        "room_code": "1H",
+        "room_name": "U147"
+      },
+      {
+        "room_code": "1H304",
+        "room_name": "Hallituksen istuntosali"
+      },
+      {
+        "room_code": "1H310",
+        "room_name": "H4"
+      },
+      {
+        "room_code": "1J",
+        "room_name": "U149"
+      },
+      {
+        "room_code": "1K",
+        "room_name": "U154"
+      },
+      {
+        "room_code": "1K014",
+        "room_name": "K014"
+      },
+      {
+        "room_code": "1K101",
+        "room_name": "H1"
+      },
+      {
+        "room_code": "1K102",
+        "room_name": "H2"
+      },
+      {
+        "room_code": "1K104",
+        "room_name": "H3"
+      },
+      {
+        "room_code": "1KON",
+        "room_name": "A222"
+      },
+      {
+        "room_code": "1L",
+        "room_name": "U270"
+      },
+      {
+        "room_code": "1M",
+        "room_name": "U157"
+      },
+      {
+        "room_code": "1M1",
+        "room_name": "M232"
+      },
+      {
+        "room_code": "1M102",
+        "room_name": "M102"
+      },
+      {
+        "room_code": "1M129",
+        "room_name": "M129"
+      },
+      {
+        "room_code": "1M134",
+        "room_name": "M134"
+      },
+      {
+        "room_code": "1M145b",
+        "room_name": "M145b"
+      },
+      {
+        "room_code": "1M2",
+        "room_name": "M233"
+      },
+      {
+        "room_code": "1M203",
+        "room_name": "M203"
+      },
+      {
+        "room_code": "1M205",
+        "room_name": "M205"
+      },
+      {
+        "room_code": "1M240",
+        "room_name": "M240"
+      },
+      {
+        "room_code": "1M3",
+        "room_name": "M234"
+      },
+      {
+        "room_code": "1M315",
+        "room_name": "M315"
+      },
+      {
+        "room_code": "1M329",
+        "room_name": "M329"
+      },
+      {
+        "room_code": "1M330",
+        "room_name": "M330"
+      },
+      {
+        "room_code": "1M4",
+        "room_name": "M220"
+      },
+      {
+        "room_code": "1M5",
+        "room_name": "M140"
+      },
+      {
+        "room_code": "1MAP",
+        "room_name": "A131a"
+      },
+      {
+        "room_code": "1MAula",
+        "room_name": "mellin-aula"
+      },
+      {
+        "room_code": "1MS1",
+        "room_name": "A128"
+      },
+      {
+        "room_code": "1N",
+        "room_name": "U271"
+      },
+      {
+        "room_code": "1Oppilaslabra",
+        "room_name": "Y156"
+      },
+      {
+        "room_code": "1U130",
+        "room_name": "U130"
+      },
+      {
+        "room_code": "1U131",
+        "room_name": "U131"
+      },
+      {
+        "room_code": "1U261",
+        "room_name": "U261"
+      },
+      {
+        "room_code": "1U262",
+        "room_name": "U262"
+      },
+      {
+        "room_code": "1U264",
+        "room_name": "U264"
+      },
+      {
+        "room_code": "1U322",
+        "room_name": "U322"
+      },
+      {
+        "room_code": "1U325",
+        "room_name": "U325"
+      },
+      {
+        "room_code": "1U344",
+        "room_name": "U344"
+      },
+      {
+        "room_code": "1U345",
+        "room_name": "U345"
+      },
+      {
+        "room_code": "1U352",
+        "room_name": "U352"
+      },
+      {
+        "room_code": "1U353",
+        "room_name": "U353"
+      },
+      {
+        "room_code": "1U356",
+        "room_name": "U356"
+      },
+      {
+        "room_code": "1U358",
+        "room_name": "U358"
+      },
+      {
+        "room_code": "1U401b",
+        "room_name": "U401b"
+      },
+      {
+        "room_code": "1U402",
+        "room_name": "U402"
+      },
+      {
+        "room_code": "1U405a",
+        "room_name": "U405a"
+      },
+      {
+        "room_code": "1U405b",
+        "room_name": "U405b"
+      },
+      {
+        "room_code": "1U406a",
+        "room_name": "U406a"
+      },
+      {
+        "room_code": "1U409",
+        "room_name": "U409"
+      },
+      {
+        "room_code": "1U410b",
+        "room_name": "U410b"
+      },
+      {
+        "room_code": "1U413a",
+        "room_name": "U413a"
+      },
+      {
+        "room_code": "1U414a",
+        "room_name": "U414a"
+      },
+      {
+        "room_code": "1U414b",
+        "room_name": "U414b"
+      },
+      {
+        "room_code": "1U502",
+        "room_name": "U502"
+      },
+      {
+        "room_code": "1U503",
+        "room_name": "U503"
+      },
+      {
+        "room_code": "1U510",
+        "room_name": "U510"
+      },
+      {
+        "room_code": "1U511",
+        "room_name": "U511"
+      },
+      {
+        "room_code": "1U513",
+        "room_name": "Iso neukkari"
+      },
+      {
+        "room_code": "1U521",
+        "room_name": "U521"
+      },
+      {
+        "room_code": "1Unelias",
+        "room_name": "U351"
+      },
+      {
+        "room_code": "1VT1",
+        "room_name": "VT1"
+      },
+      {
+        "room_code": "1VT2",
+        "room_name": "VT2"
+      },
+      {
+        "room_code": "1Y195",
+        "room_name": "Y195"
+      },
+      {
+        "room_code": "1Y197",
+        "room_name": "Y197"
+      },
+      {
+        "room_code": "1Y198",
+        "room_name": "Y198"
+      },
+      {
+        "room_code": "1Y199a",
+        "room_name": "Y199a"
+      },
+      {
+        "room_code": "1Y199c",
+        "room_name": "Y199c"
+      },
+      {
+        "room_code": "1Y225a",
+        "room_name": "Paja"
+      },
+      {
+        "room_code": "1Y227",
+        "room_name": "Y227"
+      },
+      {
+        "room_code": "1Y228a",
+        "room_name": "Y228a"
+      },
+      {
+        "room_code": "1Y307",
+        "room_name": "Y307"
+      },
+      {
+        "room_code": "1Y308a",
+        "room_name": "H5"
+      },
+      {
+        "room_code": "1Y308b",
+        "room_name": "Y308b"
+      },
+      {
+        "room_code": "1Y308c",
+        "room_name": "Y308c"
+      },
+      {
+        "room_code": "1Y309a",
+        "room_name": "Y309a"
+      },
+      {
+        "room_code": "1Y309b",
+        "room_name": "Y309b"
+      },
+      {
+        "room_code": "1Y309c",
+        "room_name": "Y309c"
+      },
+      {
+        "room_code": "1Y313",
+        "room_name": "Y313"
+      },
+      {
+        "room_code": "1Y323",
+        "room_name": "Y323"
+      },
+      {
+        "room_code": "1Y338c",
+        "room_name": "Y338c"
+      },
+      {
+        "room_code": "1Y339a",
+        "room_name": "Y339a"
+      },
+      {
+        "room_code": "1Y339b",
+        "room_name": "Y339b"
+      },
+      {
+        "room_code": "1Y342a",
+        "room_name": "Y342a"
+      },
+      {
+        "room_code": "1Y344",
+        "room_name": "Y344"
+      },
+      {
+        "room_code": "1Y404",
+        "room_name": "H6"
+      },
+      {
+        "room_code": "1Y405",
+        "room_name": "Y405"
+      },
+      {
+        "room_code": "1Y421",
+        "room_name": "Y421/minineukkari-itseopiskelu"
+      },
+      {
+        "room_code": "1Y423",
+        "room_name": "Y423"
+      },
+      {
+        "room_code": "1Y427a",
+        "room_name": "Y427a"
+      },
+      {
+        "room_code": "1Y427b",
+        "room_name": "Y427b"
+      },
+      {
+        "room_code": "1Y429a",
+        "room_name": "Y429a"
+      },
+      {
+        "room_code": "1Y429c",
+        "room_name": "Y429c"
+      },
+      {
+        "room_code": "1Y430a",
+        "room_name": "Y430a"
+      },
+      {
+        "room_code": "1Y430b",
+        "room_name": "Y430b"
+      },
+      {
+        "room_code": "1YAula",
+        "room_name": "ylä-aula"
+      }
+    ]
+  },
+  {
+    "name": "2 Rakennus- ja ympäristötekniikka",
+    "rooms": [
+      {
+        "room_code": "2CADluokka",
+        "room_name": "267"
+      },
+      {
+        "room_code": "2266",
+        "room_name": "266"
+      },
+      {
+        "room_code": "2355",
+        "room_name": "355"
+      },
+      {
+        "room_code": "2226b",
+        "room_name": "226b"
+      },
+      {
+        "room_code": "2K2",
+        "room_name": "165"
+      },
+      {
+        "room_code": "2R1",
+        "room_name": "160a"
+      },
+      {
+        "room_code": "2R2",
+        "room_name": "253"
+      },
+      {
+        "room_code": "2R3",
+        "room_name": "255"
+      },
+      {
+        "room_code": "2R4",
+        "room_name": "264a"
+      },
+      {
+        "room_code": "2R5",
+        "room_name": "265"
+      },
+      {
+        "room_code": "2R6",
+        "room_name": "351a"
+      },
+      {
+        "room_code": "2R7",
+        "room_name": "351b"
+      },
+      {
+        "room_code": "2R8",
+        "room_name": "352"
+      },
+      {
+        "room_code": "2R9",
+        "room_name": "309/ videoneuvottelu"
+      }
+    ]
+  },
+  {
+    "name": "3 Teknillinen fysiikka",
+    "rooms": [
+      {
+        "room_code": "3Auditorio",
+        "room_name": "F239a"
+      },
+      {
+        "room_code": "3F115",
+        "room_name": "F115"
+      },
+      {
+        "room_code": "3F122",
+        "room_name": "F122"
+      },
+      {
+        "room_code": "3F138",
+        "room_name": "F138"
+      },
+      {
+        "room_code": "3F158",
+        "room_name": "F158"
+      },
+      {
+        "room_code": "3F178a",
+        "room_name": "F178a"
+      },
+      {
+        "room_code": "3F227",
+        "room_name": "F227"
+      },
+      {
+        "room_code": "3F254",
+        "room_name": "F254"
+      },
+      {
+        "room_code": "3F255",
+        "room_name": "F255"
+      },
+      {
+        "room_code": "3F257",
+        "room_name": "F257"
+      },
+      {
+        "room_code": "3F258",
+        "room_name": "F258"
+      },
+      {
+        "room_code": "3F259",
+        "room_name": "F259"
+      },
+      {
+        "room_code": "3F301b",
+        "room_name": "F301b"
+      },
+      {
+        "room_code": "3F332",
+        "room_name": "F332"
+      },
+      {
+        "room_code": "3F333",
+        "room_name": "F333"
+      },
+      {
+        "room_code": "3F334",
+        "room_name": "F334"
+      },
+      {
+        "room_code": "3F335",
+        "room_name": "F335"
+      },
+      {
+        "room_code": "3F336",
+        "room_name": "F336"
+      },
+      {
+        "room_code": "3F401",
+        "room_name": "F401"
+      },
+      {
+        "room_code": "3Luentosali1",
+        "room_name": "F175a"
+      },
+      {
+        "room_code": "3Luentosali2",
+        "room_name": "F175b"
+      },
+      {
+        "room_code": " ",
+        "room_name": " "
+      },
+      {
+        "room_code": "4E110",
+        "room_name": "E110"
+      },
+      {
+        "room_code": "4E111",
+        "room_name": "E111"
+      },
+      {
+        "room_code": "4E127",
+        "room_name": "Kuunteluhuone"
+      },
+      {
+        "room_code": "4E220",
+        "room_name": "Strömberg"
+      },
+      {
+        "room_code": "4B201b",
+        "room_name": "B201b"
+      },
+      {
+        "room_code": "4C215",
+        "room_name": "C215"
+      },
+      {
+        "room_code": "4C226",
+        "room_name": "C226"
+      },
+      {
+        "room_code": "4D302",
+        "room_name": "D302"
+      },
+      {
+        "room_code": "4F201",
+        "room_name": "F201"
+      },
+      {
+        "room_code": "4F401",
+        "room_name": "F401"
+      },
+      {
+        "room_code": "4F402",
+        "room_name": "F402"
+      },
+      {
+        "room_code": "4G116a",
+        "room_name": "G116a"
+      },
+      {
+        "room_code": "4G236",
+        "room_name": "G236"
+      },
+      {
+        "room_code": "4G336",
+        "room_name": "G336"
+      },
+      {
+        "room_code": "4H302",
+        "room_name": "H302"
+      },
+      {
+        "room_code": "4H402",
+        "room_name": "H402"
+      },
+      {
+        "room_code": "4I212DC",
+        "room_name": "I212 Matalataajuuspuoli"
+      },
+      {
+        "room_code": "4I212RF",
+        "room_name": "I212 Radiotaajuuspuoli"
+      },
+      {
+        "room_code": "4I256",
+        "room_name": "I256"
+      },
+      {
+        "room_code": "4I346",
+        "room_name": "I346"
+      },
+      {
+        "room_code": "4I407",
+        "room_name": "I407"
+      },
+      {
+        "room_code": "4K203",
+        "room_name": "Iso kaiuton huone"
+      },
+      {
+        "room_code": "4K204",
+        "room_name": "Monikanavahuone"
+      },
+      {
+        "room_code": "4K205",
+        "room_name": "Pieni kaiuton huone"
+      },
+      {
+        "room_code": "4L213",
+        "room_name": "L213"
+      },
+      {
+        "room_code": "4L304",
+        "room_name": "L304"
+      },
+      {
+        "room_code": "4L310",
+        "room_name": "L310"
+      },
+      {
+        "room_code": "4L311a",
+        "room_name": "L311a"
+      },
+      {
+        "room_code": "4L311b",
+        "room_name": "L311b"
+      },
+      {
+        "room_code": "4S1",
+        "room_name": "A102"
+      },
+      {
+        "room_code": "4S2",
+        "room_name": "A101"
+      },
+      {
+        "room_code": "4S3",
+        "room_name": "A205"
+      },
+      {
+        "room_code": "4S4",
+        "room_name": "A202"
+      },
+      {
+        "room_code": "4S5",
+        "room_name": "L306"
+      }
+    ]
+  },
+  {
+    "name": "5 Konetekniikka 4",
+    "rooms": [
+      {
+        "room_code": "5VSauna",
+        "room_name": "Virtauksen sauna"
+      },
+      {
+        "room_code": "5172",
+        "room_name": "172"
+      },
+      {
+        "room_code": "5339",
+        "room_name": "339"
+      },
+      {
+        "room_code": "5354",
+        "room_name": "354"
+      },
+      {
+        "room_code": "6luentosali",
+        "room_name": "118"
+      },
+      {
+        "room_code": "6pikkupalaveri",
+        "room_name": "226"
+      },
+      {
+        "room_code": "6seminaari",
+        "room_name": "117a"
+      }
+    ]
+  },
+  {
+    "name": "7 Konetekniikka 2",
+    "rooms": [
+      {
+        "room_code": "7211a",
+        "room_name": "211a"
+      },
+      {
+        "room_code": "7223",
+        "room_name": "223"
+      }
+    ]
+  },
+  {
+    "name": "8 Konetekniikka 1",
+    "rooms": [
+      {
+        "room_code": "8101",
+        "room_name": "101"
+      },
+      {
+        "room_code": "8148",
+        "room_name": "148"
+      },
+      {
+        "room_code": "8149",
+        "room_name": "149"
+      },
+      {
+        "room_code": "8150",
+        "room_name": "150"
+      },
+      {
+        "room_code": "8201",
+        "room_name": "201"
+      },
+      {
+        "room_code": "8202",
+        "room_name": "202"
+      },
+      {
+        "room_code": "8215",
+        "room_name": "215"
+      },
+      {
+        "room_code": "8216",
+        "room_name": "216"
+      },
+      {
+        "room_code": "8323",
+        "room_name": "323"
+      },
+      {
+        "room_code": "8326",
+        "room_name": "326"
+      },
+      {
+        "room_code": "8342",
+        "room_name": "342"
+      },
+      {
+        "room_code": "8345",
+        "room_name": "345"
+      },
+      {
+        "room_code": "8348",
+        "room_name": "348"
+      },
+      {
+        "room_code": "8157b",
+        "room_name": "157b"
+      },
+      {
+        "room_code": "8203b",
+        "room_name": "203b"
+      },
+      {
+        "room_code": "8213a",
+        "room_name": "213a"
+      },
+      {
+        "room_code": "8237c",
+        "room_name": "237c"
+      },
+      {
+        "room_code": "8302b",
+        "room_name": "302b"
+      },
+      {
+        "room_code": "8324b",
+        "room_name": "324b"
+      },
+      {
+        "room_code": "8343b",
+        "room_name": "343b"
+      },
+      {
+        "room_code": "8CAEluokka",
+        "room_name": "344"
+      }
+    ]
+  },
+  {
+    "name": "9 Nano-talo",
+    "rooms": [
+      {
+        "room_code": "9161",
+        "room_name": "161"
+      },
+      {
+        "room_code": "9204",
+        "room_name": "204"
+      },
+      {
+        "room_code": "9227",
+        "room_name": "227"
+      },
+      {
+        "room_code": "9228",
+        "room_name": "228"
+      }
+    ]
+  },
+  {
+    "name": "11 Kemian tekniikka",
+    "rooms": [
+      {
+        "room_code": "11A303",
+        "room_name": "A303"
+      },
+      {
+        "room_code": "11C229",
+        "room_name": "C229"
+      },
+      {
+        "room_code": "11D422",
+        "room_name": "D422"
+      },
+      {
+        "room_code": "11F505b",
+        "room_name": "F505b"
+      },
+      {
+        "room_code": "11Ke5",
+        "room_name": "D311"
+      },
+      {
+        "room_code": "11Luentosali1",
+        "room_name": "A305"
+      },
+      {
+        "room_code": "11Luentosali2",
+        "room_name": "A304"
+      },
+      {
+        "room_code": "11Luentosali3",
+        "room_name": "A302"
+      },
+      {
+        "room_code": "11Luentosali4",
+        "room_name": "C301"
+      },
+      {
+        "room_code": "11Luentosali6",
+        "room_name": "D301a"
+      },
+      {
+        "room_code": "11luokka1",
+        "room_name": "B016"
+      },
+      {
+        "room_code": "11luokka2",
+        "room_name": "B017"
+      },
+      {
+        "room_code": "11luokka3",
+        "room_name": "B018"
+      }
+    ]
+  },
+  {
+    "name": "12 Materiaalitekniikka",
+    "rooms": [
+      {
+        "room_code": "12010",
+        "room_name": "Oppimistilan neuvotteluhuone"
+      },
+      {
+        "room_code": "12011",
+        "room_name": "011"
+      },
+      {
+        "room_code": "1223",
+        "room_name": "ADP-tila (SmartBoard)"
+      },
+      {
+        "room_code": "1226",
+        "room_name": "APD (Dataprojektori)"
+      },
+      {
+        "room_code": "12109",
+        "room_name": "Kanslian kokoushuone"
+      },
+      {
+        "room_code": "12144",
+        "room_name": "144"
+      },
+      {
+        "room_code": "12147",
+        "room_name": "juhla-aula"
+      },
+      {
+        "room_code": "12160b",
+        "room_name": "160b"
+      },
+      {
+        "room_code": "12232",
+        "room_name": "232"
+      },
+      {
+        "room_code": "12242",
+        "room_name": "242"
+      },
+      {
+        "room_code": "12305a",
+        "room_name": "sauna"
+      },
+      {
+        "room_code": "12B157",
+        "room_name": "Kirjaston neuvotteluhuone"
+      },
+      {
+        "room_code": "12B212",
+        "room_name": "Neuvotteluhuone 1"
+      },
+      {
+        "room_code": "12B213",
+        "room_name": "Neuvotteluhuone 2"
+      },
+      {
+        "room_code": "12B380",
+        "room_name": "B380"
+      },
+      {
+        "room_code": "12Kalliotekniikka",
+        "room_name": "B205"
+      },
+      {
+        "room_code": "12KorroosioJaMVTsemina",
+        "room_name": "B236"
+      },
+      {
+        "room_code": "12LuentosaliV2",
+        "room_name": "145"
+      },
+      {
+        "room_code": "12MateriaalitieteenSem",
+        "room_name": "225"
+      },
+      {
+        "room_code": "12MekProsSemina",
+        "room_name": "B306"
+      },
+      {
+        "room_code": "12MetallurgianSemina",
+        "room_name": "B329"
+      },
+      {
+        "room_code": "12V1",
+        "room_name": "C100"
+      },
+      {
+        "room_code": "12V3",
+        "room_name": "C101"
+      }
+    ]
+  },
+  {
+    "name": "13 Puunjalostustekniikka 1",
+    "rooms": [
+      {
+        "room_code": "13237",
+        "room_name": "237"
+      },
+      {
+        "room_code": "13Halko",
+        "room_name": "Halko / 220"
+      },
+      {
+        "room_code": "13Kuitu",
+        "room_name": "Kuitu / 225"
+      },
+      {
+        "room_code": "13L1",
+        "room_name": "241"
+      },
+      {
+        "room_code": "13L2",
+        "room_name": "240"
+      },
+      {
+        "room_code": "13Lastu",
+        "room_name": "Lastu / 228"
+      },
+      {
+        "room_code": "13Pihka",
+        "room_name": "Pihka / 322"
+      },
+      {
+        "room_code": "13Pulpperi",
+        "room_name": "Pulpperi / 140"
+      }
+    ]
+  },
+  {
+    "name": "14 Puunjalostustekniikka 2",
+    "rooms": [
+      {
+        "room_code": "14218a",
+        "room_name": "218a"
+      },
+      {
+        "room_code": "14121",
+        "room_name": "121"
+      },
+      {
+        "room_code": "14122",
+        "room_name": "122"
+      },
+      {
+        "room_code": "14123",
+        "room_name": "123"
+      },
+      {
+        "room_code": "14128",
+        "room_name": "Kanto"
+      },
+      {
+        "room_code": "14129",
+        "room_name": "Kaarna"
+      },
+      {
+        "room_code": "14130",
+        "room_name": "Käpy"
+      },
+      {
+        "room_code": "14218b",
+        "room_name": "218b"
+      }
+    ]
+  },
+  {
+    "name": "15 Kirjasto",
+    "rooms": [
+      {
+        "room_code": "15127",
+        "room_name": "127"
+      },
+      {
+        "room_code": "15213",
+        "room_name": "213"
+      }
+    ]
+  },
+  {
+    "name": "16 Laivatekniikka",
+    "rooms": [
+      {
+        "room_code": "16134",
+        "room_name": "134"
+      },
+      {
+        "room_code": "16103b",
+        "room_name": "Neuvotteluhuone"
+      },
+      {
+        "room_code": "16108c",
+        "room_name": "108c"
+      },
+      {
+        "room_code": "161Cseminaarisali",
+        "room_name": "205"
+      },
+      {
+        "room_code": "16ATKluokka",
+        "room_name": "104a"
+      },
+      {
+        "room_code": "16L204",
+        "room_name": "L204"
+      }
+    ]
+  },
+  {
+    "name": "17 Maarintalo",
+    "rooms": [
+      {
+        "room_code": "17203",
+        "room_name": "203"
+      },
+      {
+        "room_code": "17204",
+        "room_name": "204"
+      },
+      {
+        "room_code": "17205",
+        "room_name": "205"
+      },
+      {
+        "room_code": "17206",
+        "room_name": "206"
+      },
+      {
+        "room_code": "17207",
+        "room_name": "207"
+      },
+      {
+        "room_code": "17211",
+        "room_name": "211"
+      },
+      {
+        "room_code": "17212",
+        "room_name": "212"
+      },
+      {
+        "room_code": "17214",
+        "room_name": "214"
+      },
+      {
+        "room_code": "17215",
+        "room_name": "215"
+      },
+      {
+        "room_code": "17216",
+        "room_name": "216"
+      },
+      {
+        "room_code": "17218",
+        "room_name": "218"
+      },
+      {
+        "room_code": "17219",
+        "room_name": "219"
+      },
+      {
+        "room_code": "17220",
+        "room_name": "220"
+      },
+      {
+        "room_code": "17221",
+        "room_name": "221"
+      },
+      {
+        "room_code": "17222",
+        "room_name": "222"
+      },
+      {
+        "room_code": "17224",
+        "room_name": "224"
+      },
+      {
+        "room_code": "17226",
+        "room_name": "226"
+      },
+      {
+        "room_code": "17227",
+        "room_name": "227"
+      },
+      {
+        "room_code": "17229",
+        "room_name": "229"
+      },
+      {
+        "room_code": "17245",
+        "room_name": "245"
+      },
+      {
+        "room_code": "17255",
+        "room_name": "255"
+      },
+      {
+        "room_code": "17258",
+        "room_name": "258"
+      },
+      {
+        "room_code": "17260",
+        "room_name": "260"
+      },
+      {
+        "room_code": "17262",
+        "room_name": "262"
+      },
+      {
+        "room_code": "17264",
+        "room_name": "264"
+      },
+      {
+        "room_code": "17266",
+        "room_name": "266"
+      },
+      {
+        "room_code": "17268",
+        "room_name": "268"
+      },
+      {
+        "room_code": "17Maari-A",
+        "room_name": "167"
+      },
+      {
+        "room_code": "17Maari-B",
+        "room_name": "Mikroluokka 5"
+      },
+      {
+        "room_code": "17Maari-C",
+        "room_name": "Mikroluokka 3"
+      },
+      {
+        "room_code": "17Maari-D",
+        "room_name": "186"
+      },
+      {
+        "room_code": "17Maari-E",
+        "room_name": "172"
+      },
+      {
+        "room_code": "17Maari-F",
+        "room_name": "159"
+      },
+      {
+        "room_code": "17Maari-K",
+        "room_name": "243"
+      },
+      {
+        "room_code": "17Maari-L",
+        "room_name": "242"
+      },
+      {
+        "room_code": "17Maari-M",
+        "room_name": "278"
+      }
+    ]
+  },
+  {
+    "name": "22 Lämpömiehenkuja 2",
+    "rooms": [
+      {
+        "room_code": "22Alvar/Aino/Elissa",
+        "room_name": "C110-C114"
+      },
+      {
+        "room_code": "22BakerHouse",
+        "room_name": "C212"
+      },
+      {
+        "room_code": "22C208",
+        "room_name": "C208"
+      },
+      {
+        "room_code": "22C209",
+        "room_name": "C209"
+      },
+      {
+        "room_code": "22C216",
+        "room_name": "C216"
+      },
+      {
+        "room_code": "22C259",
+        "room_name": "C259"
+      },
+      {
+        "room_code": "22NeueVahr",
+        "room_name": "C211"
+      },
+      {
+        "room_code": "22VillaKokkonen",
+        "room_name": "C230"
+      },
+      {
+        "room_code": "22VillaTammekann",
+        "room_name": "C210"
+      }
+    ]
+  },
+  {
+    "name": "27 Arkkitehtuuri/Paja",
+    "rooms": [
+      {
+        "room_code": "27305",
+        "room_name": "305"
+      },
+      {
+        "room_code": "27PS1",
+        "room_name": "306"
+      },
+      {
+        "room_code": "27PS2",
+        "room_name": "310"
+      }
+    ]
+  },
+  {
+    "name": "28 YTK",
+    "rooms": [
+      {
+        "room_code": "28YTKluento",
+        "room_name": "215"
+      },
+      {
+        "room_code": "28307",
+        "room_name": "307"
+      }
+    ]
+  },
+  {
+    "name": "29 Sähkötalo 1",
+    "rooms": [
+      {
+        "room_code": "29ST1",
+        "room_name": "223"
+      },
+      {
+        "room_code": "29203",
+        "room_name": "Edison"
+      },
+      {
+        "room_code": "29212",
+        "room_name": "Maxwell"
+      },
+      {
+        "room_code": "29231",
+        "room_name": "231"
+      },
+      {
+        "room_code": "29271",
+        "room_name": "271"
+      },
+      {
+        "room_code": "29326",
+        "room_name": "326"
+      },
+      {
+        "room_code": "29329",
+        "room_name": "329"
+      },
+      {
+        "room_code": "29330",
+        "room_name": "330"
+      },
+      {
+        "room_code": "29331",
+        "room_name": "331"
+      },
+      {
+        "room_code": "29341",
+        "room_name": "341"
+      },
+      {
+        "room_code": "29379",
+        "room_name": " "
+      },
+      {
+        "room_code": "29381",
+        "room_name": "H1"
+      },
+      {
+        "room_code": "29428",
+        "room_name": "428"
+      },
+      {
+        "room_code": "29432",
+        "room_name": "432"
+      },
+      {
+        "room_code": "29433",
+        "room_name": "433"
+      }
+    ]
+  },
+  {
+    "name": "30 Tietotekniikka",
+    "rooms": [
+      {
+        "room_code": "30A106",
+        "room_name": "A106"
+      },
+      {
+        "room_code": "30A117",
+        "room_name": "A117"
+      },
+      {
+        "room_code": "30A120",
+        "room_name": "A120"
+      },
+      {
+        "room_code": "30A123",
+        "room_name": "A123"
+      },
+      {
+        "room_code": "30A136",
+        "room_name": "A136"
+      },
+      {
+        "room_code": "30A142",
+        "room_name": "A142"
+      },
+      {
+        "room_code": "30A211",
+        "room_name": "A211"
+      },
+      {
+        "room_code": "30A218",
+        "room_name": "A218"
+      },
+      {
+        "room_code": "30A225",
+        "room_name": "A225"
+      },
+      {
+        "room_code": "30A232",
+        "room_name": "A232"
+      },
+      {
+        "room_code": "30A243",
+        "room_name": "A243"
+      },
+      {
+        "room_code": "30A319",
+        "room_name": "A319"
+      },
+      {
+        "room_code": "30A322",
+        "room_name": "A322"
+      },
+      {
+        "room_code": "30A328",
+        "room_name": "A328"
+      },
+      {
+        "room_code": "30A346",
+        "room_name": "A346"
+      },
+      {
+        "room_code": "30B115",
+        "room_name": "B115"
+      },
+      {
+        "room_code": "30B122",
+        "room_name": "B122"
+      },
+      {
+        "room_code": "30B130",
+        "room_name": "B130"
+      },
+      {
+        "room_code": "30B219",
+        "room_name": "B219"
+      },
+      {
+        "room_code": "30B353",
+        "room_name": "B353"
+      },
+      {
+        "room_code": "30B357",
+        "room_name": "B357"
+      },
+      {
+        "room_code": "30C106",
+        "room_name": "C106"
+      },
+      {
+        "room_code": "30C307",
+        "room_name": "C307"
+      },
+      {
+        "room_code": "30T1",
+        "room_name": "C202"
+      },
+      {
+        "room_code": "30T2",
+        "room_name": "C105"
+      },
+      {
+        "room_code": "30T3",
+        "room_name": "C206"
+      },
+      {
+        "room_code": "30T4",
+        "room_name": "A238"
+      },
+      {
+        "room_code": "30T5",
+        "room_name": "A133"
+      },
+      {
+        "room_code": "30TSauna",
+        "room_name": "T-talon sauna"
+      }
+    ]
+  },
+  {
+    "name": "32 HTC",
+    "rooms": [
+      {
+        "room_code": "32CA504",
+        "room_name": "CA504"
+      },
+      {
+        "room_code": "32CB504",
+        "room_name": "CB504"
+      },
+      {
+        "room_code": "32CB604",
+        "room_name": "CB604"
+      }
+    ]
+  },
+  {
+    "name": "33 Innopoli 2",
+    "rooms": [
+      {
+        "room_code": "33A314",
+        "room_name": "A314"
+      },
+      {
+        "room_code": "33A317",
+        "room_name": "A317"
+      },
+      {
+        "room_code": "33A325",
+        "room_name": "A325"
+      },
+      {
+        "room_code": "33A346",
+        "room_name": "A346"
+      },
+      {
+        "room_code": "33B317",
+        "room_name": "Atlantis"
+      },
+      {
+        "room_code": "33B345",
+        "room_name": "Mars"
+      },
+      {
+        "room_code": "33C313",
+        "room_name": "Saturnus"
+      },
+      {
+        "room_code": "33C325",
+        "room_name": "Merkurius"
+      },
+      {
+        "room_code": "33C331",
+        "room_name": "C331"
+      },
+      {
+        "room_code": "33C412",
+        "room_name": "C412"
+      },
+      {
+        "room_code": "33C414",
+        "room_name": "C414"
+      },
+      {
+        "room_code": "33C424",
+        "room_name": "C424"
+      },
+      {
+        "room_code": "33C425",
+        "room_name": "C425"
+      },
+      {
+        "room_code": "33C432",
+        "room_name": "Seminaarisali"
+      },
+      {
+        "room_code": "33D320",
+        "room_name": "D320"
+      },
+      {
+        "room_code": "33E332",
+        "room_name": "E332"
+      },
+      {
+        "room_code": "33E432",
+        "room_name": "E432"
+      },
+      {
+        "room_code": "33E456",
+        "room_name": "E456"
+      }
+    ]
+  },
+  {
+    "name": "34 Vesilaboratorio",
+    "rooms": [
+      {
+        "room_code": "34286",
+        "room_name": "286"
+      },
+      {
+        "room_code": "34287",
+        "room_name": "287"
+      }
+    ]
+  },
+  {
+    "name": "35 Falcon Gentti",
+    "rooms": [
+      {
+        "room_code": "351.015",
+        "room_name": "Opetustila 1"
+      },
+      {
+        "room_code": "351.016",
+        "room_name": "Opetustila 2"
+      },
+      {
+        "room_code": "351.017",
+        "room_name": "Opetustila 3"
+      },
+      {
+        "room_code": "351.018",
+        "room_name": "Neuvotteluhuone 1"
+      },
+      {
+        "room_code": "351.019",
+        "room_name": "Neuvotteluhuone 2"
+      },
+      {
+        "room_code": "351.061",
+        "room_name": "Neuvotteluhuone"
+      },
+      {
+        "room_code": "351.062",
+        "room_name": "Opetustila"
+      }
+    ]
+  },
+  {
+    "name": "36 Micronova",
+    "rooms": [
+      {
+        "room_code": "36MSauna",
+        "room_name": "Micronovan sauna"
+      },
+      {
+        "room_code": "361167",
+        "room_name": "1167"
+      },
+      {
+        "room_code": "362159",
+        "room_name": "2159"
+      },
+      {
+        "room_code": "362183",
+        "room_name": "Shockley"
+      },
+      {
+        "room_code": "362186",
+        "room_name": "\"Bardeen\""
+      },
+      {
+        "room_code": "362187",
+        "room_name": "\"Battain\""
+      },
+      {
+        "room_code": "364109",
+        "room_name": "4109"
+      },
+      {
+        "room_code": "364121",
+        "room_name": "4121"
+      },
+      {
+        "room_code": "364167",
+        "room_name": "4167"
+      },
+      {
+        "room_code": "364172",
+        "room_name": "4172"
+      },
+      {
+        "room_code": "36Iso-sali",
+        "room_name": "2190"
+      },
+      {
+        "room_code": "36Pieni-sali",
+        "room_name": "2191"
+      }
+    ]
+  },
+  {
+    "name": "37 TUAS",
+    "rooms": [
+      {
+        "room_code": "37AS1",
+        "room_name": "1018"
+      },
+      {
+        "room_code": "371135",
+        "room_name": "1135"
+      },
+      {
+        "room_code": "371141",
+        "room_name": "1141"
+      },
+      {
+        "room_code": "371142",
+        "room_name": "1142"
+      },
+      {
+        "room_code": "371143",
+        "room_name": "1143"
+      },
+      {
+        "room_code": "371144",
+        "room_name": "1144"
+      },
+      {
+        "room_code": "371592",
+        "room_name": "1592"
+      },
+      {
+        "room_code": "371593",
+        "room_name": "1593"
+      },
+      {
+        "room_code": "371594",
+        "room_name": "1594"
+      },
+      {
+        "room_code": "371595",
+        "room_name": "1595"
+      },
+      {
+        "room_code": "371596",
+        "room_name": "ruokalan kabinetti"
+      },
+      {
+        "room_code": "372103",
+        "room_name": "2103"
+      },
+      {
+        "room_code": "372104",
+        "room_name": "2104"
+      },
+      {
+        "room_code": "372179",
+        "room_name": "2179"
+      },
+      {
+        "room_code": "373103",
+        "room_name": "3103"
+      },
+      {
+        "room_code": "373104",
+        "room_name": "3104"
+      },
+      {
+        "room_code": "373550",
+        "room_name": "3550"
+      },
+      {
+        "room_code": "373551",
+        "room_name": "3551"
+      },
+      {
+        "room_code": "374126",
+        "room_name": "4126"
+      },
+      {
+        "room_code": "371021-1022",
+        "room_name": "1021-1022"
+      },
+      {
+        "room_code": "371023-1024",
+        "room_name": "1023-1024"
+      },
+      {
+        "room_code": "371165-66",
+        "room_name": "1165-66"
+      },
+      {
+        "room_code": "371171-72",
+        "room_name": "1171-72"
+      },
+      {
+        "room_code": "371174-1176",
+        "room_name": "1174-1176"
+      },
+      {
+        "room_code": "371521-1522",
+        "room_name": "1521-1522"
+      },
+      {
+        "room_code": "372534-2535",
+        "room_name": "2534-2535"
+      },
+      {
+        "room_code": "3737/1001",
+        "room_name": "ala-aula"
+      },
+      {
+        "room_code": "3737/2001",
+        "room_name": "ylä-aula"
+      },
+      {
+        "room_code": "37AS2",
+        "room_name": "2006"
+      },
+      {
+        "room_code": "37AS3",
+        "room_name": "1621"
+      },
+      {
+        "room_code": "37Odeion",
+        "room_name": "Odeion / 2007"
+      },
+      {
+        "room_code": "37TU1",
+        "room_name": "1017"
+      },
+      {
+        "room_code": "37TU2",
+        "room_name": "2005"
+      },
+      {
+        "room_code": "37TU3",
+        "room_name": "1194"
+      },
+      {
+        "room_code": "37TU4",
+        "room_name": "1195"
+      },
+      {
+        "room_code": "37TU5",
+        "room_name": "1199"
+      },
+      {
+        "room_code": "37TU6",
+        "room_name": "1200"
+      },
+      {
+        "room_code": "37TU7",
+        "room_name": "1201"
+      },
+      {
+        "room_code": "37TU8",
+        "room_name": "4125"
+      },
+      {
+        "room_code": "37TUAula",
+        "room_name": "aula"
+      },
+      {
+        "room_code": "37TUSauna",
+        "room_name": "TUAS-talon sauna"
+      }
+    ]
+  }
+]
