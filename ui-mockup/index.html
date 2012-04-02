@@ -7,12 +7,12 @@
 
         <title>Find-a-Room</title>
 
-        <link rel="stylesheet" href="jquery/jquery.mobile-1.1.0-rc.1.min.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/latest/jquery.mobile.css" />
         <link rel="stylesheet" href="style.css" />
         
         <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCBE8w-6Jn_-Qh-q27TLUt-vZ3AxIoH2w0&amp;sensor=true"></script>
         <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-        <script src="jquery/jquery.mobile-1.1.0-rc.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/latest/jquery.mobile.js"></script>
         
         <script type="text/javascript">
             var map;
@@ -74,9 +74,7 @@
             });
 
             $("#outside").live("pageshow", function() {
-                $.mobile.showPageLoadingMsg();
                 initialize();
-                $.mobile.hidePageLoadingMsg();
             });
         </script>
 
@@ -150,7 +148,7 @@
         </div>
 
         <div data-role="page" id="inside">
-            <div data-theme="a" data-role="header">
+            <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
@@ -178,17 +176,17 @@
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>
-                            <a href="#page4" data-theme="c" data-icon="">
+                            <a href="#page4" data-theme="c">
                                 1st
                             </a>
                         </li>
                         <li>
-                            <a href="#page1" data-theme="c" data-icon="">
+                            <a href="#page1" data-theme="c">
                                 2nd
                             </a>
                         </li>
                         <li>
-                            <a href="#page1" data-theme="c" data-icon="">
+                            <a href="#page1" data-theme="c">
                                 3rd
                             </a>
                         </li>
@@ -198,7 +196,7 @@
         </div>
 
         <div data-role="page" id="outside" class="full_height">
-            <div data-theme="a" data-role="header">
+            <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li>

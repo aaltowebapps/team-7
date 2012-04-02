@@ -3,6 +3,7 @@ html, body {
     margin: 0px;
     padding: 0px;
 }
+
 #searchview {
     padding: 0px;
     margin: 10px;
@@ -65,13 +66,13 @@ html, body {
 
 .list_name { 
     float: left;
-    width: 30%;
+    width: 34%;
     text-indent: 15px;
 }
 
 .searchview_list a.list_button, .searchview_list a.list_button:visited {
     float: left;
-    width: 35%;
+    width: 33%;
     text-align: center;
     height: 100%;
     line-height: 50px;
