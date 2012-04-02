@@ -57,57 +57,11 @@
         return output.toString();
       }
 
-
+      // HAX: define it here to allow using in inline html
+      var addImage;
       var lat = 60.181456;
       var lng = 24.832063;
-      var lastLat;
-      var lastLng;
       var placeId;
-      var lastPlaceId;
-
-      $("#places").live("pageshow", function() {
-        // TODO: add check for no lat & lng
-        // and go back to main page
-        if (lastLat != lat || lastLng != lng) {
-          lastLat = lat;
-          lastLng = lng;
-          $.mobile.showPageLoadingMsg();
-          $("#placesList").html("");
-          $.getJSON("/places/"+lat+"/"+lng+"/", function(data) {
-            var list = "";
-            $.each(data["data"], function(i, e) {
-              // this is a huge hack
-              list += "<li><a href='#backgrounds' onclick='placeId = "+e["id"]+";'>"+e["name"]+"</a></li>";
-            });
-            $("#placesList").html(list);
-            $("#placesList").listview('refresh');
-            $.mobile.hidePageLoadingMsg();
-          });
-        }
-      });
-
-      function addImage(base64Url) {
-        $("#backgroundImages").html("<img src='/get_url/"+base64Url+"/'>");
-      }
-
-      $("#backgrounds").live("pageshow", function() {
-        if (lastPlaceId == placeId) {
-          return;
-        }
-        lastPlaceId = placeId;
-        // TODO handle when user navigated straight to this page
-        // load and display images for place
-        $("#backgroundImages").html("");
-        $.mobile.showPageLoadingMsg();
-        $.getJSON("/images/"+placeId+"/", function(data) {
-          var images = "";
-          $.each(data["data"], function(i, e) {
-            images += "<img onclick=\"addImage('"+encode64(e["images"]["standard_resolution"]["url"])+"');\" src='"+e["images"]["thumbnail"]["url"]+"'>";
-          });
-          $("#backgroundImages").html(images);
-          $.mobile.hidePageLoadingMsg();
-        });
-      });
 
       $(function() {
         var canvas = $('#canvas')[0];
@@ -131,6 +85,62 @@
         $("#save_server").bind("click", function(e) {
           e.preventDefault();
         });
+
+        var lastLat;
+        var lastLng;
+        var lastPlaceId;
+
+        $("#places").live("pageshow", function() {
+          // TODO: add check for no lat & lng
+          // and go back to main page
+          if (lastLat != lat || lastLng != lng) {
+            lastLat = lat;
+            lastLng = lng;
+            $.mobile.showPageLoadingMsg();
+            $("#placesList").html("");
+            $.getJSON("/places/"+lat+"/"+lng+"/", function(data) {
+              var list = "";
+              $.each(data["data"], function(i, e) {
+                // this is a huge hack
+                list += "<li><a href='#backgrounds' onclick='placeId = "+e["id"]+";'>"+e["name"]+"</a></li>";
+              });
+              $("#placesList").html(list);
+              $("#placesList").listview('refresh');
+              $.mobile.hidePageLoadingMsg();
+            });
+          }
+        });
+
+        addImage = function (base64Url) {
+          $.mobile.changePage($("#home"));
+          $.mobile.showPageLoadingMsg();
+          var img = new Image();
+          img.onload = function() {
+            ctx.drawImage(img, 0, 0);
+            $.mobile.hidePageLoadingMsg();
+          }
+          img.src = "/get_url/"+base64Url+"/";
+        }
+
+        $("#backgrounds").live("pageshow", function() {
+          if (lastPlaceId == placeId) {
+            return;
+          }
+          lastPlaceId = placeId;
+          // TODO handle when user navigated straight to this page
+          // load and display images for place
+          $("#backgroundImages").html("");
+          $.mobile.showPageLoadingMsg();
+          $.getJSON("/images/"+placeId+"/", function(data) {
+            var images = "";
+            $.each(data["data"], function(i, e) {
+              images += "<img onclick=\"addImage('"+encode64(e["images"]["standard_resolution"]["url"])+"');\" src='"+e["images"]["thumbnail"]["url"]+"'>";
+            });
+            $("#backgroundImages").html(images);
+            $.mobile.hidePageLoadingMsg();
+          });
+        });
+
       });
     </script>
   </head>
