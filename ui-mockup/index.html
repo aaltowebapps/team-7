@@ -16,6 +16,7 @@
         
         <script type="text/javascript">
             var map;
+            var center;
 
             function initialize() {
 
@@ -33,7 +34,6 @@
                         var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
                         map.setCenter(pos);
-                        
 
                         /*Just for testing...*/
                         google.maps.event.addListener(map , "click", function(event) {
@@ -58,6 +58,7 @@
                 };
 
                 map.setCenter(this.options.position);
+                center = this.options.position;
                 this.marker = new google.maps.Marker(this.options);
 
                 google.maps.event.addListener(this.marker, 'click', function() {
@@ -74,7 +75,8 @@
             });
 
             $("#outside").live("pageshow", function() {
-                initialize();
+                google.maps.event.trigger(map, "resize");
+                map.setCenter(center);
             });
         </script>
         
