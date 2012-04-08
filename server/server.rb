@@ -12,6 +12,21 @@ get '/' do
   File.read("index.html")
 end
 
+
+# Returns the complete set of building data
+get '/api/building_data' do
+  content_type :json
+  building_data
+end
+
+# Returns the building data that has been updated since the given time.
+get '/api/building_data/updated/:timestamp' do
+  content_type :json
+  timestamp = Time.parse(params[:timestamp])
+  
+end
+
+
 # Returns the list of all available floormap images.
 # TODO: Is this needed at all?
 get '/api/floormap_list' do

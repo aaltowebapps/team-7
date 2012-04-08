@@ -4,6 +4,10 @@
 # Contains logic for accessing building and floormap data.
 #
 
+def building_data
+  # TODO: implement
+  File.open('room_data.json', 'rb')
+end
 
 # Returns available floormap names. If timestamp is given, only files newer
 # than the given time are returned.
@@ -29,7 +33,7 @@ def floormap_data(id)
     fileinfo['id'] = id
     fileinfo['contents'] = Base64.encode64(contents)
     fileinfo['timestamp'] = File.mtime(id).iso8601
-    # TODO: Get values for width, height, content type etc. from file or database
+    # TODO: Get values for width, height, content type etc. from database
     fileinfo['width'] = 200
     fileinfo['height'] = 100
     fileinfo['type'] = 'image/png'
