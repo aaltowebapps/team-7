@@ -5,6 +5,10 @@ require 'sinatra/reloader' if DEVELOPMENT
 require 'base64'
 require 'json'
 
+also_reload 'building.rb' if DEVELOPMENT
+also_reload 'building_classes.rb' if DEVELOPMENT
+
+
 get '/' do
 # return the client's index file
 # TODO: it would make sense to keep all client files in public/
