@@ -1,6 +1,8 @@
 [
   {
     "name": "1 Päärakennus",
+    "latitude": 60.18654,
+    "longitude": 24.82829,
     "rooms": [
       {
         "room_code": "1A",
@@ -486,6 +488,8 @@
   },
   {
     "name": "2 Rakennus- ja ympäristötekniikka",
+    "latitude": 60.18714,
+    "longitude": 24.83099,
     "rooms": [
       {
         "room_code": "2CADluokka",
@@ -547,6 +551,8 @@
   },
   {
     "name": "3 Teknillinen fysiikka",
+    "latitude": 60.18798,
+    "longitude": 24.83032,
     "rooms": [
       {
         "room_code": "3Auditorio",
@@ -776,6 +782,8 @@
   },
   {
     "name": "5 Konetekniikka 4",
+    "latitude": 60.188844,
+    "longitude": 24.825754,
     "rooms": [
       {
         "room_code": "5VSauna",
@@ -809,6 +817,8 @@
   },
   {
     "name": "7 Konetekniikka 2",
+    "latitude": 60.18774,
+    "longitude": 24.825218,
     "rooms": [
       {
         "room_code": "7211a",
@@ -822,6 +832,8 @@
   },
   {
     "name": "8 Konetekniikka 1",
+    "latitude": 60.187180,
+    "longitude": 24.82683,
     "rooms": [
       {
         "room_code": "8101",
@@ -932,6 +944,8 @@
   },
   {
     "name": "11 Kemian tekniikka",
+    "latitude": 60.18362,
+    "longitude": 24.82451,
     "rooms": [
       {
         "room_code": "11A303",
@@ -989,6 +1003,8 @@
   },
   {
     "name": "12 Materiaalitekniikka",
+    "latitude": 60.182896,
+    "longitude": 24.825207,
     "rooms": [
       {
         "room_code": "12010",
@@ -1086,6 +1102,8 @@
   },
   {
     "name": "13 Puunjalostustekniikka 1",
+    "latitude": 60.181621,
+    "longitude": 24.824842,
     "rooms": [
       {
         "room_code": "13237",
@@ -1123,6 +1141,8 @@
   },
   {
     "name": "14 Puunjalostustekniikka 2",
+    "latitude": 60.180362,
+    "longitude": 24.825819,
     "rooms": [
       {
         "room_code": "14218a",
@@ -1160,6 +1180,8 @@
   },
   {
     "name": "15 Kirjasto",
+    "latitude": 60.184742,
+    "longitude": 24.827771,
     "rooms": [
       {
         "room_code": "15127",
@@ -1173,6 +1195,8 @@
   },
   {
     "name": "16 Laivatekniikka",
+    "latitude": 60.186092,
+    "longitude": 24.820293,
     "rooms": [
       {
         "room_code": "16134",
@@ -1202,6 +1226,8 @@
   },
   {
     "name": "17 Maarintalo",
+    "latitude": 60.189249,
+    "longitude": 24.826226,
     "rooms": [
       {
         "room_code": "17203",
@@ -1351,6 +1377,8 @@
   },
   {
     "name": "22 Lämpömiehenkuja 2",
+    "latitude": 60.182123,
+    "longitude": 24.832116,
     "rooms": [
       {
         "room_code": "22Alvar/Aino/Elissa",
@@ -1392,6 +1420,8 @@
   },
   {
     "name": "27 Arkkitehtuuri/Paja",
+    "latitude": 60.183414,
+    "longitude": 24.829016,
     "rooms": [
       {
         "room_code": "27305",
@@ -1422,6 +1452,8 @@
   },
   {
     "name": "29 Sähkötalo 1",
+    "latitude": 60.188972,
+    "longitude": 24.833404,
     "rooms": [
       {
         "room_code": "29ST1",
@@ -1487,6 +1519,8 @@
   },
   {
     "name": "30 Tietotekniikka",
+    "latitude": 60.18695,
+    "longitude": 24.821355,
     "rooms": [
       {
         "room_code": "30A106",
@@ -1625,6 +1659,8 @@
   },
   {
     "name": "33 Innopoli 2",
+    "latitude": 60.185521,
+    "longitude": 24.812086,
     "rooms": [
       {
         "room_code": "33A314",
@@ -1702,6 +1738,8 @@
   },
   {
     "name": "34 Vesilaboratorio",
+    "latitude": 60.185606,
+    "longitude": 24.820046,
     "rooms": [
       {
         "room_code": "34286",
@@ -1748,6 +1786,8 @@
   },
   {
     "name": "36 Micronova",
+    "latitude": 60.184715,
+    "longitude": 24.817032,
     "rooms": [
       {
         "room_code": "36MSauna",
@@ -1801,6 +1841,8 @@
   },
   {
     "name": "37 TUAS",
+    "latitude": 60.187078,
+    "longitude": 24.818931,
     "rooms": [
       {
         "room_code": "37AS1",
