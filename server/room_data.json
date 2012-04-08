@@ -1,0 +1,53 @@
+{
+   "last_updated": "2012-04-08T12:00:00Z",
+   "buildings":[
+      {
+         "name":"T-talo",
+         "latitude":"60.18693",
+         "longitude":"24.82149",
+         "floors":[
+            11,
+            12
+         ],
+         "rooms":[
+            {
+               "name":"T1-sali",
+               "room_id":21,
+               "keywords":[
+                  "T1-sali",
+                  "tee ykkönen"
+               ],
+               "map_data":{
+                  "floor_id":11,
+                  "map_x":0.25,
+                  "map_y":0.7
+               }
+            },
+            {
+               "name":"T2-sali",
+               "room_id":22,
+               "keywords":[
+                  "T2-sali",
+                  "tee kakkonen a.k.a. sali, jonka kerrosta ja sijaintia ei tiedetä"
+               ]
+            }
+         ]
+      }
+   ],
+   "floors":[
+      {
+         "floor_id":11,
+         "map_image":"ttalo.png",
+         "width":500,
+         "height":600,
+         "name":"1"
+      },
+      {
+         "floor_id":12,
+         "map_image":"ttalo2kerros.png",
+         "width":500,
+         "height":600,
+         "name":"2"
+      }
+   ]
+}
