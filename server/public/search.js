@@ -10,6 +10,9 @@ function Search() {
     listContainer = $(".searchview_list");
     buildingData = base.getBuildingData();
     searchBox = $("#search-basic");
+
+    checkNavButtons();
+
     // bind view updating to many events & a timer
     // to always have view up to date
     searchBox.keyup(updateView);
@@ -19,7 +22,18 @@ function Search() {
     renderRooms(function (b,r) {return true;});
   });
 
+  /* Disables & enables outside&inside nav-buttons */
+  var checkNavButtons = function() {
+    if (selectedBuilding == null) {
+      $(".disableable").addClass("ui-disabled");
+    } else {
+      $(".disableable").removeClass("ui-disabled");
+    }
+  }
+
   var updateView = function() {
+    checkNavButtons();
+
     // don't update unless necessary
     if (lastSearch == searchBox.val()) {
       return;
