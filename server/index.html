@@ -18,8 +18,10 @@
         <script src="jquery/jquery.json-2.3.min.js"></script>
         
         <script src="base.js"></script> 
+        <script src="search.js"></script> 
         <script>
           var base = new Base();
+          var search = new Search();
         </script>
 
     </head>
@@ -50,11 +52,9 @@
                 </div>
 
                 <div id="searchview">
-                    <form action="" method="post">
 
                         <label data-theme="c" for="search-basic" class="ui-hidden-accessible">Search:</label>
-                        <input type="search" name="search" id="search-basic" value="" placeholder="Search a room" data-theme="c">
-                    </form>
+                        <input type="search" name="search" id="search-basic" value="" placeholder="Room name or code" data-theme="c">
                 </div>
 
             </div>
