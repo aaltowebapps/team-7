@@ -71,17 +71,17 @@
             }
 
             function resizeMap() {
-                /* Fixing the map height, headers size is 54 atm */
-                $("#map_canvas").css("min-height", $(window).height()-54);
+                /* Fixing the map height */
+                $("#map_canvas").css("min-height", $(window).height()-$("#outside > [data-role=header]").innerHeight() - 2);
             }
 
             $(function() {
                 resizeMap();
                 initialize();
-
             });
 
             $("#outside").live("pageshow", function() {
+                resizeMap();
                 google.maps.event.trigger(map, "resize");
                 map.setCenter(center);
             });
