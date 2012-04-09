@@ -34,9 +34,7 @@ function Search() {
         }
       });
 
-      return (r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1 || found) ? true : false;
-
-      /*return r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1;*/
+      return r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1 || found;
     });
   }
 
