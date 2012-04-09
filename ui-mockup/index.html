@@ -78,14 +78,12 @@
             $(function() {
                 resizeMap();
                 initialize();
-                google.maps.event.trigger(map, "resize");
 
                 $("#outside").live("pageshow", function() {
                     resizeMap();
                     google.maps.event.trigger(map, "resize");
                     map.setCenter(center);
                 });
-
             });
 
             window.onresize = function() {
