@@ -4,9 +4,18 @@ html, body {
     padding: 0px;
 }
 
+/* Search input fixes */
 #searchview {
     padding: 0px;
     margin: 10px;
+}
+
+#searchview .ui-input-clear {
+    right: 5px !important;
+}
+
+#searchview .ui-btn-inner {
+    padding: 0 !important;
 }
 
 #list_view {
