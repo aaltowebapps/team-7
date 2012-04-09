@@ -37,7 +37,6 @@
     <body>
 
         <div data-role="page" id="search">
-
             <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -72,6 +71,32 @@
                 </ul>
             </div>
         </div>
+        
+        <div data-role="page" id="outside">
+            <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#search" data-theme="" data-icon="search" data-transition="slide" data-direction="reverse">
+                                Search
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#outside" data-theme="" data-icon="arrow-u" data-transition="slide" class="ui-state-persist">
+                                Outside
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#inside" data-theme="" data-icon="arrow-d" data-transition="slide">
+                                Inside
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div data-role="content" id="map_canvas"></div>
+        </div>
 
         <div data-role="page" id="inside">
             <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
@@ -98,32 +123,6 @@
 
             <div data-role="content">
             </div>
-        </div>
-
-        <div data-role="page" id="outside" class="full_height">
-            <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
-                <div data-role="navbar" data-iconpos="top">
-                    <ul>
-                        <li>
-                            <a href="#search" data-theme="" data-icon="search" data-transition="slide" data-direction="reverse">
-                                Search
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#outside" data-theme="" data-icon="arrow-u" data-transition="slide" class="ui-state-persist">
-                                Outside
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#inside" data-theme="" data-icon="arrow-d" data-transition="slide">
-                                Inside
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div data-role="content" id="map_canvas"></div>
         </div>
     </body>
 </html>

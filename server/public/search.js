@@ -27,15 +27,35 @@ function Search() {
     lastSearch = searchBox.val();
 
     renderRooms(function (b, r) {
-      return r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1;
+      var found = false;
+      $.each(r["keywords"], function() {
+        if(this.toLowerCase().indexOf(lastSearch.toLowerCase()) != -1) {
+          found = true;
+        }
+      });
+
+      return (r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1 || found) ? true : false;
+
+      /*return r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1;*/
     });
   }
 
   var renderRooms = function(filter) {
     listContainer.html("");
     $.each(buildingData["buildings"], function (bindex, building) {
+      var bShown = false;
+
       $.each(building["rooms"], function (rindex, room) {
         if (filter(building, room)) {
+          
+          if(!bShown) {
+            var buildingLi = $("<li></li>");
+            buildingLi.addClass("list_header").addClass("ui-btn-up-a");
+            buildingLi.append(building["name"]);
+            listContainer.append(buildingLi);
+            bShown = true;
+          }
+
           var li = $("<li></li>");
           li.addClass("list_item").addClass("ui-btn-up-c");
           li.append("<div class=list_name>"+room["name"]+"</div>");

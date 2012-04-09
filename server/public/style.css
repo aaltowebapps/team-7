@@ -52,6 +52,7 @@ html, body {
     height: 35px;
     line-height: 35px;
     text-indent: 15px;
+    border: none;
 }
 
 .list_item {
@@ -118,6 +119,7 @@ html, body {
     margin-top: 16px;
 }
 
+/* ui-btn-active styles are used in ui-state-persist */
 .ui-btn-active {
     border: 1px solid       #000;
     font-weight: bold;
