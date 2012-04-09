@@ -117,3 +117,16 @@ html, body {
     margin: 0 auto;
     margin-top: 16px;
 }
+
+.ui-btn-active {
+    border: 1px solid       #000;
+    font-weight: bold;
+    color:                  #fff
+    text-shadow: 0 1px 1px 111;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #202020 ), to( #2c2c2c )); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient( #202020 , #2c2c2c ); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient( #202020 , #2c2c2c ); /* FF3.6 */
+    background-image:     -ms-linear-gradient( #202020 , #2c2c2c ); /* IE10 */
+    background-image:      -o-linear-gradient( #202020 , #2c2c2c ); /* Opera 11.10+ */
+    background-image:         linear-gradient( #202020 , #2c2c2c );
+}
