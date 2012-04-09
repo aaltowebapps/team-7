@@ -6,7 +6,7 @@ function Search() {
   var lastSearch;
   var updateInterval;
 
-  $(function() {
+  $(document).delegate("#search", "pageinit", function() {
     listContainer = $(".searchview_list");
     buildingData = base.getBuildingData();
     searchBox = $("#search-basic");
