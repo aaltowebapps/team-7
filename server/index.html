@@ -19,9 +19,17 @@
         
         <script src="base.js"></script> 
         <script src="search.js"></script> 
+        <script src="outside.js"></script> 
+        <script src="inside.js"></script> 
         <script>
           var base = new Base();
           var search = new Search();
+          var outside = new Outside();
+          var inside = new Inside();
+
+          // global variables for communication
+          // TODO: use something else?
+          var selectedBuilding, selectedRoom;
         </script>
 
     </head>

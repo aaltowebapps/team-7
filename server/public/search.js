@@ -14,6 +14,7 @@ function Search() {
     // to always have view up to date
     searchBox.keyup(updateView);
     searchBox.blur(updateView);
+    searchBox.change(updateView);
     updateInterval = setInterval(updateView, 1000);
     renderRooms(function (b,r) {return true;});
   });
@@ -38,8 +39,12 @@ function Search() {
           var li = $("<li></li>");
           li.addClass("list_item").addClass("ui-btn-up-c");
           li.append("<div class=list_name>"+room["name"]+"</div>");
-          li.append("<a class=\"list_button\" href=\"#inside\"><span class=\"icon_down\"></span></a>");
           li.append("<a class=\"list_button\" href=\"#outside\"><span class=\"icon_up\"></span></a>");
+          li.append("<a class=\"list_button\" href=\"#inside\"><span class=\"icon_down\"></span></a>");
+          li.find("a").click(function () {
+            selectedBuilding = building;
+            selectedRoom = room;
+          });
           listContainer.append(li);
         }
       });
