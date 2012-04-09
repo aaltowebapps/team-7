@@ -11,7 +11,7 @@ html, body {
 }
 
 #searchview .ui-input-clear {
-    right: 10px !important;
+    right: 5px !important;
 }
 
 #searchview .ui-btn-inner {
