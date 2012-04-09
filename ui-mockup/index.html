@@ -36,9 +36,9 @@
                         map.setCenter(pos);
 
                         /*Just for testing...*/
-                        google.maps.event.addListener(map , "click", function(event) {
+                        /*google.maps.event.addListener(map , "click", function(event) {
                             $("#test").html(event.latLng.lat() + ", " + event.latLng.lng());
-                        }); 
+                        }); */
 
                           initializePlaces();
                     }, function() {
@@ -70,14 +70,25 @@
                 place("60.18689745913466", "24.821578044211037", "T-talo");
             }
 
+            function resizeMap() {
+                /* Fixing the map height, headers size is 54 atm */
+                $("#map_canvas").css("min-height", $(window).height()-54);
+            }
+
             $(function() {
+                resizeMap();
                 initialize();
+
             });
 
             $("#outside").live("pageshow", function() {
                 google.maps.event.trigger(map, "resize");
                 map.setCenter(center);
             });
+
+            window.onresize = function() {
+                resizeMap();
+            }
         </script>
         
 
@@ -198,7 +209,7 @@
             </div>
         </div>
 
-        <div data-role="page" id="outside" class="full_height">
+        <div data-role="page" id="outside">
             <div data-theme="a" data-role="header" data-position="fixed" data-tap-toggle="false">
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
@@ -222,7 +233,6 @@
             </div>
 
             <div data-role="content" id="map_canvas"></div>
-            <div id="test"></div>
         </div>
     </body>
 </html>
