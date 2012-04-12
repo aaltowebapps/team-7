@@ -9,6 +9,7 @@ function Search() {
   $(document).delegate("#search", "pageinit", function() {
     listContainer = $(".searchview_list");
     buildingData = base.getBuildingData();
+    
     searchBox = $("#search-basic");
 
     checkNavButtons();
@@ -29,6 +30,10 @@ function Search() {
     } else {
       $(".disableable").removeClass("ui-disabled");
     }
+  }
+
+  this.setBuildingData = function(newData) {
+  	buildingData = newData;
   }
 
   var updateView = function() {
