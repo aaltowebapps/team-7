@@ -9,8 +9,20 @@ require_relative 'building_classes.rb'
 # Returns all building data in JSON format (see wiki, TODO: URL).
 def building_data(timestamp = nil)
   # TODO: replace temporary static test data with live data read from DB
-  contents = File.open('building_data.json', 'rb').read
-  return contents;
+  data_file = 'building_data.json'
+  contents = File.open(data_file, 'rb').read
+
+  data = JSON.parse(contents)
+  
+  if data['last_updated'] == nil
+    data['last_updated'] = File.mtime(data_file).iso8601
+  end
+    
+  if (timestamp == nil || Time.parse(data['last_updated']) > timestamp)
+    return JSON.pretty_generate(data)  
+  else
+    return ''
+  end
 end
 
 # Returns available floormap names. If timestamp is given, only files newer
