@@ -6,7 +6,7 @@ function Inside() {
   $(document).delegate("#inside", "pageinit", function() {
     // bind up/down buttons
     $("#floorDown").click(function () {
-      if (floorIndex > 0) {
+      if (floorIndex > 0 && floors.length != 0) {
         floorIndex--;
         updateView();
       }
@@ -28,14 +28,19 @@ function Inside() {
       return;
     }
 
-    // check if we have the floor data
+    // fail hard if no maps are available
+    if (selectedBuilding["floor_ids"].length == 0) {
+      $("#floormap").html("No floor maps available for the selected building. Sorry!");
+      $("#floorDown").addClass("ui-disabled");
+      $("#floorUp").addClass("ui-disabled");
+      setFloorText("");
+      floors = [];
+      return;
+    }
+
+    // check if we have the floor data for the room
     if (selectedRoom["map_data"] == null) {
       floorIndex = 0;
-      // fail hard if no maps are available
-      if (selectedBuilding["floor_ids"].length == 0) {
-        $("#floormap").html("No floor maps available for the selected building. Sorry!");
-        return;
-      }
     } else {
       // we have room's floor data
       floorIndex = selectedBuilding["floor_ids"].indexOf(selectedRoom["map_data"]["floor_id"]);
@@ -44,7 +49,6 @@ function Inside() {
         floorIndex = 0;
       }
     }
-
     floors = selectedBuilding["floor_ids"]; 
     updateView();
   });
@@ -66,13 +70,16 @@ function Inside() {
     var data = getFloorById(floors[floorIndex]);
     var imageData = base.getFloorMap(data["map_image"]);
     // update buttons
-    $("#curfloor .ui-btn-text").html(data["name"]);
-    $("#floorbuttons").navbar();
+    setFloorText(data["name"]);
     $("#floorDown").toggleClass("ui-disabled", floorIndex == 0);
     $("#floorUp").toggleClass("ui-disabled", floorIndex == floors.length - 1);
     // construct image
     var imageElement = new Image();
     imageElement.src = "data:"+imageData["type"]+";base64,"+imageData["contents"];
     $("#floormap").append(imageElement);
+  }
+
+  function setFloorText(text) { 
+    $("#curfloor .ui-btn-text").html(text);
   }
 }
