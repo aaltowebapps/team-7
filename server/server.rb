@@ -27,7 +27,7 @@ end
 get '/api/building_data/updated/:timestamp' do
   content_type :json
   timestamp = Time.parse(params[:timestamp])
-  
+  building_data(timestamp)
 end
 
 

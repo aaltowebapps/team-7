@@ -2,14 +2,16 @@
 // that handles storage
 function Base() {
   this.getBuildingData = function() {
-    var data = localStorage.getItem("building-data");
-    // TODO: add last_updated timestamp handling
-    if (data == null) {
-      this.initiateBuildingDataLoading();
-      // return a placeholder with no real data
+    var d = localStorage.getItem("building-data");
+    if (d == null) {
+      this.initiateBuildingDataLoading(null);
+      // return a placeholder with no real data to show while loading the actual data
       return {"last_updated": 0, "buildings": [], "floors": []};
     } else {
-      return $.parseJSON(data);
+      data = $.parseJSON(d);
+      lastUpdated = data["last_updated"];
+      this.initiateBuildingDataLoading(lastUpdated);
+      return data;
     }
   }
 
@@ -40,11 +42,22 @@ function Base() {
     return result;
   }
   
-  this.initiateBuildingDataLoading = function() {
+  this.initiateBuildingDataLoading = function(lastUpdated) {
   	// TODO: add error handling
-  	$.getJSON('/api/building_data', function(data) {
-      base.storeBuildingData(data);
-      search.setBuildingData(data);
+  	var queryPath;
+  	if (lastUpdated == null) {
+  	  queryPath = '/api/building_data';
+  	}
+  	else {
+  	  queryPath = '/api/building_data/updated/' + lastUpdated;
+  	}
+  	  	
+  	$.getJSON(queryPath, function(data) {
+      // Null is returned if there was no updated data
+      if (data != null) {
+        base.storeBuildingData(data);
+        search.setBuildingData(data);
+      }
   	});
   }
 }
