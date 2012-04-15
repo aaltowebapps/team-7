@@ -77,9 +77,9 @@ function Search() {
 
           var li = $("<li></li>");
           li.addClass("list_item").addClass("ui-btn-up-c");
-          li.append("<div class=list_name>"+room["name"]+"</div>");
-          li.append("<a class=\"list_button\" href=\"#outside\"><span class=\"icon_up\"></span></a>");
-          li.append("<a class=\"list_button\" href=\"#inside\"><span class=\"icon_down\"></span></a>");
+          li.append("<div class=\"list_name\" style=\"width: 60%\">"+room["name"]+"</div>");
+          li.append("<a class=\"list_button\" style=\"width: 20%\" href=\"#outside\"><span class=\"icon_up\"></span></a>");
+          li.append("<a class=\"list_button\" style=\"width: 20%\" href=\"#inside\"><span class=\"icon_down\"></span></a>");
           li.find("a").click(function () {
             selectedBuilding = building;
             selectedRoom = room;
