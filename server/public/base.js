@@ -24,7 +24,7 @@ function Base() {
   }
 
   this.storeFloorMap = function(newData) {
-  	var id = newData['id'];
+    var id = newData['id'];
     localStorage.setItem("floormap-"+id, $.toJSON(newData));
   }
 
@@ -44,18 +44,17 @@ function Base() {
   }
   
   this.initiateBuildingDataLoading = function(lastUpdated) {
-  	// TODO: add error handling
-  	var buildingDataQueryPath;
-  	var floormapDataQueryPath = '/api/floormap_data/'
-  	
-  	if (lastUpdated == null) {
-  	  buildingDataQueryPath = '/api/building_data';
-  	}
-  	else {
-  	  buildingDataQueryPath = '/api/building_data/updated/' + lastUpdated;
-  	}
-  	  	
-  	$.getJSON(buildingDataQueryPath, function(buildingData) {
+    // TODO: add error handling
+    var buildingDataQueryPath;
+    var floormapDataQueryPath = '/api/floormap_data/'
+  
+    if (lastUpdated == null) {
+      buildingDataQueryPath = '/api/building_data';
+    } else {
+      buildingDataQueryPath = '/api/building_data/updated/' + lastUpdated;
+    }
+              
+    $.getJSON(buildingDataQueryPath, function(buildingData) {
       // Null is returned if there was no updated data
       if (buildingData != null) {
         base.storeBuildingData(buildingData);
@@ -69,6 +68,6 @@ function Base() {
           });
         }        
       }
-  	});
+    });
   }
 }

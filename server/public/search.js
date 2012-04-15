@@ -33,7 +33,9 @@ function Search() {
   }
 
   this.setBuildingData = function(newData) {
-  	buildingData = newData;
+    // set the new data & force view redraw
+    buildingData = newData;
+    lastSearch = null;
   }
 
   var updateView = function() {
