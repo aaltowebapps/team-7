@@ -7,7 +7,6 @@ contents = File.open('tilaluntti_output.json', 'rb').read
 
 result = Hash.new
 
-result['last_updated'] = Time.new.iso8601
 result['buildings'] = []
 
 input = JSON.parse(contents)
