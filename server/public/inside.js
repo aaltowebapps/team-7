@@ -21,7 +21,7 @@ function Inside() {
     });
   });
 
-  $(document).delegate("#inside", "pageshow", function() {
+  $(document).delegate("#inside", "pagebeforeshow", function() {
     // redirect to search page if we have no info to show
     if (selectedRoom == null) {
       $.mobile.changePage("#search");
