@@ -23,7 +23,8 @@ function Base() {
     return $.parseJSON(localStorage.getItem("floormap-"+id));
   }
 
-  this.storeFloorMap = function(id, newData) {
+  this.storeFloorMap = function(newData) {
+  	var id = newData['id'];
     localStorage.setItem("floormap-"+id, $.toJSON(newData));
   }
 
@@ -44,19 +45,29 @@ function Base() {
   
   this.initiateBuildingDataLoading = function(lastUpdated) {
   	// TODO: add error handling
-  	var queryPath;
+  	var buildingDataQueryPath;
+  	var floormapDataQueryPath = '/api/floormap_data/'
+  	
   	if (lastUpdated == null) {
-  	  queryPath = '/api/building_data';
+  	  buildingDataQueryPath = '/api/building_data';
   	}
   	else {
-  	  queryPath = '/api/building_data/updated/' + lastUpdated;
+  	  buildingDataQueryPath = '/api/building_data/updated/' + lastUpdated;
   	}
   	  	
-  	$.getJSON(queryPath, function(data) {
+  	$.getJSON(buildingDataQueryPath, function(buildingData) {
       // Null is returned if there was no updated data
-      if (data != null) {
-        base.storeBuildingData(data);
-        search.setBuildingData(data);
+      if (buildingData != null) {
+        base.storeBuildingData(buildingData);
+        search.setBuildingData(buildingData);
+        
+        for (var i = 0; i < buildingData['floors'].length; i++) {
+          mapImageName = buildingData['floors'][i]['map_image']  
+          
+          $.getJSON(floormapDataQueryPath + mapImageName, function(imageData) {
+            base.storeFloorMap(imageData);
+          });
+        }        
       }
   	});
   }
