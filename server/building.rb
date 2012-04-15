@@ -40,7 +40,7 @@ def floormap_data(id)
     # TODO: Get values for width, height, content type etc. from database
     fileinfo['width'] = 200
     fileinfo['height'] = 100
-    fileinfo['type'] = 'image/png'
+    fileinfo['type'] = 'image/' + id.split('.')[-1]
 
     fileinfo
   end
