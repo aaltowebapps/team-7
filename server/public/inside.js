@@ -10,14 +10,14 @@ function Inside() {
         floorIndex--;
         updateView();
       }
-      $("#floorDown").removeClass("ui-btn-active");
+      return false; // keep it from getting active style
     });
     $("#floorUp").click(function () {
       if (floorIndex < floors.length - 1) {
         floorIndex++;
         updateView();
       }
-      $("#floorUp").removeClass("ui-btn-active");
+      return false; // keep it from getting active style
     });
   });
 
@@ -68,6 +68,8 @@ function Inside() {
     // update buttons
     $("#curfloor .ui-btn-text").html(data["name"]);
     $("#floorbuttons").navbar();
+    $("#floorDown").toggleClass("ui-disabled", floorIndex == 0);
+    $("#floorUp").toggleClass("ui-disabled", floorIndex == floors.length - 1);
     // construct image
     var imageElement = new Image();
     imageElement.src = "data:"+imageData["type"]+";base64,"+imageData["contents"];
