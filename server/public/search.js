@@ -7,7 +7,7 @@ function Search() {
   var updateInterval;
 
   $(document).delegate("#search", "pageinit", function() {
-    listContainer = $(".searchview_list");
+    listContainer = $(".searchview-list");
     buildingData = base.getBuildingData();
     
     searchBox = $("#search-basic");
@@ -69,17 +69,17 @@ function Search() {
           
           if(!bShown) {
             var buildingLi = $("<li></li>");
-            buildingLi.addClass("list_header").addClass("ui-btn-up-a");
+            buildingLi.addClass("list-header").addClass("ui-btn-up-a");
             buildingLi.append(building["name"]);
             listContainer.append(buildingLi);
             bShown = true;
           }
 
           var li = $("<li></li>");
-          li.addClass("list_item").addClass("ui-btn-up-c");
-          li.append("<div class=\"list_name\" style=\"width: 60%\">"+room["name"]+"</div>");
-          li.append("<a class=\"list_button\" style=\"width: 20%\" href=\"#outside\"><span class=\"icon_up\"></span></a>");
-          li.append("<a class=\"list_button\" style=\"width: 20%\" href=\"#inside\"><span class=\"icon_down\"></span></a>");
+          li.addClass("list-item").addClass("ui-btn-up-c");
+          li.append("<div class=\"list-name\" style=\"width: 60%\">"+room["name"]+"</div>");
+          li.append("<a class=\"list-button\" style=\"width: 20%\" href=\"#outside\"><span class=\"icon-up\"></span></a>");
+          li.append("<a class=\"list-button\" style=\"width: 20%\" href=\"#inside\"><span class=\"icon-down\"></span></a>");
           li.find("a").click(function () {
             selectedBuilding = building;
             selectedRoom = room;

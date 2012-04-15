@@ -11,7 +11,7 @@ function Outside() {
       disableDefaultUI: true
     };
 
-    map = new google.maps.Map(document.getElementById('map_canvas'), options);
+    map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
     $(window).resize(resize);
   });
@@ -53,7 +53,7 @@ function Outside() {
   });
 
   var resize = function() {
-    $("#map_canvas").css("min-height", $(window).height()-$("#outside > [data-role=header]").innerHeight() - 2);
+    $("#map-canvas").css("min-height", $(window).height()-$("#outside > [data-role=header]").innerHeight() - 2);
     google.maps.event.trigger(map, "resize");
   }
 }
