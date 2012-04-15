@@ -132,3 +132,12 @@ html, body {
     background-image:      -o-linear-gradient( #202020 , #2c2c2c ); /* Opera 11.10+ */
     background-image:         linear-gradient( #202020 , #2c2c2c );
 }
+
+.nameLabel {
+  background-color: white;
+  border: 1px solid black;
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 3px 5px 3px 5px;
+  font-weight: bold;
+}

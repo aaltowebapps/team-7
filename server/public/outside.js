@@ -42,9 +42,11 @@ function Outside() {
     var options = {
       map: map,
       position: loc,
-      title: buildingName
+      labelContent: buildingName,
+      labelAnchor: new google.maps.Point(-15, 30),
+      labelClass: "nameLabel"
     };
-    buildingMarker = new google.maps.Marker(options);
+    buildingMarker = new MarkerWithLabel(options);
     google.maps.event.addListener(buildingMarker, 'click', function() {
       $.mobile.changePage( "#inside", { transition: "fade"} );
     });
