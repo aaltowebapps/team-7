@@ -5,7 +5,8 @@
       "latitude": 60.18654,
       "longitude": 24.82829,
       "floor_ids": [
-
+        1,
+        2
       ],
       "rooms": [
         {
@@ -4398,6 +4399,22 @@
           "map_data": null
         }
       ]
+    }
+  ],
+  "floors": [
+    {
+      "floor_id":1,
+      "map_image":"paarakennus-1.png",
+      "width":960,
+      "height":640,
+      "name":"1"
+    },
+    {
+      "floor_id":2,
+      "map_image":"paarakennus-2.png",
+      "width":960,
+      "height":640,
+      "name":"2"
     }
   ]
 }
