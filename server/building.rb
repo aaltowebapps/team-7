@@ -28,34 +28,31 @@ end
 # Returns available floormap names. If timestamp is given, only files newer
 # than the given time are returned.
 def floormap_names(timestamp = nil)
-  Dir.chdir(FLOORMAP_DIR) do
-    names = []
-    files = Dir.entries('.')
-    files.each do |file|
-      if File.file?(file) && (timestamp == nil || File.mtime(file) > timestamp)
-        names << file
-      end
+  names = []
+  basenames = Dir.entries(FLOORMAP_DIR)
+  basenames.each do |basename|
+    filename = File.join(FLOORMAP_DIR, basename)
+    if File.file?(filename) && (timestamp == nil || File.mtime(filename) > timestamp)
+      names << basename
     end
-    names
   end
+  names
 end
 
 # Returns structural floormap data (binary content + metadata) for the given id.
 def floormap_data(id)
-  Dir.chdir(FLOORMAP_DIR) do
-    contents = File.open(id, 'rb').read
+  contents = File.open(File.join(FLOORMAP_DIR, id), 'rb').read
 
-    fileinfo = Hash.new
-    fileinfo['id'] = id
-    fileinfo['contents'] = Base64.encode64(contents)
-    fileinfo['timestamp'] = File.mtime(id).iso8601
-    # TODO: Get values for width, height, content type etc. from database
-    fileinfo['width'] = 200
-    fileinfo['height'] = 100
-    fileinfo['type'] = 'image/' + id.split('.')[-1]
+  fileinfo = Hash.new
+  fileinfo['id'] = id
+  fileinfo['contents'] = Base64.encode64(contents)
+  fileinfo['timestamp'] = File.mtime(File.join(FLOORMAP_DIR, id)).iso8601
+  # TODO: Get values for width, height, content type etc. from database
+  fileinfo['width'] = 200
+  fileinfo['height'] = 100
+  fileinfo['type'] = 'image/' + id.split('.')[-1]
 
-    fileinfo
-  end
+  fileinfo
 end
 
 # Returns an array of floormap data structures for the given floormap names.
