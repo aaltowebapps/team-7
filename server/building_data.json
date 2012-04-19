@@ -3327,7 +3327,7 @@
       "latitude": 60.18695,
       "longitude": 24.821355,
       "floor_ids": [
-
+        3, 4, 5
       ],
       "rooms": [
         {
@@ -4415,6 +4415,27 @@
       "width":960,
       "height":640,
       "name":"2"
+    },
+    {
+      "floor_id":3,
+      "map_image":"t-talo_kerros1_optimized.svg",
+      "width":1320,
+      "height":700,
+      "name":"1"
+    },
+    {
+      "floor_id":4,
+      "map_image":"t-talo_kerros2_optimized.svg",
+      "width":1320,
+      "height":700,
+      "name":"2"
+    },
+    {
+      "floor_id":5,
+      "map_image":"t-talo_kerros3_optimized.svg",
+      "width":1320,
+      "height":700,
+      "name":"3"
     }
   ]
 }
