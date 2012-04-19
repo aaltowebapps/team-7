@@ -39,6 +39,9 @@ def floormap_names(timestamp = nil)
   names
 end
 
+# mappings between file endings & mime types. contains only those which aren't the same
+MIME_TYPE_FOR_ENDING = {"svg" => "image/svg+xml"}
+
 # Returns structural floormap data (binary content + metadata) for the given id.
 def floormap_data(id)
   contents = File.open(File.join(FLOORMAP_DIR, id), 'rb').read
@@ -50,7 +53,9 @@ def floormap_data(id)
   # TODO: Get values for width, height, content type etc. from database
   fileinfo['width'] = 200
   fileinfo['height'] = 100
-  fileinfo['type'] = 'image/' + id.split('.')[-1]
+
+  ending = id.split('.')[-1]
+  fileinfo['type'] = MIME_TYPE_FOR_ENDING[ending] || ('image/' + ending)
 
   fileinfo
 end
