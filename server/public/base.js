@@ -22,6 +22,10 @@ function Base() {
   this.getFloorMap = function(id) {
     return $.parseJSON(localStorage.getItem("floormap-"+id));
   }
+  
+  this.floorMapExists = function(id) {
+    return localStorage.getItem("floormap-" + id) != null;
+  }
 
   this.storeFloorMap = function(newData) {
     var id = newData['id'];
@@ -42,7 +46,7 @@ function Base() {
     }
     return result;
   }
-  
+    
   this.initiateBuildingDataLoading = function(lastUpdated) {
     // TODO: add error handling
     var buildingDataQueryPath;
@@ -53,20 +57,43 @@ function Base() {
     } else {
       buildingDataQueryPath = '/api/building_data/updated/' + lastUpdated;
     }
-              
+
     $.getJSON(buildingDataQueryPath, function(buildingData) {
       // Null is returned if there was no updated data
       if (buildingData != null) {
         base.storeBuildingData(buildingData);
         search.setBuildingData(buildingData);
         
+        var availableMapImages = {};
         for (var i = 0; i < buildingData['floors'].length; i++) {
-          mapImageName = buildingData['floors'][i]['map_image']  
-          
-          $.getJSON(floormapDataQueryPath + mapImageName, function(imageData) {
-            base.storeFloorMap(imageData);
+          var mapImage = buildingData['floors'][i]['map_image'];
+          availableMapImages[mapImage] = true;
+        }
+        
+        localMapImages = base.listFloorMaps();
+
+        for (var i = 0; i < localMapImages.length; i++) {
+          localMapImage = localMapImages[i];
+          if (!availableMapImages[localMapImage]) {
+            // Delete locally stored maps no longer in server data
+            base.deleteFloorMap(localMapImage);
+          }                    
+        }
+        
+        for (mapImage in availableMapImages) {
+          if (base.floorMapExists(mapImage)) {
+            // Only new maps are loaded
+            continue;
+          }
+          $.ajax({
+            url: floormapDataQueryPath + mapImage,
+            dataType : 'json',
+            async: false,
+            success: function(imageData) {
+              base.storeFloorMap(imageData);
+            }
           });
-        }        
+        }
       }
     });
   }
