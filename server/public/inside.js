@@ -2,6 +2,10 @@
 function Inside() {
   var floors;
   var floorIndex;
+  var showMarker;
+  var markerX;
+  var markerY;
+  var markerFloor;
 
   $(document).delegate("#inside", "pageinit", function() {
     // bind up/down buttons
@@ -38,6 +42,7 @@ function Inside() {
       return;
     }
 
+    showMarker = false;
     // check if we have the floor data for the room
     if (selectedRoom["map_data"] == null) {
       floorIndex = 0;
@@ -47,6 +52,11 @@ function Inside() {
       if (floorIndex == -1) { 
         // we have inconsistent building data, should never happen!
         floorIndex = 0;
+      } else {
+        showMarker = true;
+        markerX = selectedRoom["map_data"]["map_x"];
+        markerY = selectedRoom["map_data"]["map_y"];
+        markerFloor = floorIndex;
       }
     }
     floors = selectedBuilding["floor_ids"]; 
@@ -76,7 +86,22 @@ function Inside() {
     // construct image
     var imageElement = new Image();
     imageElement.src = "data:"+imageData["type"]+";base64,"+imageData["contents"];
+
+    // construct a room marker
+    // this code assumes 50x50 marker size
+    var marker;
+    if (showMarker && floorIndex == markerFloor) {
+      marker = $("<img src=\"/room_marker.svg\">");
+      var x = markerX * data["width"] - 25;
+      var y = markerY * data["height"] - 25;
+      marker.css("z-index", "50").css("position", "absolute").css("left", x+"px").css("top", y+"px");
+    }
+
+    // update DOM
     $("#floormap").append(imageElement);
+    if (showMarker && floorIndex == markerFloor) {
+      $("#floormap").append(marker);
+    }
   }
 
   function setFloorText(text) { 
