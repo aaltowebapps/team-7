@@ -16,7 +16,6 @@ get '/' do
   File.read("index.html")
 end
 
-
 # Returns the complete set of building data
 get '/api/building_data' do
   content_type :json
@@ -30,23 +29,30 @@ get '/api/building_data/updated/:timestamp' do
   building_data(timestamp)
 end
 
+# Returns floormap data (binary contents + basic metadata) for a single floormap.
+get '/api/floormap_data/:id' do
+  content_type :json
+  floormap_data(params[:id]).to_json
+end
 
 # Returns the list of all available floormap images.
 # TODO: Is this needed at all?
-get '/api/floormap_list' do
+get '/api_old/floormap_list' do
   content_type :json
   floormap_names.to_json
 end
 
 # Returns the list of floormap images that have been updated since the given time.
-get '/api/floormap_list/updated/:timestamp' do
+# TODO: Is this needed at all?
+get '/api_old/floormap_list/updated/:timestamp' do
   content_type :json
   timestamp = Time.parse(params[:timestamp])
   floormap_names(timestamp).to_json
 end
 
 # Returns all floormap data (binary contents + basic metadata).
-get '/api/floormap_data' do
+# TODO: Is this needed at all?
+get '/api_old/floormap_data' do
   content_type :json
   names = floormap_names
   floormap_data_collection(names).to_json
@@ -54,16 +60,13 @@ end
 
 # Returns all floormap data (binary contents + basic metadata) for floormaps
 # that have been updated after the given time.
-get '/api/floormap_data/updated/:timestamp' do
+# TODO: Is this needed at all?
+get '/api_old/floormap_data/updated/:timestamp' do
   content_type :json
   timestamp = Time.parse(params[:timestamp])
   names = floormap_names(timestamp)
   floormaps = floormap_data_collection(names).to_json
 end
 
-# Returns floormap data (binary contents + basic metadata) for a single floormap.
-get '/api/floormap_data/:id' do
-  content_type :json
-  floormap_data(params[:id]).to_json
-end
+
 
