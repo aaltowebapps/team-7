@@ -6,6 +6,7 @@ function Inside() {
   var markerX;
   var markerY;
   var markerFloor;
+  var lastHeight;
 
   $(document).delegate("#inside", "pageinit", function() {
     // bind up/down buttons
@@ -13,6 +14,8 @@ function Inside() {
       if (floorIndex > 0 && floors.length != 0) {
         floorIndex--;
         updateView();
+        lastHeight = null;
+        resize();
       }
       return false; // keep it from getting active style
     });
@@ -20,6 +23,8 @@ function Inside() {
       if (floorIndex < floors.length - 1) {
         floorIndex++;
         updateView();
+        lastHeight = null;
+        resize();
       }
       return false; // keep it from getting active style
     });
@@ -61,7 +66,26 @@ function Inside() {
     }
     floors = selectedBuilding["floor_ids"]; 
     updateView();
+
+    setInterval(resize, 1000);
+    $(window).resize(resize);
   });
+
+  $(document).delegate("#inside", "pageshow", function() {
+    lastHeight = null;
+    resize();
+  });
+
+  function resize() {
+    var height = window.innerHeight ? window.innerHeight : $(window).height();
+    if (height != lastHeight) {
+      lastHeight = height;
+      var target = height - $("#inside > [data-role=header]").height() - 2;
+      $("#floormap").removeOverscroll();
+      $("#floormap").css("height", target);
+      $("#floormap").overscroll();
+    }
+  }
 
   function getFloorById(id) {
     var allFloors = base.getBuildingData()["floors"];
@@ -84,27 +108,34 @@ function Inside() {
     $("#floorDown").toggleClass("ui-disabled", floorIndex == 0);
     $("#floorUp").toggleClass("ui-disabled", floorIndex == floors.length - 1);
     // construct image
-    var imageElement = new Image();
-    imageElement.src = "data:"+imageData["type"]+";base64,"+imageData["contents"];
-
-    // construct a room marker
-    // this code assumes 50x50 marker size
-    var marker;
-    if (showMarker && floorIndex == markerFloor) {
-      marker = $("<img src=\"/room_marker.svg\">");
-      var x = markerX * data["width"] - 25;
-      var y = markerY * data["height"] - 25;
-      marker.css("z-index", "50").css("position", "absolute").css("left", x+"px").css("top", y+"px");
-    }
+    var imageElement = $(Base64.decode(imageData["contents"]));
 
     // update DOM
     $("#floormap").append(imageElement);
     if (showMarker && floorIndex == markerFloor) {
-      $("#floormap").append(marker);
+      // construct a room marker
+      // this code assumes 50x50 marker size
+      var x = markerX * data["width"] - 25;
+      var y = markerY * data["height"] - 25;
+      // yes, this is very ugly
+      document.getElementsByTagName('svg')[0].appendChild(parseSVG(
+'<g stroke="#000" transform="translate('+x+','+y+')" stroke-dasharray="none" stroke-miterlimit="4"><path d="m49.625,25.188a24.562,24.562,0,1,1,-49.125,0,24.562,24.562,0,1,1,49.125,0z" stroke-width="1" fill="none"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/></g>'
+      ));
     }
   }
 
   function setFloorText(text) { 
     $("#curfloor .ui-btn-text").html(text);
   }
+
+  function parseSVG(s) {
+    var div= document.createElementNS('http://www.w3.org/1999/xhtml', 'div');
+    div.innerHTML= '<svg xmlns="http://www.w3.org/2000/svg">'+s+'</svg>';
+    var frag= document.createDocumentFragment();
+    while (div.firstChild.firstChild)
+      frag.appendChild(div.firstChild.firstChild);
+    return frag;
+  }
+
 }
+

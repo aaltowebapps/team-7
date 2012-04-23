@@ -53,7 +53,8 @@ function Outside() {
   });
 
   var resize = function() {
-    $("#map-canvas").css("min-height", $(window).height()-$("#outside > [data-role=header]").innerHeight() - 2);
+    var height = window.innerHeight ? window.innerHeight : $(window).height();
+    $("#map-canvas").css("min-height", height-$("#outside > [data-role=header]").innerHeight() - 2);
     google.maps.event.trigger(map, "resize");
   }
 }
