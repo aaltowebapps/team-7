@@ -7,6 +7,7 @@ function Inside() {
   var markerY;
   var markerFloor;
   var lastHeight;
+  var zoom, imageData;
 
   $(document).delegate("#inside", "pageinit", function() {
     // bind up/down buttons
@@ -77,14 +78,21 @@ function Inside() {
   });
 
   function resize() {
-    var height = window.innerHeight ? window.innerHeight : $(window).height();
+    var height = windowHeight();
     if (height != lastHeight) {
       lastHeight = height;
-      var target = height - $("#inside > [data-role=header]").height() - 2;
       $("#floormap").removeOverscroll();
-      $("#floormap").css("height", target);
+      $("#floormap").css("height", height);
       $("#floormap").overscroll();
     }
+  }
+
+  function updateZoom() {
+      $("#floormap").removeOverscroll();
+      $("#zoomg").attr("transform", "scale("+zoom+","+zoom+")");
+      $("svg").attr("width", zoom * imageData["width"]);
+      $("svg").attr("height", zoom * imageData["height"]);
+      $("#floormap").overscroll();
   }
 
   function getFloorById(id) {
@@ -101,27 +109,38 @@ function Inside() {
   function updateView() {
     $("#floormap").html("");
     // get the data
-    var data = getFloorById(floors[floorIndex]);
-    var imageData = base.getFloorMap(data["map_image"]);
+    imageData = getFloorById(floors[floorIndex]);
+    var imageData2 = base.getFloorMap(imageData["map_image"]);
     // update buttons
-    setFloorText(data["name"]);
+    setFloorText(imageData["name"]);
     $("#floorDown").toggleClass("ui-disabled", floorIndex == 0);
     $("#floorUp").toggleClass("ui-disabled", floorIndex == floors.length - 1);
     // construct image
-    var imageElement = $(Base64.decode(imageData["contents"]));
-
+    var imageElement = $(Base64.decode(imageData2["contents"]));
     // update DOM
     $("#floormap").append(imageElement);
+
     if (showMarker && floorIndex == markerFloor) {
       // construct a room marker
       // this code assumes 50x50 marker size
-      var x = markerX * data["width"] - 25;
-      var y = markerY * data["height"] - 25;
+      var x = markerX * imageData["width"] - 25;
+      var y = markerY * imageData["height"] - 25;
       // yes, this is very ugly
       document.getElementsByTagName('svg')[0].appendChild(parseSVG(
 '<g stroke="#000" transform="translate('+x+','+y+')" stroke-dasharray="none" stroke-miterlimit="4"><path d="m49.625,25.188a24.562,24.562,0,1,1,-49.125,0,24.562,24.562,0,1,1,49.125,0z" stroke-width="1" fill="none"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/></g>'
       ));
     }
+    
+    // wrap all g elements in a zoom container
+    zoomg = parseSVG('<g id="zoomg">');
+    $.each($("g"), function (i,e) {
+      zoomg.firstChild.appendChild(e);
+    });
+    $("svg").append(zoomg);
+
+    // calculate initial zoom level. make the map fit into the screen
+    zoom = Math.min(windowWidth() / imageData["width"], windowHeight() / imageData["height"], 1);
+    updateZoom();
   }
 
   function setFloorText(text) { 
@@ -137,5 +156,12 @@ function Inside() {
     return frag;
   }
 
+  function windowWidth() {
+    return window.innerWidth ? window.innerWidth : $(window).width();
+  }
+
+  function windowHeight() {
+    return (window.innerHeight ? window.innerHeight : $(window).height()) - $("#inside > [data-role=header]").height() - 2;
+  }
 }
 
