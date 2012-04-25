@@ -126,17 +126,28 @@ function Inside() {
       var x = markerX * imageData["width"] - 25;
       var y = markerY * imageData["height"] - 25;
       // yes, this is very ugly
-      document.getElementsByTagName('svg')[0].appendChild(parseSVG(
+      $("svg").append(parseSVG(
 '<g stroke="#000" transform="translate('+x+','+y+')" stroke-dasharray="none" stroke-miterlimit="4"><path d="m49.625,25.188a24.562,24.562,0,1,1,-49.125,0,24.562,24.562,0,1,1,49.125,0z" stroke-width="1" fill="none"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/></g>'
       ));
     }
     
     // wrap all g elements in a zoom container
-    zoomg = parseSVG('<g id="zoomg">');
+    var zoomg = parseSVG('<g id="zoomg">');
     $.each($("g"), function (i,e) {
       zoomg.firstChild.appendChild(e);
     });
     $("svg").append(zoomg);
+
+    // append zoom controls
+    $("svg").append(parseSVG('<g id="svgplus"><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10933673000000010;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" width="44" height="44" x="0" y="0" ry="0" rx="0" /><path style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="m 4,22 36,0" /><path style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="m 22,4 0,36" /></g><g id="svgminus" transform="translate(0,44)"><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10933673000000010;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" width="44" height="44" x="0" y="0" ry="0" rx="0" /><path style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="m 4,22 36,0" /></g>')); 
+    $("#svgplus").click(function () {
+      zoom += 0.1;
+      updateZoom();
+    });
+    $("#svgminus").click(function () {
+      zoom -= 0.1;
+      updateZoom();
+    });
 
     // calculate initial zoom level. make the map fit into the screen
     zoom = Math.min(windowWidth() / imageData["width"], windowHeight() / imageData["height"], 1);
