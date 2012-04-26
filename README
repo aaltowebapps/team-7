@@ -1,0 +1,11 @@
+Running the server
+------------------
+
+1. Update dependencies using bundler, "bundle install"
+2. Run using "rackup"
+
+
+Online version
+--------------
+
+There's an online version available at http://find-a-room.herokuapp.com

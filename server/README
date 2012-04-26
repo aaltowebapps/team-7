@@ -1,8 +1,0 @@
-Readme for server
------------------
-
-Running
--------
-
-1. Update dependencies using bundler, "bundle install"
-2. Run using "ruby server.rb"
