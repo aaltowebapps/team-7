@@ -145,10 +145,16 @@ html, body {
   font-weight: bold;
 }
 
-#floormap {
+#inside-content, #floormap, #zoom-controls {
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+
+#zoom-controls {
+  z-index: 99;
+  position: absolute;
+  left: 0px;
 }
 
 #curfloor {
