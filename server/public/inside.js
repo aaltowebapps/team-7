@@ -99,8 +99,8 @@ function Inside() {
   function updateZoom() {
       $("#floormap").removeOverscroll();
       $("#zoomg").attr("transform", "scale("+zoom+","+zoom+")");
-      $("#floormap > svg").attr("width", zoom * imageData["width"]);
-      $("#floormap > svg").attr("height", zoom * imageData["height"]);
+      $("#floormap > svg").width(zoom * imageData["width"]);
+      $("#floormap > svg").height(zoom * imageData["height"]);
       $("#floormap").overscroll();
   }
 
