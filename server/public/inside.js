@@ -8,6 +8,7 @@ function Inside() {
   var markerFloor;
   var lastHeight;
   var zoom, imageData;
+  var shownCount = 0, returnCount = 0;
 
   $(document).delegate("#inside", "pageinit", function() {
     // bind up/down buttons
@@ -55,6 +56,8 @@ function Inside() {
   });
 
   $(document).delegate("#inside", "pagebeforeshow", function() {
+    $("#zoom-controls").show();
+
     // redirect to search page if we have no info to show
     if (selectedRoom == null) {
       $.mobile.changePage("#search");
@@ -63,7 +66,8 @@ function Inside() {
 
     // fail hard if no maps are available
     if (selectedBuilding["floor_ids"].length == 0) {
-      $("#floormap").html("No floor maps available for the selected building. Sorry!");
+      $("#zoom-controls").hide();
+      $("#floormap").html("<p id=\"no-floormaps\">No floor maps available for the selected building. Sorry!</p>");
       $("#floorDown").addClass("ui-disabled");
       $("#floorUp").addClass("ui-disabled");
       setFloorText("");
@@ -74,7 +78,14 @@ function Inside() {
     showMarker = false;
     // check if we have the floor data for the room
     if (selectedRoom["map_data"] == null) {
-      floorIndex = 0;
+      if (shownCount > returnCount) {
+        returnCount++;
+      } else {
+        shownCount++;
+        floorIndex = 0;
+        $.mobile.changePage('#no-roomlocation-notification','pop',false,false);
+        return;
+      }
     } else {
       // we have room's floor data
       floorIndex = selectedBuilding["floor_ids"].indexOf(selectedRoom["map_data"]["floor_id"]);

@@ -161,3 +161,9 @@ html, body {
 #curfloor {
   opacity: 1;
 }
+
+#no-floormaps {
+  text-align: center;
+  vertical-align: middle;
+  left: auto;
+}
