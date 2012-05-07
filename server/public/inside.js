@@ -37,6 +37,21 @@ function Inside() {
       zoom -= 0.1;
       updateZoom();
     });
+
+    function gestureChange(event) {
+      event.preventDefault();
+      var scale = event.scale;
+
+      if (scale < 1) {
+        zoom -= 0.01;
+      } else if (scale > 1) {
+        zoom += 0.01;
+      }
+
+      updateZoom();
+    }
+
+    window.addEventListener("gesturechange", gestureChange, false);
   });
 
   $(document).delegate("#inside", "pagebeforeshow", function() {
