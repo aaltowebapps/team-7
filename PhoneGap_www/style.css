@@ -1,0 +1,162 @@
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Search input fixes */
+#searchview {
+    padding: 0px;
+    margin: 10px;
+}
+
+#searchview .ui-input-clear {
+    right: 5px !important;
+}
+
+#searchview .ui-btn-inner {
+    padding: 0 !important;
+}
+
+#listview {
+    padding: 0px;
+    margin: 0px;
+}
+
+#map-canvas {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+
+.list-button {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.list-right {
+    min-width: 50%;
+}
+
+.searchview-list {
+    list-style: none;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.list-header {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    text-indent: 15px;
+    border: none;
+}
+
+.list-item {
+    width: 100%;
+    background-color: grey;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    margin: 0px;
+    padding: 0px;
+}
+
+.list-name { 
+    float: left;
+    width: 60%;
+    text-indent: 15px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    -webkit-text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.searchview-list a.list-button, .searchview-list a.list-button:visited {
+    float: left;
+    width: 20%;
+    text-align: center;
+    height: 100%;
+    line-height: 50px;
+    /*border-left: 1px solid lightgrey;
+    margin-left: -1px;*/
+    color: #000;
+    text-decoration: none;
+}
+
+.searchview-list a.list-button:hover {
+    background:             #dfdfdf ;
+    font-weight: bold;
+    color:                  #000;
+    text-shadow: 0  1px  0  #ffffff ;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #f6f6f6 ), to( #e0e0e0 )); 
+    background-image: -webkit-linear-gradient( #f9f9f9 , #e0e0e0 ); 
+    background-image:    -moz-linear-gradient( #f6f6f6 , #e0e0e0 ); 
+    background-image:     -ms-linear-gradient( #f6f6f6 , #e0e0e0 ); 
+    background-image:      -o-linear-gradient( #f6f6f6 , #e0e0e0 ); 
+    background-image:         linear-gradient( #f6f6f6 , #e0e0e0 );
+}
+
+.icon-up {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-image: url(jquery/images/icons-18-black.png);
+    background-position:    -180px 50%;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+.icon-down {
+    width: 18px;
+    height: 18px;
+    display: block;
+    background-image: url(jquery/images/icons-18-black.png);
+    background-position:    -216px 50%;
+    margin: 0 auto;
+    margin-top: 16px;
+}
+
+/* ui-btn-active styles are used in ui-state-persist */
+.ui-btn-active {
+    border: 1px solid       #000;
+    font-weight: bold;
+    color:                  #fff
+    text-shadow: 0 1px 1px 111;
+    background-image: -webkit-gradient(linear, left top, left bottom, from( #202020 ), to( #2c2c2c )); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient( #202020 , #2c2c2c ); /* Chrome 10+, Saf5.1+ */
+    background-image:    -moz-linear-gradient( #202020 , #2c2c2c ); /* FF3.6 */
+    background-image:     -ms-linear-gradient( #202020 , #2c2c2c ); /* IE10 */
+    background-image:      -o-linear-gradient( #202020 , #2c2c2c ); /* Opera 11.10+ */
+    background-image:         linear-gradient( #202020 , #2c2c2c );
+}
+
+.nameLabel {
+  background-color: white;
+  border: 1px solid black;
+  white-space: nowrap;
+  border-radius: 8px;
+  padding: 3px 5px 3px 5px;
+  font-weight: bold;
+}
+
+#inside-content, #floormap, #zoom-controls {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+#zoom-controls {
+  z-index: 99;
+  position: absolute;
+  left: 0px;
+}
+
+#curfloor {
+  opacity: 1;
+}
