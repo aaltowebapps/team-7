@@ -47,11 +47,11 @@ function Inside() {
       } else if (scale > 1) {
         zoom += 0.01;
       }
-
       updateZoom();
     }
 
     window.addEventListener("gesturechange", gestureChange, false);
+
   });
 
   $(document).delegate("#inside", "pagebeforeshow", function() {

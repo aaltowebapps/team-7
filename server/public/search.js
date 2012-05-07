@@ -61,6 +61,10 @@ function Search() {
 
   var renderRooms = function(filter) {
     listContainer.html("");
+
+    // fix the scroll problem?
+    $.mobile.silentScroll(0);
+
     $.each(buildingData["buildings"], function (bindex, building) {
       var bShown = false;
 
@@ -77,7 +81,7 @@ function Search() {
 
           var li = $("<li></li>");
           li.addClass("list-item").addClass("ui-btn-up-c");
-          li.append("<div class=\"list-name\">"+room["name"]+"</div>");
+          li.append("<div class=\"list-name\">"+room["room_id"]+"</div>");
           li.append("<a class=\"list-button\" href=\"#outside\"><span class=\"icon-up\"></span></a>");
           li.append("<a class=\"list-button\" href=\"#inside\"><span class=\"icon-down\"></span></a>");
           li.find("a").click(function () {
