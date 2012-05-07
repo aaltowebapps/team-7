@@ -5,12 +5,16 @@ contents = File.open('building_data.json', 'rb').read
 
 input = JSON.parse(contents)
 
-
 input['buildings'].each do |b|
-	building_number = b['name'].match('\\d+')
+	building_number = b['name'].match(/^\d+/)
 	b['rooms'].each do |r|
 		r2 = []
-		r2 << r['room_id'].gsub(/^\d+/, '')
+
+		room_name = r['room_id'].gsub(/^#{building_number}/, '')
+
+		room_name += '-sali' if room_name.length <= 2 
+
+		r2 << room_name
 		r2 << r['room_id']
    		r2 << r['name']
 
