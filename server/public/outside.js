@@ -3,6 +3,8 @@ function Outside() {
   var map;
   var buildingName;
   var buildingMarker;
+  var locationMarker;
+  var watchID;
 
   $(document).delegate("#outside", "pageinit", function() {
     var options = {
@@ -13,6 +15,25 @@ function Outside() {
 
     map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
+    if (navigator.geolocation) {
+
+      var locationMarker_options = {
+        map: map,
+        position: null
+      };
+
+      locationMarker = new google.maps.Marker(locationMarker_options);
+
+      watchID = navigator.geolocation.watchPosition(showLocation);
+
+      function showLocation(position) {
+        locationMarker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+      }
+
+    } else {
+      /* browser does not support geolocation*/
+    }
+    
     $(window).resize(resize);
   });
 
@@ -46,7 +67,9 @@ function Outside() {
       labelAnchor: new google.maps.Point(-15, 30),
       labelClass: "nameLabel"
     };
+
     buildingMarker = new MarkerWithLabel(options);
+
     google.maps.event.addListener(buildingMarker, 'click', function() {
       $.mobile.changePage( "#inside", { transition: "fade"} );
     });
