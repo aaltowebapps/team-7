@@ -47,12 +47,16 @@ function Inside() {
     window.addEventListener("gesturechange", gestureChange, false);
     window.addEventListener("gestureend", function (e) {
       var floormap = $("#floormap")[0];
+      // calculate current map center location
+      var locX = (floormap.scrollLeft + windowWidth() / 2) / zoom;
+      var locY = (floormap.scrollTop + windowHeight() / 2) / zoom;
       // update the actual zoom
       zoom = e.scale * zoom;
       floormap.style.webkitTransform = "";
-      floormap.scrollLeft += (e.scale - 1) / 2 * windowWidth();
-      floormap.scrollTop += (e.scale - 1) / 2 * windowHeight();
       updateZoom();
+      // calculate new scroll offsets to view the same location
+      floormap.scrollLeft = locX * zoom - windowWidth() / 2;
+      floormap.scrollTop = locY * zoom - windowHeight() / 2;
     }, false);
 
     $("#floormap").bind("click", function (e) {
