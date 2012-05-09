@@ -19,8 +19,9 @@ function Search() {
     searchBox.keyup(updateView);
     searchBox.blur(updateView);
     searchBox.change(updateView);
+
     updateInterval = setInterval(updateView, 1000);
-    renderRooms(function (b,r) {return true;});
+    updateView();
   });
 
   /* Disables & enables outside&inside nav-buttons */
@@ -42,7 +43,10 @@ function Search() {
     checkNavButtons();
 
     // don't update unless necessary
-    if (lastSearch == searchBox.val()) {
+    if (searchBox.val().length == 0) {
+      listContainer.html("<div id=\"no-input-container\"><div id=\"arrow\"></div><div id=\"no-input\">Enter your room code</div></div>");
+      return;
+    } else if (lastSearch == searchBox.val()) {
       return;
     }
     lastSearch = searchBox.val();
