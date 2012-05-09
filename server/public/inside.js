@@ -14,6 +14,7 @@ function Inside() {
     // bind up/down buttons
     $("#floorDown").click(function () {
       if (floorIndex > 0 && floors.length != 0) {
+        $("#send-update-bar").hide();
         floorIndex--;
         updateView();
         lastHeight = null;
@@ -23,6 +24,7 @@ function Inside() {
     });
     $("#floorUp").click(function () {
       if (floorIndex < floors.length - 1) {
+        $("#send-update-bar").hide();
         floorIndex++;
         updateView();
         lastHeight = null;
