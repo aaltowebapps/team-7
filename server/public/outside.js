@@ -60,17 +60,27 @@ function Outside() {
     }
 
     // create the marker
+
+    var image = new google.maps.MarkerImage('icons/house.png',
+        new google.maps.Size(16, 16)
+    );
+
     var options = {
       map: map,
       position: loc,
       labelContent: buildingName,
       labelAnchor: new google.maps.Point(-15, 30),
-      labelClass: "nameLabel"
+      labelClass: "nameLabel",
+      icon: image
     };
 
     buildingMarker = new MarkerWithLabel(options);
 
     google.maps.event.addListener(buildingMarker, 'click', function() {
+      $.mobile.changePage( "#inside", { transition: "fade"} );
+    });
+
+    $(".nameLabel").click(function (e) {
       $.mobile.changePage( "#inside", { transition: "fade"} );
     });
   });
