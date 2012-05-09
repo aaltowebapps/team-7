@@ -126,25 +126,38 @@ html, body {
     background-image:         linear-gradient( #f6f6f6 , #e0e0e0 );
 }
 
-.icon-up {
-    width: 18px;
-    height: 18px;
+.icon-map {
+    width: 16px;
+    height: 16px;
     display: block;
-    background-image: url(jquery/images/icons-18-black.png);
-    background-position:    -180px 50%;
+    background-image: url(icons/map.png);
     margin: 0 auto;
+}
+
+.icon-building {
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-image: url(icons/house.png);
+    margin: 0 auto;
+}
+
+.icon-search {
+    width: 16px;
+    height: 16px;
+    display: block;
+    background-image: url(icons/find.png);
+    margin: 0 auto;
+}
+
+.ui-icon-nav {
+    margin-bottom: 5px;
+}
+
+.ui-icon-list {
     margin-top: 16px;
 }
 
-.icon-down {
-    width: 18px;
-    height: 18px;
-    display: block;
-    background-image: url(jquery/images/icons-18-black.png);
-    background-position:    -216px 50%;
-    margin: 0 auto;
-    margin-top: 16px;
-}
 
 /* ui-btn-active styles are used in ui-state-persist */
 .ui-btn-active {
