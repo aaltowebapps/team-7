@@ -5,6 +5,7 @@ function Outside() {
   var buildingMarker;
   var locationMarker;
   var watchID;
+  var mapInitialized = false;
 
   $(document).delegate("#outside", "pageinit", function() {
     var options = {
@@ -15,25 +16,6 @@ function Outside() {
 
     map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
-    if (navigator.geolocation) {
-
-      var locationMarker_options = {
-        map: map,
-        position: null
-      };
-
-      locationMarker = new google.maps.Marker(locationMarker_options);
-
-      watchID = navigator.geolocation.watchPosition(showLocation);
-
-      function showLocation(position) {
-        locationMarker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-      }
-
-    } else {
-      /* browser does not support geolocation*/
-    }
-    
     $(window).resize(resize);
   });
 
@@ -44,6 +26,25 @@ function Outside() {
       return;
     }
     resize();
+
+    if (!mapInitialized && navigator.geolocation) {
+      mapInitialized = true;
+      var locationMarker_options = {
+        map: map,
+        position: null,
+        icon: new google.maps.MarkerImage('icons/blue_ball16.png', new google.maps.Size(16, 16), new google.maps.Point(0, 0), new google.maps.Point(8, 8))
+      };
+
+      locationMarker = new google.maps.Marker(locationMarker_options);
+
+      function showLocation(position) {
+        locationMarker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+      }
+
+      watchID = navigator.geolocation.watchPosition(showLocation);
+    } else {
+      /* browser does not support geolocation*/
+    }
 
     var loc = new google.maps.LatLng(selectedBuilding["latitude"], selectedBuilding["longitude"]);
     map.setCenter(loc);
