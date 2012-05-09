@@ -37,19 +37,23 @@ function Search() {
     // set the new data & force view redraw
     buildingData = newData;
     lastSearch = null;
+    updateView();
   }
 
   var updateView = function() {
     checkNavButtons();
 
     // don't update unless necessary
-    if (searchBox.val().length == 0) {
-      listContainer.html("<div id=\"no-input-container\"><div id=\"arrow\"></div><div id=\"no-input\">Enter your room code</div></div>");
-      return;
-    } else if (lastSearch == searchBox.val()) {
+    if (lastSearch == searchBox.val()) {
       return;
     }
     lastSearch = searchBox.val();
+
+    // display search help
+    if (lastSearch == "") {
+      listContainer.html("<div id=\"no-input-container\"><div id=\"arrow\"></div><div id=\"no-input\">Enter your room code</div></div>");
+      return;
+    }
 
     renderRooms(function (b, r) {
       var found = false;
