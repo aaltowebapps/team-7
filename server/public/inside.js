@@ -53,6 +53,21 @@ function Inside() {
 
     window.addEventListener("gesturechange", gestureChange, false);
 
+    $("#floormap").bind("click", function (e) {
+      if (!showMarker) {
+        var floormap = $("#floormap")[0];
+        var realX = e.clientX;
+        // remove header height
+        var realY = e.clientY - headerHeight();
+        // add scroll amounts
+        realX += floormap.scrollLeft;
+        realY += floormap.scrollTop;
+        // use to fix the values
+        realX = realX / zoom;
+        realY = realY / zoom;
+        setMarker(realX, realY);
+      }
+    });
   });
 
   $(document).delegate("#inside", "pagebeforeshow", function() {
@@ -108,7 +123,7 @@ function Inside() {
 
   $(document).delegate("#inside", "pageshow", function() {
     lastHeight = null;
-    $("#zoom-controls").css("top",  $("#inside > [data-role=header]").height());
+    $("#zoom-controls").css("top", headerHeight());
     resize();
   });
 
@@ -123,6 +138,7 @@ function Inside() {
   }
 
   function updateZoom() {
+      zoom = Math.max(zoom, initialZoom());
       $("#floormap").removeOverscroll();
       $("#zoomg").attr("transform", "scale("+zoom+","+zoom+")");
       $("#floormap > svg").width(zoom * imageData["width"]);
@@ -171,7 +187,7 @@ function Inside() {
     }
     
     // calculate initial zoom level. make the map fit into the screen
-    zoom = Math.min(windowWidth() / imageData["width"], windowHeight() / imageData["height"], 1);
+    zoom = initialZoom();
     updateZoom();
   }
 
@@ -207,7 +223,15 @@ function Inside() {
   }
 
   function windowHeight() {
-    return (window.innerHeight ? window.innerHeight : $(window).height()) - $("#inside > [data-role=header]").height() - 2;
+    return (window.innerHeight ? window.innerHeight : $(window).height()) - headerHeight() - 2;
+  }
+
+  function headerHeight() {
+    return $("#inside > [data-role=header]").height();
+  }
+
+  function initialZoom() {
+    return Math.min(windowWidth() / imageData["width"], windowHeight() / imageData["height"], 1);
   }
 }
 
