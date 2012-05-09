@@ -85,6 +85,7 @@ function Inside() {
 
     $("#edit-icon").click(function () {
       setMarker(-500, -500);
+      $("#send-update-bar").fadeOut();
       setEditMode(true);
       showMarker = false;
     });
