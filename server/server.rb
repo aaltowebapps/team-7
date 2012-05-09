@@ -35,6 +35,11 @@ get '/api/floormap_data/:id' do
   floormap_data(params[:id]).to_json
 end
 
+# accepts room data update from the user
+post '/api/send_room_data/' do
+  'ok'
+end
+
 # Returns the list of all available floormap images.
 # TODO: Is this needed at all?
 get '/api_old/floormap_list' do

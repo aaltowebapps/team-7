@@ -39,19 +39,21 @@ function Inside() {
       updateZoom();
     });
 
-    function gestureChange(event) {
-      event.preventDefault();
-      var scale = event.scale;
-
-      if (scale < 1) {
-        zoom -= 0.01;
-      } else if (scale > 1) {
-        zoom += 0.01;
-      }
-      updateZoom();
+    function gestureChange(e) {
+      e.preventDefault();
+      $("#floormap")[0].style.webkitTransform = 'scale(' + e.scale + ')';
     }
 
     window.addEventListener("gesturechange", gestureChange, false);
+    window.addEventListener("gestureend", function (e) {
+      var floormap = $("#floormap")[0];
+      // update the actual zoom
+      zoom = e.scale * zoom;
+      floormap.style.webkitTransform = "";
+      floormap.scrollLeft += (e.scale - 1) / 2 * windowWidth();
+      floormap.scrollTop += (e.scale - 1) / 2 * windowHeight();
+      updateZoom();
+    }, false);
 
     $("#floormap").bind("click", function (e) {
       if (!showMarker) {
@@ -66,18 +68,26 @@ function Inside() {
         realX = realX / zoom;
         realY = realY / zoom;
         setMarker(realX, realY);
+        // update the button visibility
+        $("#send-update-bar").fadeIn();
+        $("#send-update-bar").css("margin-left", -$("#send-update-bar").width()/2);
+        // update markerX & markerY
+        markerX = realX / imageData["width"];
+        markerY = realY / imageData["height"];
       }
     });
   });
 
   $(document).delegate("#inside", "pagebeforeshow", function() {
-    $("#zoom-controls").show();
-
     // redirect to search page if we have no info to show
     if (selectedRoom == null) {
       $.mobile.changePage("#search");
       return;
     }
+
+    $("#zoom-controls").show();
+    $("#send-update-bar").hide();
+    $("#send-update-button").html("Send location of " + selectedRoom["keywords"][0]);
 
     // fail hard if no maps are available
     if (selectedBuilding["floor_ids"].length == 0) {
@@ -124,7 +134,28 @@ function Inside() {
   $(document).delegate("#inside", "pageshow", function() {
     lastHeight = null;
     $("#zoom-controls").css("top", headerHeight());
+    $("#send-update-bar").css("top", headerHeight());
     resize();
+  });
+
+  $(document).delegate("#sending-dialog", "pagebeforeshow", function() {
+    $(".upload-progress").show();
+    $(".upload-done").hide();
+    // update local copy of the room data
+    selectedRoom["map_data"] = {
+      map_x: markerX,
+      map_y: markerY,
+      floor_id: floors[floorIndex]
+    };
+    $.post("api/send_room_data/", {
+      room_id: selectedRoom["room_id"],
+      floor_id: floors[floorIndex],
+      markerX: markerX,
+      markerY: markerY
+    }, function () {
+      $(".upload-progress").hide();
+      $(".upload-done").show();
+    });
   });
 
   function resize() {

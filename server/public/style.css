@@ -181,6 +181,12 @@ html, body {
   left: 0px;
 }
 
+#send-update-bar {
+  z-index: 99;
+  position: absolute;
+  left: 50%;
+}
+
 #curfloor {
   opacity: 1;
 }
@@ -189,4 +195,8 @@ html, body {
   text-align: center;
   vertical-align: middle;
   left: auto;
+}
+
+#sending-dialog .ui-header a {
+  display: none;
 }
