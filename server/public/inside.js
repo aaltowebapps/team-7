@@ -155,17 +155,6 @@ function Inside() {
     // update DOM
     $("#floormap").append(imageElement);
 
-    if (showMarker && floorIndex == markerFloor) {
-      // construct a room marker
-      // this code assumes 50x50 marker size
-      var x = markerX * imageData["width"] - 25;
-      var y = markerY * imageData["height"] - 25;
-      // yes, this is very ugly
-      $("#floormap > svg").append(parseSVG(
-'<g stroke="#000" transform="translate('+x+','+y+')" stroke-dasharray="none" stroke-miterlimit="4"><path d="m49.625,25.188a24.562,24.562,0,1,1,-49.125,0,24.562,24.562,0,1,1,49.125,0z" stroke-width="1" fill="none"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/></g>'
-      ));
-    }
-    
     // wrap all g elements in a zoom container
     var zoomg = parseSVG('<g id="zoomg">');
     $.each($("#floormap g"), function (i,e) {
@@ -173,6 +162,14 @@ function Inside() {
     });
     $("#floormap > svg").append(zoomg);
 
+    if (showMarker && floorIndex == markerFloor) {
+      // construct a room marker
+      // this code assumes 50x50 marker size
+      var x = markerX * imageData["width"];
+      var y = markerY * imageData["height"];
+      setMarker(x, y);
+    }
+    
     // calculate initial zoom level. make the map fit into the screen
     zoom = Math.min(windowWidth() / imageData["width"], windowHeight() / imageData["height"], 1);
     updateZoom();
@@ -180,6 +177,20 @@ function Inside() {
 
   function setFloorText(text) { 
     $("#curfloor .ui-btn-text").html(text);
+  }
+
+  // functions that shows the room marker
+  // or if already visible, updates its position
+  function setMarker(x, y) {
+    if ($("#room-marker").length == 0) {
+      // need to add the marker first
+      // yep, this is ugly
+      $("#zoomg").append(parseSVG(
+'<g stroke="#000" id="room-marker" stroke-dasharray="none" stroke-miterlimit="4"><path d="m49.625,25.188a24.562,24.562,0,1,1,-49.125,0,24.562,24.562,0,1,1,49.125,0z" stroke-width="1" fill="none"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/><path d="m33.125,26.938a7.625,7.5625,0,1,1,-15.25,0,7.625,7.5625,0,1,1,15.25,0z" stroke-width="0.99974997000000021" fill="#F00"/></g>'
+      ));
+    }
+
+    $("#room-marker").attr("transform", "translate("+(x - 25)+","+(y - 25)+")");
   }
 
   function parseSVG(s) {
