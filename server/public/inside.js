@@ -61,7 +61,7 @@ function Inside() {
       floormap.scrollTop = locY * zoom - windowHeight() / 2;
     }, false);
 
-    $("#floormap").bind("click", function (e) {
+    $("#floormap").click(function (e) {
       if (!showMarker) {
         var floormap = $("#floormap")[0];
         var realX = e.clientX;
@@ -81,6 +81,12 @@ function Inside() {
         markerX = realX / imageData["width"];
         markerY = realY / imageData["height"];
       }
+    });
+
+    $("#edit-icon").click(function () {
+      setMarker(-500, -500);
+      setEditMode(true);
+      showMarker = false;
     });
   });
 
@@ -109,6 +115,7 @@ function Inside() {
     showMarker = false;
     // check if we have the floor data for the room
     if (selectedRoom["map_data"] == null) {
+      setEditMode(true);
       if (shownCount > returnCount) {
         returnCount++;
       } else {
@@ -123,7 +130,9 @@ function Inside() {
       if (floorIndex == -1) { 
         // we have inconsistent building data, should never happen!
         floorIndex = 0;
+        setEditMode(true);
       } else {
+        setEditMode(false);
         showMarker = true;
         markerX = selectedRoom["map_data"]["map_x"];
         markerY = selectedRoom["map_data"]["map_y"];
@@ -269,6 +278,10 @@ function Inside() {
 
   function initialZoom() {
     return Math.min(windowWidth() / imageData["width"], windowHeight() / imageData["height"], 1);
+  }
+
+  function setEditMode(value) {
+    $("#edit-icon").css("opacity", value ? 1 : 0.5);
   }
 }
 
