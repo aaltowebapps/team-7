@@ -105,6 +105,11 @@ html, body {
     overflow: hidden;
 }
 
+.list-name a, .list-name a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
 .searchview-list a.list-button, .searchview-list a.list-button:visited {
     float: left;
     width: 20%;
@@ -196,6 +201,7 @@ html, body {
   z-index: 99;
   position: absolute;
   left: 0px;
+  height: 132px;
 }
 
 #send-update-bar {
@@ -231,4 +237,9 @@ html, body {
     display: block;
     margin: 10px 0px 10px 0px;
     text-indent: 15px;
+}
+
+#edit-icon {
+  position: absolute;
+  top: 88px;
 }

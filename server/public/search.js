@@ -91,7 +91,7 @@ function Search() {
 
           var li = $("<li></li>");
           li.addClass("list-item").addClass("ui-btn-up-c");
-          li.append("<div class=\"list-name\">"+room["keywords"][0]+"</div>");
+          li.append("<div class=\"list-name\"><a href=\"#inside\">"+room["keywords"][0]+"</a></div>");
           li.append("<a class=\"list-button\" href=\"#outside\"><span class=\"icon-map ui-icon-list\"></span></a>");
           li.append("<a class=\"list-button\" href=\"#inside\"><span class=\"icon-building ui-icon-list\"></span></a>");
           li.find("a").click(function () {
