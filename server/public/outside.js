@@ -42,7 +42,7 @@ function Outside() {
 
         /* Lets set it just once, because otherwise user couldn't controll the map */
         if (locationMarker.getPosition() == null) {
-           map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), userLocation));
+          map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), userLocation));
         }
 
         locationMarker.setPosition(userLocation);
@@ -54,7 +54,11 @@ function Outside() {
     }
 
     var loc = new google.maps.LatLng(selectedBuilding["latitude"], selectedBuilding["longitude"]);
-    map.setCenter(loc);
+
+    if (map.getCenter() == undefined) {
+      // Center the map only if it's not already centered
+      map.setCenter(loc);
+    }
 
     // only update the marker if the building has been changed
     if (buildingName == selectedBuilding["name"]) {
