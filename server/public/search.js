@@ -51,10 +51,12 @@ function Search() {
 
     // display search help
     if (lastSearch == "") {
-      listContainer.html("<div id=\"no-input-container\"><div id=\"arrow\"></div><div id=\"no-input\">Enter your room code</div></div>");
+      $("#no-input-container").show();
       return;
     }
 
+    $("#no-input-container").hide();
+    
     renderRooms(function (b, r) {
       var found = false;
       $.each(r["keywords"], function() {

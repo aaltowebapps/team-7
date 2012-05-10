@@ -77,6 +77,14 @@
             </div>
            
             <div data-role="content" id="listview">
+                <div id="no-input-container">
+                    <div id="arrow"></div>
+                    <div id="no-input">Enter your room code</div>
+                    <div id="no-input-buttons">
+                        <a href="#about" data-role="button" data-rel="dialog" data-transition="pop" data-inline="true">About</a>
+                        <a href="#help" data-role="button" data-rel="dialog" data-transition="pop" data-theme="e" data-inline="true">Need help?</a>
+                    </div>
+                </div>
                 <ul class="searchview-list">
                 </ul>
             </div>
@@ -157,6 +165,30 @@
               </div>
             </div>
 
+        </div>
+
+        <div data-role="dialog" id="about">
+          <div data-role="header">
+            <h1>About</h1>
+          </div>
+          
+          <div data-role="content">
+            Coming soon...
+            <a data-role="button" href="#search">Close</a>
+          </div>
+        </div>
+
+        <div data-role="dialog" id="help">
+          <div data-role="header">
+            <h1>Need help?</h1>
+          </div>
+          
+          <div data-role="content">
+            <span class="help-line"><span class="big">1st</span>Enter your WebOodi code or room name.</span>
+            <span class="help-line"><span class="big">2nd</span>Locate the right building.</span>
+            <span class="help-line"><span class="big">3rd</span>Locate the right room in the building.</span>
+            <a data-role="button" href="#search">Close</a>
+          </div>
         </div>
 
         <div data-role="dialog" id="no-roomlocation-notification">

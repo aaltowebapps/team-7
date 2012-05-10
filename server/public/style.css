@@ -8,25 +8,29 @@ html, body {
 #no-input-container {
     margin: 0 auto;
     width: 100%;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 #arrow {
     width: 0;
     height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 100px solid black;
+    border-left: 80px solid transparent;
+    border-right: 80px solid transparent;
+    border-bottom: 80px solid black;
     margin: 0 auto;
 }
 
 #no-input {
     font-weight: bold;
-    margin-top: 5%;
-    font: 300% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    margin-top: 2%;
+    font: 200% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
     text-align: center;
 }
 
+#no-input-buttons {
+    text-align: center;
+    margin-top: 2%;
+}
 
 /* Search input fixes */
 #searchview {
@@ -212,4 +216,19 @@ html, body {
 
 #sending-dialog .ui-header a {
   display: none;
+}
+
+/* Help dialog */
+
+.big {
+    font: 250% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+    color: grey;
+    margin-right: 10px;
+}
+
+
+.help-line {
+    display: block;
+    margin: 10px 0px 10px 0px;
+    text-indent: 15px;
 }
