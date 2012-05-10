@@ -38,7 +38,14 @@ function Outside() {
       locationMarker = new google.maps.Marker(locationMarker_options);
 
       function showLocation(position) {
-        locationMarker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+        var userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        /* Lets set it just once, because otherwise user couldn't controll the map */
+        if (locationMarker.getPosition() == null) {
+           map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), userLocation));
+        }
+
+        locationMarker.setPosition(userLocation);
       }
 
       watchID = navigator.geolocation.watchPosition(showLocation);
