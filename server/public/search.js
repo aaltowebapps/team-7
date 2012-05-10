@@ -52,6 +52,7 @@ function Search() {
     // display search help
     if (lastSearch == "") {
       $("#no-input-container").show();
+      listContainer.html("");
       return;
     }
 
