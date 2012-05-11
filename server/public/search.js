@@ -63,10 +63,13 @@ function Search() {
       $.each(r["keywords"], function() {
         if(this.toLowerCase().indexOf(lastSearch.toLowerCase()) != -1) {
           found = true;
+
+          // lets break the loop
+          return false;
         }
       });
 
-      return r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1 || found;
+      return found;
     });
   }
 
