@@ -88,6 +88,10 @@ function Outside() {
 
     buildingMarker = new MarkerWithLabel(options);
 
+    if (locationMarker.getPosition() != null) {
+      map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), locationMarker.getPosition()));
+    }
+
     google.maps.event.addListener(buildingMarker, 'click', function() {
       $.mobile.changePage( "#inside", { transition: "fade"} );
     });
