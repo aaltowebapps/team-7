@@ -239,7 +239,7 @@ function Inside() {
   }
 
   function setFloorText(text) { 
-    $("#curfloor .ui-btn-text").html(text);
+    $("#curfloor .ui-btn-text").html(text + " - " + selectedRoom["keywords"][0]);
   }
 
   // functions that shows the room marker
