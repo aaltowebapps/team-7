@@ -1978,12 +1978,22 @@
             "354"
           ],
           "map_data": null
-        },
+        } 
+      ]
+    },
+    {
+      "name": "Konetekniikka 3",
+      "latitude": 60.188844,
+      "longitude": 24.825754,
+      "floor_ids": [
+
+      ],
+      "rooms": [
         {
           "room_id": "6luentosali",
           "name": "118",
           "keywords": [
-            "6luentosali",
+            "luentosali",
             "6luentosali",
             "118"
           ],
@@ -1993,7 +2003,7 @@
           "room_id": "6pikkupalaveri",
           "name": "226",
           "keywords": [
-            "6pikkupalaveri",
+            "pikkupalaveri",
             "6pikkupalaveri",
             "226"
           ],
@@ -2003,7 +2013,7 @@
           "room_id": "6seminaari",
           "name": "117a",
           "keywords": [
-            "6seminaari",
+            "seminaari",
             "6seminaari",
             "117a"
           ],
