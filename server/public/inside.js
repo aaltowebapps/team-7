@@ -70,6 +70,9 @@ function Inside() {
         // add scroll amounts
         realX += floormap.scrollLeft;
         realY += floormap.scrollTop;
+        // take window scrolling into account
+        realX += $(window).scrollLeft();
+        realY += $(window).scrollTop();
         // use to fix the values
         realX = realX / zoom;
         realY = realY / zoom;
