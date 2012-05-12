@@ -189,6 +189,7 @@ function Inside() {
 
   function updateZoom() {
       zoom = Math.max(zoom, initialZoom());
+      zoom = Math.min(zoom, 10);
       $("#floormap").removeOverscroll();
       $("#zoomg").attr("transform", "scale("+zoom+","+zoom+")");
       $("#floormap > svg").width(zoom * imageData["width"]);
