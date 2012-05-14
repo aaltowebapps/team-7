@@ -41,12 +41,11 @@ function Inside() {
       updateZoom();
     });
 
-    function gestureChange(e) {
+    window.addEventListener("gesturechange", function (e) {
       e.preventDefault();
       $("#floormap")[0].style.webkitTransform = 'scale(' + e.scale + ')';
-    }
+    }, false);
 
-    window.addEventListener("gesturechange", gestureChange, false);
     window.addEventListener("gestureend", function (e) {
       var floormap = $("#floormap")[0];
       // calculate current map center location
