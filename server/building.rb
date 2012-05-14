@@ -49,10 +49,6 @@ def floormap_data(id)
   fileinfo = Hash.new
   fileinfo['id'] = id
   fileinfo['contents'] = Base64.encode64(contents)
-  fileinfo['timestamp'] = File.mtime(File.join(FLOORMAP_DIR, id)).iso8601
-  # TODO: Get values for width, height, content type etc. from database
-  fileinfo['width'] = 200
-  fileinfo['height'] = 100
 
   ending = id.split('.')[-1]
   fileinfo['type'] = MIME_TYPE_FOR_ENDING[ending] || ('image/' + ending)
