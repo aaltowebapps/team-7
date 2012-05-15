@@ -51,19 +51,25 @@ function Search() {
 
     // display search help
     if (lastSearch == "") {
-      listContainer.html("<div id=\"no-input-container\"><div id=\"arrow\"></div><div id=\"no-input\">Enter your room code</div></div>");
+      $("#no-input-container").show();
+      listContainer.html("");
       return;
     }
 
+    $("#no-input-container").hide();
+    
     renderRooms(function (b, r) {
       var found = false;
       $.each(r["keywords"], function() {
         if(this.toLowerCase().indexOf(lastSearch.toLowerCase()) != -1) {
           found = true;
+
+          // lets break the loop
+          return false;
         }
       });
 
-      return r["name"].toLowerCase().indexOf(lastSearch.toLowerCase()) != -1 || found;
+      return found;
     });
   }
 
@@ -89,7 +95,7 @@ function Search() {
 
           var li = $("<li></li>");
           li.addClass("list-item").addClass("ui-btn-up-c");
-          li.append("<div class=\"list-name\">"+room["keywords"][0]+"</div>");
+          li.append("<div class=\"list-name\"><a href=\"#inside\">"+room["keywords"][0]+"</a></div>");
           li.append("<a class=\"list-button\" href=\"#outside\"><span class=\"icon-map ui-icon-list\"></span></a>");
           li.append("<a class=\"list-button\" href=\"#inside\"><span class=\"icon-building ui-icon-list\"></span></a>");
           li.find("a").click(function () {

@@ -1,6 +1,7 @@
 // defines Base class 
 // that handles storage
 function Base() {
+  var checkedBuildingData = false;
   this.getBuildingData = function() {
     var d = localStorage.getItem("building-data");
     if (d == null) {
@@ -9,8 +10,12 @@ function Base() {
       return {"last_updated": 0, "buildings": [], "floors": []};
     } else {
       data = $.parseJSON(d);
-      lastUpdated = data["last_updated"];
-      this.initiateBuildingDataLoading(lastUpdated);
+      if (!checkedBuildingData) {
+        // only update once per session
+        checkedBuildingData = true;
+        lastUpdated = data["last_updated"];
+        this.initiateBuildingDataLoading(lastUpdated);
+      }
       return data;
     }
   }

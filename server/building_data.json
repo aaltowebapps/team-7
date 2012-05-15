@@ -1,12 +1,11 @@
 {
   "buildings": [
     {
-      "name": "1 Päärakennus",
+      "name": "Päärakennus",
       "latitude": 60.18654,
       "longitude": 24.82829,
       "floor_ids": [
-        1,
-        2
+
       ],
       "rooms": [
         {
@@ -1212,7 +1211,7 @@
       ]
     },
     {
-      "name": "2 Rakennus- ja ympäristötekniikka",
+      "name": "Rakennus- ja ympäristötekniikka",
       "latitude": 60.18714,
       "longitude": 24.83099,
       "floor_ids": [
@@ -1362,7 +1361,7 @@
       ]
     },
     {
-      "name": "3 Teknillinen fysiikka",
+      "name": "Teknillinen fysiikka",
       "latitude": 60.18798,
       "longitude": 24.83032,
       "floor_ids": [
@@ -1582,7 +1581,7 @@
       ]
     },
     {
-      "name": "4 Sähkö- ja tietoliikennetekniikka",
+      "name": "Sähkö- ja tietoliikennetekniikka",
       "latitude": 60.188967,
       "longitude": 24.831226,
       "floor_ids": [
@@ -1932,7 +1931,7 @@
       ]
     },
     {
-      "name": "5 Konetekniikka 4",
+      "name": "Konetekniikka 4",
       "latitude": 60.188844,
       "longitude": 24.825754,
       "floor_ids": [
@@ -1978,12 +1977,22 @@
             "354"
           ],
           "map_data": null
-        },
+        } 
+      ]
+    },
+    {
+      "name": "Konetekniikka 3",
+      "latitude": 60.188844,
+      "longitude": 24.825754,
+      "floor_ids": [
+
+      ],
+      "rooms": [
         {
           "room_id": "6luentosali",
           "name": "118",
           "keywords": [
-            "6luentosali",
+            "luentosali",
             "6luentosali",
             "118"
           ],
@@ -1993,7 +2002,7 @@
           "room_id": "6pikkupalaveri",
           "name": "226",
           "keywords": [
-            "6pikkupalaveri",
+            "pikkupalaveri",
             "6pikkupalaveri",
             "226"
           ],
@@ -2003,7 +2012,7 @@
           "room_id": "6seminaari",
           "name": "117a",
           "keywords": [
-            "6seminaari",
+            "seminaari",
             "6seminaari",
             "117a"
           ],
@@ -2012,7 +2021,7 @@
       ]
     },
     {
-      "name": "7 Konetekniikka 2",
+      "name": "Konetekniikka 2",
       "latitude": 60.18774,
       "longitude": 24.825218,
       "floor_ids": [
@@ -2042,7 +2051,7 @@
       ]
     },
     {
-      "name": "8 Konetekniikka 1",
+      "name": "Konetekniikka 1",
       "latitude": 60.18718,
       "longitude": 24.82683,
       "floor_ids": [
@@ -2262,7 +2271,7 @@
       ]
     },
     {
-      "name": "9 Nano-talo",
+      "name": "Nano-talo",
       "latitude": null,
       "longitude": null,
       "floor_ids": [
@@ -2312,7 +2321,7 @@
       ]
     },
     {
-      "name": "11 Kemian tekniikka",
+      "name": "Kemian tekniikka",
       "latitude": 60.18362,
       "longitude": 24.82451,
       "floor_ids": [
@@ -2452,7 +2461,7 @@
       ]
     },
     {
-      "name": "12 Materiaalitekniikka",
+      "name": "Materiaalitekniikka",
       "latitude": 60.182896,
       "longitude": 24.825207,
       "floor_ids": [
@@ -2692,7 +2701,7 @@
       ]
     },
     {
-      "name": "13 Puunjalostustekniikka 1",
+      "name": "Puunjalostustekniikka 1",
       "latitude": 60.181621,
       "longitude": 24.824842,
       "floor_ids": [
@@ -2782,7 +2791,7 @@
       ]
     },
     {
-      "name": "14 Puunjalostustekniikka 2",
+      "name": "Puunjalostustekniikka 2",
       "latitude": 60.180362,
       "longitude": 24.825819,
       "floor_ids": [
@@ -2872,7 +2881,7 @@
       ]
     },
     {
-      "name": "15 Kirjasto",
+      "name": "Kirjasto",
       "latitude": 60.184742,
       "longitude": 24.827771,
       "floor_ids": [
@@ -2902,7 +2911,7 @@
       ]
     },
     {
-      "name": "16 Laivatekniikka",
+      "name": "Laivatekniikka",
       "latitude": 60.186092,
       "longitude": 24.820293,
       "floor_ids": [
@@ -2972,7 +2981,7 @@
       ]
     },
     {
-      "name": "17 Maarintalo",
+      "name": "Maarintalo",
       "latitude": 60.189249,
       "longitude": 24.826226,
       "floor_ids": [
@@ -3342,7 +3351,7 @@
       ]
     },
     {
-      "name": "22 Lämpömiehenkuja 2",
+      "name": "Lämpömiehenkuja 2",
       "latitude": 60.182123,
       "longitude": 24.832116,
       "floor_ids": [
@@ -3442,7 +3451,7 @@
       ]
     },
     {
-      "name": "27 Arkkitehtuuri/Paja",
+      "name": "Arkkitehtuuri/Paja",
       "latitude": 60.183414,
       "longitude": 24.829016,
       "floor_ids": [
@@ -3482,7 +3491,7 @@
       ]
     },
     {
-      "name": "28 YTK",
+      "name": "YTK",
       "latitude": null,
       "longitude": null,
       "floor_ids": [
@@ -3512,7 +3521,7 @@
       ]
     },
     {
-      "name": "29 Sähkötalo 1",
+      "name": "Sähkötalo 1",
       "latitude": 60.188972,
       "longitude": 24.833404,
       "floor_ids": [
@@ -3672,7 +3681,7 @@
       ]
     },
     {
-      "name": "30 Tietotekniikka",
+      "name": "Tietotekniikka",
       "latitude": 60.18695,
       "longitude": 24.821355,
       "floor_ids": [
@@ -3978,7 +3987,7 @@
       ]
     },
     {
-      "name": "32 HTC",
+      "name": "HTC",
       "latitude": null,
       "longitude": null,
       "floor_ids": [
@@ -4018,7 +4027,7 @@
       ]
     },
     {
-      "name": "33 Innopoli 2",
+      "name": "Innopoli 2",
       "latitude": 60.185521,
       "longitude": 24.812086,
       "floor_ids": [
@@ -4208,7 +4217,7 @@
       ]
     },
     {
-      "name": "34 Vesilaboratorio",
+      "name": "Vesilaboratorio",
       "latitude": 60.185606,
       "longitude": 24.820046,
       "floor_ids": [
@@ -4238,7 +4247,7 @@
       ]
     },
     {
-      "name": "35 Falcon Gentti",
+      "name": "Falcon Gentti",
       "latitude": null,
       "longitude": null,
       "floor_ids": [
@@ -4318,7 +4327,7 @@
       ]
     },
     {
-      "name": "36 Micronova",
+      "name": "Micronova",
       "latitude": 60.184715,
       "longitude": 24.817032,
       "floor_ids": [
@@ -4448,7 +4457,7 @@
       ]
     },
     {
-      "name": "37 TUAS",
+      "name": "TUAS",
       "latitude": 60.187078,
       "longitude": 24.818931,
       "floor_ids": [
@@ -4869,20 +4878,6 @@
     }
   ],
   "floors": [
-    {
-      "floor_id": 1,
-      "map_image": "paarakennus-1.png",
-      "width": 960,
-      "height": 640,
-      "name": "1"
-    },
-    {
-      "floor_id": 2,
-      "map_image": "paarakennus-2.png",
-      "width": 960,
-      "height": 640,
-      "name": "2"
-    },
     {
       "floor_id": 3,
       "map_image": "t-talo_kerros1_optimized.svg",

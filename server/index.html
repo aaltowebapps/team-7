@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
         <meta rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -77,6 +77,14 @@
             </div>
            
             <div data-role="content" id="listview">
+                <div id="no-input-container">
+                    <div id="arrow"></div>
+                    <div id="no-input">Enter your room code</div>
+                    <div id="no-input-buttons">
+                        <a href="#about" data-role="button" data-rel="dialog" data-transition="pop" data-inline="true">About</a>
+                        <a href="#help" data-role="button" data-rel="dialog" data-transition="pop" data-theme="e" data-inline="true">Need help?</a>
+                    </div>
+                </div>
                 <ul class="searchview-list">
                 </ul>
             </div>
@@ -154,9 +162,44 @@
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="44px" height="88px">
                   <g id="svgplus"><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10933673000000010;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" width="44" height="44" x="0" y="0" ry="0" rx="0" /><path style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="m 4,22 36,0" /><path style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="m 22,4 0,36" /></g><g id="svgminus" transform="translate(0,44)"><rect style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.10933673000000010;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" width="44" height="44" x="0" y="0" ry="0" rx="0" /><path style="fill:none;stroke:#000000;stroke-width:6;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none" d="m 4,22 36,0" /></g>
                 </svg>
+                <img src="icons/edit.png" id="edit-icon">
               </div>
             </div>
 
+        </div>
+
+        <div data-role="dialog" id="about">
+          <div data-role="header">
+            <h1>About</h1>
+          </div>
+          
+          <div data-role="content">
+            <img src="apple-touch-icon-144x144.png" alt="" style="float: left; margin: 10px">
+            <h2>Find-a-Room</h2>
+            Find-a-Room is a student project for the Aalto web application-course. The frontend uses JQuery Mobile and overscroll.js plugin. The backend is done with Ruby and Sinatra.
+            <h3>Team</h3>
+            <ul>
+            <li>Kaarlo Haikonen</li>
+            <li>Antti Risteli</li>
+            <li>Sampsa Toivanen</li>
+            </ul>
+            <h3>Contact</h3>
+            firstname.lastname@aalto.fi
+            <a data-role="button" href="#search">Close</a>
+          </div>
+        </div>
+
+        <div data-role="dialog" id="help">
+          <div data-role="header">
+            <h1>Need help?</h1>
+          </div>
+          
+          <div data-role="content">
+            <span class="help-line"><span class="big">1st</span>Enter your WebOodi code or room name.</span>
+            <span class="help-line"><span class="big">2nd</span>Locate the right building.</span>
+            <span class="help-line"><span class="big">3rd</span>Locate the right room in the building.</span>
+            <a data-role="button" href="#search">Close</a>
+          </div>
         </div>
 
         <div data-role="dialog" id="no-roomlocation-notification">
@@ -180,7 +223,7 @@
               <img src="jquery/images/ajax-loader2.gif">Please wait..
             </p>
             <p class="upload-done">
-              Upload complete! Thank you!
+              Upload complete! Thank you for your input. The data will be visible to everyone after moderation.
               <a data-role="button" href="#inside">Okay!</a>
             </p>
           </div>

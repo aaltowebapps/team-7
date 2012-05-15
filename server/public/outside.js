@@ -5,6 +5,7 @@ function Outside() {
   var buildingMarker;
   var locationMarker;
   var watchID;
+  var mapInitialized = false;
 
   $(document).delegate("#outside", "pageinit", function() {
     var options = {
@@ -15,25 +16,6 @@ function Outside() {
 
     map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
-    if (navigator.geolocation) {
-
-      var locationMarker_options = {
-        map: map,
-        position: null
-      };
-
-      locationMarker = new google.maps.Marker(locationMarker_options);
-
-      watchID = navigator.geolocation.watchPosition(showLocation);
-
-      function showLocation(position) {
-        locationMarker.setPosition(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
-      }
-
-    } else {
-      /* browser does not support geolocation*/
-    }
-    
     $(window).resize(resize);
   });
 
@@ -45,8 +27,38 @@ function Outside() {
     }
     resize();
 
+    if (!mapInitialized && navigator.geolocation) {
+      mapInitialized = true;
+      var locationMarker_options = {
+        map: map,
+        position: null,
+        icon: new google.maps.MarkerImage('icons/blue_ball16.png', new google.maps.Size(16, 16), new google.maps.Point(0, 0), new google.maps.Point(8, 8))
+      };
+
+      locationMarker = new google.maps.Marker(locationMarker_options);
+
+      function showLocation(position) {
+        var userLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+        /* Lets set it just once, because otherwise user couldn't controll the map */
+        if (locationMarker.getPosition() == null) {
+          map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), userLocation));
+        }
+
+        locationMarker.setPosition(userLocation);
+      }
+
+      watchID = navigator.geolocation.watchPosition(showLocation);
+    } else {
+      /* browser does not support geolocation*/
+    }
+
     var loc = new google.maps.LatLng(selectedBuilding["latitude"], selectedBuilding["longitude"]);
-    map.setCenter(loc);
+
+    if (map.getCenter() == undefined) {
+      // Center the map only if it's not already centered
+      map.setCenter(loc);
+    }
 
     // only update the marker if the building has been changed
     if (buildingName == selectedBuilding["name"]) {
@@ -75,6 +87,10 @@ function Outside() {
     };
 
     buildingMarker = new MarkerWithLabel(options);
+
+    if (locationMarker.getPosition() != null) {
+      map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), locationMarker.getPosition()));
+    }
 
     google.maps.event.addListener(buildingMarker, 'click', function() {
       $.mobile.changePage( "#inside", { transition: "fade"} );
