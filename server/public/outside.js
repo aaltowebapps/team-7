@@ -42,7 +42,7 @@ function Outside() {
 
         /* Lets set it just once, because otherwise user couldn't controll the map */
         if (locationMarker.getPosition() == null) {
-          map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), userLocation));
+          map.fitBounds(getBounds(buildingMarker.getPosition(), userLocation));
         }
 
         locationMarker.setPosition(userLocation);
@@ -89,7 +89,7 @@ function Outside() {
     buildingMarker = new MarkerWithLabel(options);
 
     if (locationMarker.getPosition() != null) {
-      map.fitBounds(new google.maps.LatLngBounds(buildingMarker.getPosition(), locationMarker.getPosition()));
+      map.fitBounds(getBounds(buildingMarker.getPosition(), locationMarker.getPosition()));
     }
 
     google.maps.event.addListener(buildingMarker, 'click', function() {
@@ -105,5 +105,11 @@ function Outside() {
     var height = window.innerHeight ? window.innerHeight : $(window).height();
     $("#map-canvas").css("min-height", height-$("#outside > [data-role=header]").innerHeight() - 2);
     google.maps.event.trigger(map, "resize");
+  }
+  
+  var getBounds = function(pos1, pos2) {
+    var sw = new google.maps.LatLng(Math.min(pos1.lat(), pos2.lat()), Math.min(pos1.lng(), pos2.lng()));
+    var ne = new google.maps.LatLng(Math.max(pos1.lat(), pos2.lat()), Math.max(pos1.lng(), pos2.lng()));
+    return new google.maps.LatLngBounds(sw, ne);
   }
 }
