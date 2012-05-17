@@ -243,3 +243,8 @@ html, body {
   position: absolute;
   top: 88px;
 }
+
+.ui-header .ui-title, .ui-footer .ui-title {
+  margin-left: 15px;
+  margin-right: 15px;
+}
