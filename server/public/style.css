@@ -201,7 +201,10 @@ html, body {
   z-index: 99;
   position: absolute;
   left: 0px;
-  height: 132px;
+}
+
+#zoom-controls img {
+  vertical-align: bottom;
 }
 
 #send-update-bar {
@@ -237,11 +240,6 @@ html, body {
     display: block;
     margin: 10px 0px 10px 0px;
     text-indent: 15px;
-}
-
-#edit-icon {
-  position: absolute;
-  top: 88px;
 }
 
 .ui-header .ui-title, .ui-footer .ui-title {

@@ -32,11 +32,11 @@ function Inside() {
       }
       return false; // keep it from getting active style
     });
-    $("#svgplus").click(function () {
+    $("#zoom-in").click(function () {
       zoom += 0.1;
       updateZoom();
     });
-    $("#svgminus").click(function () {
+    $("#zoom-out").click(function () {
       zoom -= 0.1;
       updateZoom();
     });
