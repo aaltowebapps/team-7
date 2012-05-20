@@ -229,17 +229,20 @@ html, body {
 
 /* Help dialog */
 
-.big {
-    font: 250% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-    color: grey;
-    margin-right: 10px;
+.down-arrow {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid gray;
+    margin: 0 auto;
 }
 
-
 .help-line {
+    font: 120% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
     display: block;
-    margin: 10px 0px 10px 0px;
-    text-indent: 15px;
+    margin: 20px 10px 20px 10px;
+    text-align: center;
 }
 
 .ui-header .ui-title, .ui-footer .ui-title {
