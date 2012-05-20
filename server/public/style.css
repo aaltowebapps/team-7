@@ -257,7 +257,7 @@ html, body {
 }
 
 .inside-icon {
-    padding: 5px !important;
+    padding: 5px !important;  
     background-color: #dcdcdc;
     -moz-border-radius: 5px;
     border-radius: 5px;

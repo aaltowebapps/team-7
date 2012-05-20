@@ -194,6 +194,15 @@ function Inside() {
       $("#floormap > svg").width(zoom * imageData["width"]);
       $("#floormap > svg").height(zoom * imageData["height"]);
       $("#floormap").overscroll();
+
+      if(zoom >= 10) {
+        $("#zoom-in").addClass("ui-disabled");
+      } else if (zoom <= 1) {
+        $("#zoom-out").addClass("ui-disabled");
+      } else {
+        $("#zoom-in").removeClass("ui-disabled");
+        $("#zoom-out").removeClass("ui-disabled");
+      }
   }
 
   function getFloorById(id) {
@@ -285,8 +294,6 @@ function Inside() {
   }
 
   function setEditMode(value) {
-    $("#edit-icon").css("opacity", value ? 1 : 0.5);
-
     if (value) {
       $("#edit-icon").attr("data-theme", "e").removeClass("ui-btn-up-c").addClass("ui-btn-up-e");
     } else {
