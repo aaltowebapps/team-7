@@ -288,9 +288,9 @@ function Inside() {
     $("#edit-icon").css("opacity", value ? 1 : 0.5);
 
     if (value) {
-      $("#edit-icon").addClass("icon-selected");
+      $("#edit-icon").attr("data-theme", "e").removeClass("ui-btn-up-c").addClass("ui-btn-up-e");
     } else {
-      $("#edit-icon").removeClass("icon-selected");
+      $("#edit-icon").attr("data-theme", "c").removeClass("ui-btn-up-e").addClass("ui-btn-up-c");
     }
   }
 }
