@@ -286,6 +286,12 @@ function Inside() {
 
   function setEditMode(value) {
     $("#edit-icon").css("opacity", value ? 1 : 0.5);
+
+    if (value) {
+      $("#edit-icon").addClass("icon-selected");
+    } else {
+      $("#edit-icon").removeClass("icon-selected");
+    }
   }
 }
 
