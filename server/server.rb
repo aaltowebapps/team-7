@@ -4,6 +4,7 @@ require 'sinatra'
 require 'sinatra/reloader' if DEVELOPMENT
 require 'base64'
 require 'json'
+require 'manifesto.rb'
 
 also_reload 'building.rb' if DEVELOPMENT
 also_reload 'building_classes.rb' if DEVELOPMENT
@@ -14,6 +15,13 @@ get '/' do
 # TODO: it would make sense to keep all client files in public/
 #       but it might break if using Manifesto (check when changing)
   File.read("index.html")
+end
+
+get '/manifest' do
+  headers 'Content-Type' => 'text/cache-manifest' # Must be served with this MIME type
+  contents = File.open(NETWORK_ENTRIES_FILE, 'rb').read
+  network = JSON.parse(contents)
+  Manifesto.cache(:network_includes => network)
 end
 
 # Returns the complete set of building data
