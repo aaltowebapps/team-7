@@ -195,14 +195,13 @@ function Inside() {
       $("#floormap > svg").height(zoom * imageData["height"]);
       $("#floormap").overscroll();
 
+      $("#zoom-in").removeClass("ui-disabled");
+      $("#zoom-out").removeClass("ui-disabled");
       if(zoom >= 10) {
         $("#zoom-in").addClass("ui-disabled");
-      } else if (zoom <= 1) {
+      } else if (zoom <= initialZoom()) {
         $("#zoom-out").addClass("ui-disabled");
-      } else {
-        $("#zoom-in").removeClass("ui-disabled");
-        $("#zoom-out").removeClass("ui-disabled");
-      }
+      } 
   }
 
   function getFloorById(id) {
