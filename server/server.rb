@@ -21,7 +21,7 @@ get '/manifest' do
   headers 'Content-Type' => 'text/cache-manifest' # Must be served with this MIME type
   contents = File.open(NETWORK_ENTRIES_FILE, 'rb').read
   network = JSON.parse(contents)
-  Manifesto.cache(:network_includes => network)
+  Manifesto.cache(:network_includes => network, :timestamp => false)
 end
 
 # Returns the complete set of building data
