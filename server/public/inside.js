@@ -61,7 +61,7 @@ function Inside() {
     }, false);
 
     $("#floormap").click(function (e) {
-      if (!showMarker) {
+      if (!showMarker && floors.length != 0) {
         var floormap = $("#floormap")[0];
         var realX = e.clientX;
         // remove header height
