@@ -6,17 +6,21 @@ function Outside() {
   var locationMarker;
   var watchID;
   var mapInitialized = false;
+  var mapAvailable = false;
 
   $(document).delegate("#outside", "pageinit", function() {
-    var options = {
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      disableDefaultUI: true
-    };
+    if (isMapLoaded()) {
+      mapAvailable = true;
+      var options = {
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDefaultUI: true
+      };
 
-    map = new google.maps.Map(document.getElementById('map-canvas'), options);
+      map = new google.maps.Map(document.getElementById('map-canvas'), options);
 
-    $(window).resize(resize);
+      $(window).resize(resize);
+    }
   });
 
   $(document).delegate("#outside", "pageshow", function() {
@@ -25,6 +29,12 @@ function Outside() {
       $.mobile.changePage("#search");
       return;
     }
+
+    if (!mapAvailable) {
+      $("#map-canvas").html("The app was started in offline mode which means Google Maps couldn't be loaded. Please go online and refresh the page to access the outside view.");
+      return;
+    }
+
     resize();
 
     if (!mapInitialized && navigator.geolocation) {
@@ -111,5 +121,9 @@ function Outside() {
     var sw = new google.maps.LatLng(Math.min(pos1.lat(), pos2.lat()), Math.min(pos1.lng(), pos2.lng()));
     var ne = new google.maps.LatLng(Math.max(pos1.lat(), pos2.lat()), Math.max(pos1.lng(), pos2.lng()));
     return new google.maps.LatLngBounds(sw, ne);
+  }
+
+  function isMapLoaded() {
+    return (typeof google != "undefined");
   }
 }
