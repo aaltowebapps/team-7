@@ -33,11 +33,11 @@ function Inside() {
       return false; // keep it from getting active style
     });
     $("#zoom-in").click(function () {
-      zoom += 0.1;
+      zoom *= 1.2;
       updateZoom();
     });
     $("#zoom-out").click(function () {
-      zoom -= 0.1;
+      zoom *= 0.8;
       updateZoom();
     });
 
