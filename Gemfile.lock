@@ -4,6 +4,7 @@ GEM
     backports (2.5.1)
     daemons (1.1.8)
     eventmachine (0.12.10)
+    manifesto (0.7.0)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -30,6 +31,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  manifesto
   sinatra
   sinatra-contrib
   thin

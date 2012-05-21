@@ -4,3 +4,4 @@ source "http://rubygems.org"
 gem 'sinatra'
 gem 'sinatra-contrib' # contains sinatra reloader for easy development
 gem 'thin'
+gem 'manifesto'
