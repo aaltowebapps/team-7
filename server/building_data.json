@@ -1,5 +1,311 @@
 {
   "buildings": [
+     {
+      "name": "Tietotekniikka",
+      "latitude": 60.18695,
+      "longitude": 24.821355,
+      "floor_ids": [
+        3,
+        4,
+        5
+      ],
+      "rooms": [
+        {
+          "room_id": "30A106",
+          "name": "A106",
+          "keywords": [
+            "A106",
+            "30A106",
+            "A106"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A117",
+          "name": "A117",
+          "keywords": [
+            "A117",
+            "30A117",
+            "A117"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A120",
+          "name": "A120",
+          "keywords": [
+            "A120",
+            "30A120",
+            "A120"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A123",
+          "name": "A123",
+          "keywords": [
+            "A123",
+            "30A123",
+            "A123"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A136",
+          "name": "A136",
+          "keywords": [
+            "A136",
+            "30A136",
+            "A136"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A142",
+          "name": "A142",
+          "keywords": [
+            "A142",
+            "30A142",
+            "A142"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A211",
+          "name": "A211",
+          "keywords": [
+            "A211",
+            "30A211",
+            "A211"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A218",
+          "name": "A218",
+          "keywords": [
+            "A218",
+            "30A218",
+            "A218"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A225",
+          "name": "A225",
+          "keywords": [
+            "A225",
+            "30A225",
+            "A225"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A232",
+          "name": "A232",
+          "keywords": [
+            "A232",
+            "30A232",
+            "A232"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A243",
+          "name": "A243",
+          "keywords": [
+            "A243",
+            "30A243",
+            "A243"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A319",
+          "name": "A319",
+          "keywords": [
+            "A319",
+            "30A319",
+            "A319"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A322",
+          "name": "A322",
+          "keywords": [
+            "A322",
+            "30A322",
+            "A322"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A328",
+          "name": "A328",
+          "keywords": [
+            "A328",
+            "30A328",
+            "A328"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30A346",
+          "name": "A346",
+          "keywords": [
+            "A346",
+            "30A346",
+            "A346"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30B115",
+          "name": "B115",
+          "keywords": [
+            "B115",
+            "30B115",
+            "B115"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30B122",
+          "name": "B122",
+          "keywords": [
+            "B122",
+            "30B122",
+            "B122"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30B130",
+          "name": "B130",
+          "keywords": [
+            "B130",
+            "30B130",
+            "B130"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30B219",
+          "name": "B219",
+          "keywords": [
+            "B219",
+            "30B219",
+            "B219"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30B353",
+          "name": "B353",
+          "keywords": [
+            "B353",
+            "30B353",
+            "B353"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30B357",
+          "name": "B357",
+          "keywords": [
+            "B357",
+            "30B357",
+            "B357"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30C106",
+          "name": "C106",
+          "keywords": [
+            "C106",
+            "30C106",
+            "C106"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30C307",
+          "name": "C307",
+          "keywords": [
+            "C307",
+            "30C307",
+            "C307"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30T1",
+          "name": "C202",
+          "keywords": [
+            "T1-sali",
+            "30T1",
+            "C202"
+          ],
+          "map_data": {
+            "floor_id": 4,
+            "map_x": 0.793030303,
+            "map_y": 0.3271428571
+          }
+        },
+        {
+          "room_id": "30T2",
+          "name": "C105",
+          "keywords": [
+            "T2-sali",
+            "30T2",
+            "C105"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30T3",
+          "name": "C206",
+          "keywords": [
+            "T3-sali",
+            "30T3",
+            "C206"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30T4",
+          "name": "A238",
+          "keywords": [
+            "T4-sali",
+            "30T4",
+            "A238"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30T5",
+          "name": "A133",
+          "keywords": [
+            "T5-sali",
+            "30T5",
+            "A133"
+          ],
+          "map_data": null
+        },
+        {
+          "room_id": "30TSauna",
+          "name": "T-talon sauna",
+          "keywords": [
+            "TSauna",
+            "30TSauna",
+            "T-talon sauna"
+          ],
+          "map_data": null
+        }
+      ]
+    },
     {
       "name": "Päärakennus",
       "latitude": 60.18654,
@@ -3680,312 +3986,7 @@
         }
       ]
     },
-    {
-      "name": "Tietotekniikka",
-      "latitude": 60.18695,
-      "longitude": 24.821355,
-      "floor_ids": [
-        3,
-        4,
-        5
-      ],
-      "rooms": [
-        {
-          "room_id": "30A106",
-          "name": "A106",
-          "keywords": [
-            "A106",
-            "30A106",
-            "A106"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A117",
-          "name": "A117",
-          "keywords": [
-            "A117",
-            "30A117",
-            "A117"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A120",
-          "name": "A120",
-          "keywords": [
-            "A120",
-            "30A120",
-            "A120"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A123",
-          "name": "A123",
-          "keywords": [
-            "A123",
-            "30A123",
-            "A123"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A136",
-          "name": "A136",
-          "keywords": [
-            "A136",
-            "30A136",
-            "A136"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A142",
-          "name": "A142",
-          "keywords": [
-            "A142",
-            "30A142",
-            "A142"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A211",
-          "name": "A211",
-          "keywords": [
-            "A211",
-            "30A211",
-            "A211"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A218",
-          "name": "A218",
-          "keywords": [
-            "A218",
-            "30A218",
-            "A218"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A225",
-          "name": "A225",
-          "keywords": [
-            "A225",
-            "30A225",
-            "A225"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A232",
-          "name": "A232",
-          "keywords": [
-            "A232",
-            "30A232",
-            "A232"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A243",
-          "name": "A243",
-          "keywords": [
-            "A243",
-            "30A243",
-            "A243"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A319",
-          "name": "A319",
-          "keywords": [
-            "A319",
-            "30A319",
-            "A319"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A322",
-          "name": "A322",
-          "keywords": [
-            "A322",
-            "30A322",
-            "A322"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A328",
-          "name": "A328",
-          "keywords": [
-            "A328",
-            "30A328",
-            "A328"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30A346",
-          "name": "A346",
-          "keywords": [
-            "A346",
-            "30A346",
-            "A346"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30B115",
-          "name": "B115",
-          "keywords": [
-            "B115",
-            "30B115",
-            "B115"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30B122",
-          "name": "B122",
-          "keywords": [
-            "B122",
-            "30B122",
-            "B122"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30B130",
-          "name": "B130",
-          "keywords": [
-            "B130",
-            "30B130",
-            "B130"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30B219",
-          "name": "B219",
-          "keywords": [
-            "B219",
-            "30B219",
-            "B219"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30B353",
-          "name": "B353",
-          "keywords": [
-            "B353",
-            "30B353",
-            "B353"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30B357",
-          "name": "B357",
-          "keywords": [
-            "B357",
-            "30B357",
-            "B357"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30C106",
-          "name": "C106",
-          "keywords": [
-            "C106",
-            "30C106",
-            "C106"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30C307",
-          "name": "C307",
-          "keywords": [
-            "C307",
-            "30C307",
-            "C307"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30T1",
-          "name": "C202",
-          "keywords": [
-            "T1-sali",
-            "30T1",
-            "C202"
-          ],
-          "map_data": {
-            "floor_id": 4,
-            "map_x": 0.793030303,
-            "map_y": 0.3271428571
-          }
-        },
-        {
-          "room_id": "30T2",
-          "name": "C105",
-          "keywords": [
-            "T2-sali",
-            "30T2",
-            "C105"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30T3",
-          "name": "C206",
-          "keywords": [
-            "T3-sali",
-            "30T3",
-            "C206"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30T4",
-          "name": "A238",
-          "keywords": [
-            "T4-sali",
-            "30T4",
-            "A238"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30T5",
-          "name": "A133",
-          "keywords": [
-            "T5-sali",
-            "30T5",
-            "A133"
-          ],
-          "map_data": null
-        },
-        {
-          "room_id": "30TSauna",
-          "name": "T-talon sauna",
-          "keywords": [
-            "TSauna",
-            "30TSauna",
-            "T-talon sauna"
-          ],
-          "map_data": null
-        }
-      ]
-    },
+ 
     {
       "name": "HTC",
       "latitude": null,
