@@ -159,6 +159,7 @@ function Inside() {
   $(document).delegate("#sending-dialog", "pagebeforeshow", function() {
     $(".upload-progress").show();
     $(".upload-done").hide();
+    $(".upload-failed").hide();
     // update local copy of the room data
     selectedRoom["map_data"] = {
       map_x: markerX,
@@ -170,9 +171,12 @@ function Inside() {
       floor_id: floors[floorIndex],
       markerX: markerX,
       markerY: markerY
-    }, function () {
+    }).success(function () {
       $(".upload-progress").hide();
       $(".upload-done").show();
+    }).error(function () {
+      $(".upload-progress").hide();
+      $(".upload-failed").show();
     });
   });
 
