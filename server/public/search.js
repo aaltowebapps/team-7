@@ -8,6 +8,7 @@ function Search() {
 
   $(document).delegate("#search", "pageinit", function() {
     listContainer = $(".searchview-list");
+    
     buildingData = base.getBuildingData();
     
     searchBox = $("#search-basic");
